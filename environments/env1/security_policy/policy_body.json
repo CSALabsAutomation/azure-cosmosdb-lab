@@ -1,0 +1,78 @@
+{
+  "permissions": [
+    {
+      "actions": ["*"],
+      "notActions": [
+        "Microsoft.Authorization/*/Delete",
+        "Microsoft.Authorization/*/Write",
+        "Microsoft.Authorization/elevateAccess/Action",
+        "Microsoft.MarketplaceOrdering/*",
+        "Microsoft.Compute/virtualMachines/Write",
+        "Microsoft.Sql/servers/Write",
+        "Microsoft.Compute/disks/Write"
+      ]
+    }
+  ],
+  "parameters": {
+    "allowedLocations": {
+      "type": "array",
+      "metadata": {
+        "description": "The list of locations that can be specified when deploying resources",
+        "strongType": "location",
+        "displayName": "Allowed locations"
+      }
+    },
+    "allowedServices": {
+      "type": "array",
+      "metadata": {
+        "description": "The list of allowed services",
+        "displayName": "Allowed services"
+      }
+    }
+  },
+  "displayName": "Azure SQL Migration Policy",
+  "description": "This policy restricts what is allowed in the Azure SQL Migration Lab.",
+  "policyRule": {
+    "if": {
+      "anyOf": [
+        {
+          "not": {
+            "field": "type",
+            "in": "[parameters('allowedServices')]"
+          }
+        },
+        {
+          "not": {
+            "field": "location",
+            "in": "[parameters('allowedLocations')]"
+          }
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters_values": {
+    "allowedLocations": {
+      "value": ["westus", "southcentralus", "{RGLocation}"]
+    },
+    "allowedServices": {
+      "value": [
+        "Microsoft.Compute/virtualMachines",
+        "Microsoft.DataMigration/services",
+        "Microsoft.Network/networkInterfaces",
+        "Microsoft.Network/networkSecurityGroups",
+        "Microsoft.Network/publicIPAddresses",
+        "Microsoft.Network/virtualNetworks",
+        "Microsoft.Storage/storageAccounts",
+        "Microsoft.Sql/servers",
+        "Microsoft.Compute/virtualMachines/extensions",
+        "Microsoft.Network/virtualNetworks/subnets",
+        "Microsoft.Compute/disks",
+        "Microsoft.DataMigration/services/projects",
+        "Microsoft.Sql/servers/databases"
+      ]
+    }
+  }
+}
