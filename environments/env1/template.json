@@ -11,7 +11,7 @@
     },
     "cosmosDBAccountName": {
         "type": "string",
-        "defaultValue": "[uniqueString('cosmosdb', resourceGroup().id)]",
+        "defaultValue": "cosmosDbAccount",
         "metadata": {
         "description": "The name of your CosmosDB account"
         }
@@ -25,7 +25,7 @@
     },
     "adminUsername": {
       "type": "string",
-      "defaultValue": "CosmosLabAdmin",
+      "defaultValue": "cosmosLabAdmin",
       "metadata": {
         "description": "Username for the Virtual Machine."
       }
@@ -47,7 +47,7 @@
     },
     "publicIpName": {
       "type": "string",
-      "defaultValue": "myPublicIP",
+      "defaultValue": "DevVmPublicIp",
       "metadata": {
         "description": "Name for the Public IP used to access the Virtual Machine."
       }
@@ -104,24 +104,27 @@
     },
     "vmName": {
       "type": "string",
-      "defaultValue": "simple-vm",
+      "defaultValue": "DevVM",
       "metadata": {
         "description": "Name of the virtual machine."
       }
     }
   },
   "variables": {
+    "cosmosDBAccountName": "[take(concat('cosmosdb', uniqueString(resourceGroup().id)), 15)]",
+    "vmName": "[take(concat('DevVm', uniqueString(resourceGroup().id)), 15)]",
     "storageAccountName": "[format('bootdiags{0}', uniqueString(resourceGroup().id))]",
-    "nicName": "myVMNic",
+    "publicIpName": "DevVmPublicIp",
+    "nicName": "DevVmNic",
     "addressPrefix": "10.0.0.0/16",
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
-    "virtualNetworkName": "MyVNET",
-    "networkSecurityGroupName": "default-NSG"
+    "virtualNetworkName": "DevVmVnet",
+    "networkSecurityGroupName": "DevVmNsg"
   },
   "resources": [
     {
-        "name": "[parameters('cosmosDBAccountName')]",
+        "name": "[variables('cosmosDBAccountName')]",
         "type": "Microsoft.DocumentDB/databaseAccounts",
         "apiVersion": "2020-04-01",
         "location": "[parameters('location')]",
@@ -147,7 +150,7 @@
     {
       "type": "Microsoft.Network/publicIPAddresses",
       "apiVersion": "2021-02-01",
-      "name": "[parameters('publicIpName')]",
+      "name": "[variables('publicIpName')]",
       "location": "[parameters('location')]",
       "sku": {
         "name": "[parameters('publicIpSku')]"
@@ -238,7 +241,7 @@
     {
       "type": "Microsoft.Compute/virtualMachines",
       "apiVersion": "2021-03-01",
-      "name": "[parameters('vmName')]",
+      "name": "[variables('vmName')]",
       "location": "[parameters('location')]",
       "properties": {
         "hardwareProfile": {
@@ -247,7 +250,14 @@
         "osProfile": {
           "computerName": "[parameters('vmName')]",
           "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]"
+          "adminPassword": "[parameters('adminPassword')]",
+          "windowsConfiguration": {
+            "provisionVMAgent": true,
+            "enableAutomaticUpdates": true,
+            "patchSettings": {
+                "patchMode": "AutomaticByPlatform"
+            }
+           }
         },
         "storageProfile": {
           "imageReference": {
