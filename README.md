@@ -1,3 +1,2 @@
-# Azure Cosmos DB Retail Recommendation System for e-Commerce
-The intent of the lab is to take participants step by step thru the setup and deployment of the key components of the solution deployed in the demo thus enable users to quickly get to showing an end-to-end solution working in their subscription, getting at the capabilities of Cosmos DB in the context of each of the scenario. It provides automation for deployment and minimizes any time spent manually configuring or provisioning resources in the target Azure subscription, providing guidance, teaching best practices and linking out to additional resources along the way
-In this scenario, you will implement a recommendation system for e-commerce using several Microsoft Azure services including Cosmos DB, Azure Functions, Event Hubs, Azure Synapse, Azure Storage, Azure Stream Analytics, Power BI, Azure Web Apps, and Logic Apps.
+# Azure Cosmos DB Lab
+The intent of the lab is to take participants step by step thru learning key features of Azure Cosmos DB
