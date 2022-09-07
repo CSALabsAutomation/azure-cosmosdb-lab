@@ -1,0 +1,6 @@
+title: Created Partitioned Container with .NET SDK
+internal_name: Created a Partitioned Container with .NET SDK
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10

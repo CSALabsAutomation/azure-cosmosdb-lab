@@ -1,4 +1,4 @@
-In this scenario, you will implement a recommendation system for e-commerce using several Microsoft Azure services including Cosmos DB, Azure Functions, Event Hubs, Azure Synapse, Azure Storage, Azure Stream Analytics, Power BI, Azure Web Apps, and Logic Apps.
+In this lab, you will taken through a series of steps to implement key features of Azure Cosmos DB
 
 ### Learning Objectives
 

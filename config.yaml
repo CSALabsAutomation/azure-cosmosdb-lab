@@ -1,6 +1,6 @@
-title: Migrating an On-Premise SQL Server to Azure SQL Database with Azure DMS
-slug: on-premise-sql-server-azure-sql-db
-short_description: Learn how to migrate from an On-Premise SQL Server to Azure SQL Database in this lab.
+title: Learning azure Cosmos DB
+slug: learn-azure-cosmodb 
+short_description: Learn how to develop Azure Cosmos DB based applications
 lab_features: # cloud-environment|remote-desktop|cli|code-ide
   - cloud-environment
 duration: 3600
