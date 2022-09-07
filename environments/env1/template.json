@@ -76,7 +76,7 @@
     },
     "OSVersion": {
       "type": "string",
-      "defaultValue": "2022-datacenter-azure-edition-core",
+      "defaultValue": "2022-datacenter-azure-edition",
       "allowedValues": [
         "2022-datacenter",
         "2022-datacenter-azure-edition",
@@ -120,7 +120,10 @@
     "subnetName": "Subnet",
     "subnetPrefix": "10.0.0.0/24",
     "virtualNetworkName": "DevVmVnet",
-    "networkSecurityGroupName": "DevVmNsg"
+    "networkSecurityGroupName": "DevVmNsg",
+    "dotNetSDKInstallScriptFileUrl": "https://raw.githubusercontent.com/CSALabsAutomation/quickstart-templates/main/azure-cosmosdb/scripts/dotnet-install.ps1",
+    "vsCodeInstallScriptFileUrl": "https://raw.githubusercontent.com/CSALabsAutomation/quickstart-templates/main/azure-cosmosdb/scripts/vscode-install.ps1",
+    "pbiDesktopInstallScriptFileUrl": "https://raw.githubusercontent.com/CSALabsAutomation/quickstart-templates/main/azure-cosmosdb/scripts/pbi-desktop-install.ps1"
   },
   "resources": [
     {
@@ -298,6 +301,27 @@
         "[resourceId('Microsoft.Network/networkInterfaces', variables('nicName'))]",
         "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
       ]
+    },
+    {
+      "type": "Microsoft.Compute/virtualMachines/extensions",
+      "apiVersion": "2021-04-01",
+      "name": "[concat(variables('vmName'),'/', 'InstallDotNetSDK')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/',variables('vmName'))]"
+      ],
+      "properties": {
+        "publisher": "Microsoft.Compute",
+        "type": "CustomScriptExtension",
+        "typeHandlerVersion": "1.9",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
+          "fileUris": [
+            "[variables('dotNetSDKInstallScriptFileUrl')]"
+          ],
+          "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File dotnet-install.ps1 -Channel LTS"
+        }
+      }
     }
   ],
   "outputs": {
