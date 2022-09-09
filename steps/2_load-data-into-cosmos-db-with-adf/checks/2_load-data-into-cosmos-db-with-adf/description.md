@@ -1,1 +1,1 @@
-Check if the User Successfully Loaded data into Cosmos Db with ADF
+Check if the User Successfully Loaded data into Cosmos DB with ADF
