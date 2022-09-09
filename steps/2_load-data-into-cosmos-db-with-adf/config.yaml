@@ -1,7 +1,0 @@
-title: Load data into Cosmos DB with ADF
-internal_name: Load data into Cosmos DB with ADF
-vendor: azure
-runtime: python3.8
-memory: 128
-timeout: 10
-
