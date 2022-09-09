@@ -1,0 +1,6 @@
+title: Load data into Cosmos Db with Adf with .NET SDK
+internal_name: Load data into Cosmos Db with Adf with .NET SDK
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10
