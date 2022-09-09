@@ -1,0 +1,6 @@
+title: Queried in Azure Cosmos DB
+internal_name: Queried in Azure Cosmos DB
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10

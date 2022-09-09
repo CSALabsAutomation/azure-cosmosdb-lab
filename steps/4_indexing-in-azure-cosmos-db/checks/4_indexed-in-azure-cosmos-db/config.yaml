@@ -1,0 +1,6 @@
+title: Indexed in azure cosmos db
+internal_name: Indexed in Azure Cosmos DB
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10
