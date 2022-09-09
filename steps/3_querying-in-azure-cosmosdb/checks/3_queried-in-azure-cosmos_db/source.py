@@ -1,4 +1,3 @@
-
 from azure.identity import ClientSecretCredential
 from azure.mgmt.loganalytics import LogAnalyticsManagementClient
 from azure.mgmt.monitor import MonitorManagementClient
@@ -34,7 +33,3 @@ def get_credentials(event):
         tenant_id=event['environment_params']['tenant']
     )
     return credentials, subscription_id
-<<<<<<< HEAD
-=======
-
->>>>>>> b8b10c83b9002d6b6b94aa589ce3390ec3fb0991
