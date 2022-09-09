@@ -1,1 +1,1 @@
-Check if the User Successfully loaded data into Cosmos DB with ADF
+Check if the User Successfully Queried in Azure Cosmos DB
