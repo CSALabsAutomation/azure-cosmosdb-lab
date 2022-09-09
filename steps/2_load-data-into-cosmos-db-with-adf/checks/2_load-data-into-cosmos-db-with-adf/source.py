@@ -34,4 +34,3 @@ def get_credentials(event):
         tenant_id=event['environment_params']['tenant']
     )
     return credentials, subscription_id
-
