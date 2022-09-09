@@ -1,5 +1,5 @@
 title: Queried in Azure Cosmos DB
-internal_name: queried-in-azure-cosmos-db
+internal_name: Queried in Azure Cosmos DB
 vendor: azure
 runtime: python3.8
 memory: 128
