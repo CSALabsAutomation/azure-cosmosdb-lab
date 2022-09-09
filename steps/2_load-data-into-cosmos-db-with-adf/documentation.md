@@ -182,3 +182,4 @@ You will validate that the data was successfully imported into your container us
     ![An Example document is displayed](./assets/03-example_document.jpg "Select a document")
 
 > If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+> 
