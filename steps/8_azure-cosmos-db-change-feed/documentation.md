@@ -61,7 +61,7 @@ You're ready to run the console app, and in this step you'll take a look at your
 
 3. After a brief build process, you should begin to see the asterisks being printed as data is being generated and written to Cosmos DB.
 
-   ![The terminal window is displayed showing the program running outputting asterisks](../media/08-console-running.jpg "Run the program, let it run for a minute or two")
+   ![The terminal window is displayed showing the program running outputting asterisks](./assets/08-console-running.jpg "Run the program, let it run for a minute or two")
 
 4. Let the console app run for a minute or two and then stop it by pressing any key in the console.
 
@@ -69,13 +69,13 @@ You're ready to run the console app, and in this step you'll take a look at your
 
 6. From within the **Azure Cosmos DB** blade, select the **Data Explorer** tab on the left.
 
-   ![The Cosmos DB resource with the Data Explorer highlighted](../media/08-cosmos-overview-final.jpg "Open the Data Explorer")
+   ![The Cosmos DB resource with the Data Explorer highlighted](./assets/08-cosmos-overview-final.jpg "Open the Data Explorer")
 
 7. Expand the **StoreDatabase** then the **CartContainer** and select **Items**. You should see something like the following screenshot.
 
    > Note your data will be slightly different since it is random, the important thing is that there is data here at all
 
-   ![An item in the StoreDatabase is selected](../media/08-cosmos-data-explorer-with-data.jpg "Select an item in the StoreDatabase")
+   ![An item in the StoreDatabase is selected](./assets/08-cosmos-data-explorer-with-data.jpg "Select an item in the StoreDatabase")
 
 ## Consume Cosmos DB Change Feed via the Change Feed Processor
 
