@@ -1024,7 +1024,7 @@ You will now tune your requests to Azure Cosmos DB by manipulating the SQL query
 
 1. Take note of the **id** property value of any document as well as that document's **partition key**.
 
-    ![The PeopleCollection is displayed with an item selected.  The id and Lastname is highlighted.](../media/09-find-id-key.jpg "Find an item and record its id property")
+    ![The PeopleCollection is displayed with an item selected.  The id and Lastname is highlighted.](./assets/09-find-id-key.jpg "Find an item and record its id property")
 
 1. Locate the `Main` method and comment the last line and add a new line `await QueryMember(peopleContainer);` so it looks like this:
 
@@ -1179,7 +1179,7 @@ Using appropriate RU/s settings for container or database throughput can allow y
 1. In the **Azure Cosmos DB** blade, locate and select the **Metrics** link on the left side of the blade under the **Monitoring** section.
 1. Observe the values in the **Number of requests** graph to see the volume of requests your lab work has been making to your Cosmos containers.
 
-    ![The Metrics dashboard is displayed](../media/09-metrics.jpg "Review your Cosmos DB metrics dashboard")
+    ![The Metrics dashboard is displayed](./assets/09-metrics.jpg "Review your Cosmos DB metrics dashboard")
 
     > Various parameters can be changed to adjust the data shown in the graphs and there is also an option to export data to csv for further analysis. For an existing application this can be helpful in determining your query volume.
 
