@@ -16,7 +16,7 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
 1. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
 
-   ![The Open in Terminal link is highlighted](../media/open_in_terminal.jpg "Open Visual Studio code to the Lab10 folder")
+   ![The Open in Terminal link is highlighted](./assets/open_in_terminal.jpg "Open Visual Studio code to the Lab10 folder")
 
 1. In the terminal pane, enter and execute the following command:
 
