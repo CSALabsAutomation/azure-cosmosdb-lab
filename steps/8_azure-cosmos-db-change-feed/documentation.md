@@ -18,7 +18,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
 
 1. Select the `program.cs` link in the **Explorer** pane to open the file in the editor.
 
-   ![The program.cs is displayed](../media/08-console-main-default.jpg "Open the program.cs file")
+   ![The program.cs is displayed](./assets/08-console-main-default.jpg "Open the program.cs file")
 
 1. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](00-account_setup.md) to get these values if you do not already have them:
 
@@ -263,7 +263,7 @@ Now that we have our first Change Feed consumer, we're ready to run a test and c
 
 1. After a few minutes, navigate to the **cosmosdblab** Data Explorer and expand **StoreDatabase** then **CartContainerByState** and select **Items**. You should see items populating there, and note that the Partition Key this time is `/BuyerState`.
 
-   ![The Cart Container By State is displayed](../media/08-cart-container-by-state.jpg "Open the CartContainerByState and review the items")
+   ![The Cart Container By State is displayed](./assets/08-cart-container-by-state.jpg "Open the CartContainerByState and review the items")
 
 1. Press any key in the **first** terminal to stop data generation
 
@@ -725,7 +725,7 @@ The Azure Function receives a list of Documents that have changed. We want to or
 
 1. You should see data being populated in the container by state, select on an item to see the contents of the data.
 
-   ![The Cosmos DB StateSales container is displayed](../media/08-cosmos-state-sales.jpg "Browse the StateSales container items")
+   ![The Cosmos DB StateSales container is displayed](./assets/08-cosmos-state-sales.jpg "Browse the StateSales container items")
 
 1. In the **first** terminal window, press any key to stop data generation
 
@@ -751,15 +751,15 @@ This step is optional, if you do not wish to follow the lab to creating the dash
 
 1. On the left side of the portal, select the **Resource groups** link.
 
-   ![Resource Groups is highlighted](../media/08-select-resource-groups.jpg "Browse to resource groups")
+   ![Resource Groups is highlighted](./assets/08-select-resource-groups.jpg "Browse to resource groups")
 
 1. In the **Resource groups** blade, locate and select the **cosmoslabs** resource group.
 
-   ![The lab resource group is highlighted](../media/08-cosmos-in-resources.jpg "Select your lab resource group")
+   ![The lab resource group is highlighted](./assets/08-cosmos-in-resources.jpg "Select your lab resource group")
 
 1. In the **cosmoslabs** resource blade, and select the Event Hub namespace.
 
-   ![The lab Event Hub is highlighted](../media/08-cosmos-select-hub.jpg "Select the lab Event Hub resource")
+   ![The lab Event Hub is highlighted](./assets/08-cosmos-select-hub.jpg "Select the lab Event Hub resource")
 
 1. In the **Event Hub** blade, find **Shared Access Policies** under **Settings** and select it
 
@@ -767,7 +767,7 @@ This step is optional, if you do not wish to follow the lab to creating the dash
 
 1. In the panel that appears, copy the value for **Connection string-primary key** and save it for use later in this lab.
 
-   ![The Event Hub Keys are highlighted](../media/08-event-hub-keys.jpg "Copy and save the connection string for later use")
+   ![The Event Hub Keys are highlighted](./assets/08-event-hub-keys.jpg "Copy and save the connection string for later use")
 
 ### Create Outputs for the Azure Stream Analytics Job
 
@@ -777,15 +777,15 @@ This step is optional, if you do not wish to connect to Power BI to visualize yo
 
 1. In the **cosmoslabs** resource blade and select the stream analytics job
 
-   ![Stream Analytics is highlighted](../media/08-select-stream-processor.jpg "Select the stream analytics resource")
+   ![Stream Analytics is highlighted](./assets/08-select-stream-processor.jpg "Select the stream analytics resource")
 
 1. Select **Outputs** on the **CartStreamProcessor** Overview Screen
 
-   ![The Stream Analytics resource overview blade is displayed](../media/08-stream-processor-output.jpg "Review the overview blade")
+   ![The Stream Analytics resource overview blade is displayed](./assets/08-stream-processor-output.jpg "Review the overview blade")
 
 1. At the top of the **Outputs** page, select **+Add** and choose **Power BI**
 
-   ![Power BI is highlighted](../media/08-add-power-bi.jpg "Choose Power BI")
+   ![Power BI is highlighted](./assets/08-add-power-bi.jpg "Choose Power BI")
 
 1. Select the **Authorize** button and follow the login prompts to authorize this output in your Power BI account
 
@@ -803,7 +803,7 @@ This step is optional, if you do not wish to connect to Power BI to visualize yo
 
    - Select **Save**
 
-   ![The New output dialog is displayed](../media/08-adding-output.jpg "Set the values and select Save")
+   ![The New output dialog is displayed](./assets/08-adding-output.jpg "Set the values and select Save")
 
 1. Repeat the previous step to add a second output
 
@@ -849,7 +849,7 @@ This step is optional, if you do not wish to connect to Power BI to visualize yo
 
 1. Once you've completed these steps, the **Outputs** blade should look like this:
 
-   ![The Outputs Blade is displayed with four outputs](../media/08-outputs-blade.jpg "You should see four outputs now")
+   ![The Outputs Blade is displayed with four outputs](./assets/08-outputs-blade.jpg "You should see four outputs now")
 
 ### Create an Azure Function to write data to the Event Hub
 
@@ -1061,7 +1061,7 @@ With all of the configuration out of the way, you'll see how simple it is to wri
 > [!TIP]
 > If the Stream Analytics Job fails to start it may be due to a bad connection to Event Hubs. To correct this to go **Inputs** in the Stream Analytics Job, then note the Service Bus namespace and Event Hub name, then delete the `cartInput` connection to the Event Hub and recreate it.
 
-   ![The start link is highlighted](../media/08-start-processor.jpg "Start the stream analytics job")
+   ![The start link is highlighted](./assets/08-start-processor.jpg "Start the stream analytics job")
 
    > Wait for the processor to start before continuing
 
@@ -1069,21 +1069,21 @@ With all of the configuration out of the way, you'll see how simple it is to wri
 
 1. Sign in, and choose **CosmosDB** from the left hand section
 
-   ![The Power BI portal is displayed](../media/08-power-bi.jpg "Open the PowerBI website")
+   ![The Power BI portal is displayed](./assets/08-power-bi.jpg "Open the PowerBI website")
 
 1. In the top right of the screen select **Create** and choose **Dashboard** give the dashboard any _Name_
 
 1. In the **Dashboard** screen, select **Add tile** from the top
 
-   ![Add Tile link is highlighted](../media/08-power-bi-add-title.jpg "Add a new tile")
+   ![Add Tile link is highlighted](./assets/08-power-bi-add-title.jpg "Add a new tile")
 
 1. Choose **Custom Streaming Data** and hit **Next**
 
-   ![The real-time data streaming tile is highlighted.](../media/08-pbi-custom-streaming-data.jpg "Add a new stream data item")
+   ![The real-time data streaming tile is highlighted.](./assets/08-pbi-custom-streaming-data.jpg "Add a new stream data item")
 
 1. Choose **averagePrice** from the **Add custom streaming data tile** window
 
-   ![averagePrice is highlighted](../media/08-add-averageprice-pbi.jpg "Select averagePrice")
+   ![averagePrice is highlighted](./assets/08-add-averageprice-pbi.jpg "Select averagePrice")
 
 1. From _Visualization Type_ select **Clustered bar char**
 
@@ -1093,7 +1093,7 @@ With all of the configuration out of the way, you'll see how simple it is to wri
 
    - Select **Next**
 
-   ![The settings of the tile are highlighted](../media/08-power-bi-first-tile.jpg "Configure the tile")
+   ![The settings of the tile are highlighted](./assets/08-power-bi-first-tile.jpg "Configure the tile")
 
    - Give it a name like `Average Price` and select **Apply**
 
