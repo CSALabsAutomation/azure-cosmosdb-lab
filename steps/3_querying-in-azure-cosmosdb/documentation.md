@@ -23,11 +23,11 @@ You will begin by running basic queries with `SELECT`, `WHERE`, and `FROM` claus
 3. Within the **FoodCollection** node, select the **Items** link.
 4. View the items within the container. Observe how these documents have many properties, including arrays.
 
-    ![The NutritionDatabase and FoodCollection is displayed and highlighted](../media/04-food_container.jpg "Browse to the FoodCollection and select an item to review its properties")
+    ![The NutritionDatabase and FoodCollection is displayed and highlighted](./assets/04-food_container.jpg "Browse to the FoodCollection and select an item to review its properties")
 
 5. Select **New SQL Query**.
 
-      ![New SQL Query is highlighted](../media/04-new_query.jpg "Create a new SQL Query")
+      ![New SQL Query is highlighted](./assets/04-new_query.jpg "Create a new SQL Query")
 
 6. Paste the following SQL query and select **Execute Query**.
 
@@ -39,7 +39,7 @@ You will begin by running basic queries with `SELECT`, `WHERE`, and `FROM` claus
 
 7. You will see that the query returned the single document where id is "19015" and the foodGroup is "Snacks". Explore the structure of this item as it is representative of the items within the **FoodCollection** container that we will be working with for the remainder of this section.
 
-      ![The query results are displayed](../media/04-query_01_results.jpg "Review the results")
+      ![The query results are displayed](./assets/04-query_01_results.jpg "Review the results")
 
 ## Dot and quoted property projection accessors
 
