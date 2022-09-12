@@ -1,6 +1,0 @@
-title: Authored Azure Cosmos DB Stored Procedures for Multi-Document Transactions
-internal_name: Authored Azure Cosmos DB Stored Procedures for Multi-Document Transactions
-vendor: azure
-runtime: python3.8
-memory: 128
-timeout: 10
