@@ -1107,6 +1107,6 @@ With all of the configuration out of the way, you'll see how simple it is to wri
 
 1. When complete, you'll have a dashboard that looks like the image below, updating in real time!
 
-   ![The Final Power BI Dashboard is displayed with real-time data flowing](../media/08-power-bi-dashboard.jpg "Review the new dashboard")
+   ![The Final Power BI Dashboard is displayed with real-time data flowing](./assets/08-power-bi-dashboard.jpg "Review the new dashboard")
 
 > If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
