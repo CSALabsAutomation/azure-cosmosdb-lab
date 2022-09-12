@@ -38,7 +38,7 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
 1. Select the **Program.cs** link in the **Explorer** pane to open the file in the editor.
 
-   ![The program.cs file is displayed](../media/10-program-editor.jpg "Open the program.cs file")
+   ![The program.cs file is displayed](./assets/10-program-editor.jpg "Open the program.cs file")
 
 1. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](00-account_setup.md) to get these values if you do not already have them:
 
