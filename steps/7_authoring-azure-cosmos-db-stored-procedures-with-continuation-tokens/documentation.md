@@ -138,7 +138,7 @@ You will now implement stored procedures that may execute longer than the bounde
 
 1. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
 
-   ![Open in Terminal](../media/open_in_terminal.jpg)
+   ![Open in Terminal](./assets/open_in_terminal.jpg)
 
 1. In the terminal pane, enter and execute the following command:
 
