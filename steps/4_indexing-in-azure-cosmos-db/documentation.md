@@ -37,7 +37,7 @@ In this lab section, you will view and modify the indexing policy for your **Foo
     - An Indexing policy can also be modified through any Azure Cosmos DB SDK as well as ARM template, PowerShell or Azure CLI
     - During this lab we will modify the indexing policy through the Azure Portal
 
-   ![The Indexing Policy window is highlighted](../media/04-indexingpolicy-initial.jpg "Review the indexing policy of the FoodCollection")
+   ![The Indexing Policy window is highlighted](./assets/04-indexingpolicy-initial.jpg "Review the indexing policy of the FoodCollection")
 
 ### Including and excluding Indexes
 
@@ -202,7 +202,7 @@ These queries only require an index be defined on **manufacturerName** and **foo
 
 7. Navigate to the **Query Stats** tab. You should observe that this query still has a low RU charge, even after removing some properties from the index. Because the **manufacturerName** was the only property used as a filter in the query, it was the only index that was required.
 
-    ![Query metrics are displayed for the previous query](../media/04-querymetrics_01.JPG "Review the query metrics")
+    ![Query metrics are displayed for the previous query](./assets/04-querymetrics_01.JPG "Review the query metrics")
 
 8. Replace the query text with the following and select **Execute Query**:
 
@@ -214,7 +214,7 @@ These queries only require an index be defined on **manufacturerName** and **foo
 
 10. Observe the **Query Metrics**:
 
-    ![Query metrics are displayed for the previous query](../media/04-querymetrics_02.JPG "Review the query metrics")
+    ![Query metrics are displayed for the previous query](./assets/04-querymetrics_02.JPG "Review the query metrics")
 
     > If a query does not use the index, the **Index hit document count** will be 0. We can see above that the query needed to retrieve 8,618 documents and ultimately ended up only returning 1 document.
 
@@ -488,7 +488,7 @@ First, you will create a new Cosmos container named volcanoes inside a new datab
 
 4. Observe the **Query Stats** for this operation. Because the container has a geo-spatial index for Points, this query consumed a small amount of RU's.
 
-    ![Query metrics are displayed for the previous query](../media/04-querymetrics_geo.jpg "Review the query metrics")
+    ![Query metrics are displayed for the previous query](./assets/04-querymetrics_geo.jpg "Review the query metrics")
 
 ### Query sample polygon data
 
