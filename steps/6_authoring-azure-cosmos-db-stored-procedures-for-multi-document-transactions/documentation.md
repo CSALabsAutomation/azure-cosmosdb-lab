@@ -20,7 +20,7 @@ You will get started in this lab by authoring simple stored procedures that impl
 
 1. Select the **New Stored Procedure** button (two gears icon) at the top of the **Data Explorer** section.
 
-    ![The New Stored Procedure menu item is highlighted](../media/06-new_storedprocedure.jpg "Create a new Stored Procedure")
+    ![The New Stored Procedure menu item is highlighted](./assets/06-new_storedprocedure.jpg "Create a new Stored Procedure")
 
 1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **greetCaller**.
 
@@ -34,7 +34,7 @@ You will get started in this lab by authoring simple stored procedures that impl
     }
     ```
 
-    ![A new stored procedure called greetCaller is displayed](../media/06-new_greet_caller_sp.jpg "Create a new stored procedure")
+    ![A new stored procedure called greetCaller is displayed](./assets/06-new_greet_caller_sp.jpg "Create a new stored procedure")
 
     > This simple stored procedure will echo the input parameter string with the text `Hello` as a prefix.
 
@@ -52,7 +52,7 @@ You will get started in this lab by authoring simple stored procedures that impl
 
     - Select the **Execute** button.
 
-        ![The stored procedure parameters are populated](../media/06-execute_sp.jpg "Execute the stored procedure")
+        ![The stored procedure parameters are populated](./assets/06-execute_sp.jpg "Execute the stored procedure")
 
 1. In the **Result** pane at the bottom of the tab, observe the results of the stored procedure's execution.
 
@@ -106,7 +106,7 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. In the **Result** pane at the bottom of the tab, observe the results of the stored procedure's execution.
 
-    ![The item created from the stored procedure is displayed](../media/06-execute_sp_02.jpg "review the item created")
+    ![The item created from the stored procedure is displayed](./assets/06-execute_sp_02.jpg "review the item created")
 
     > You should see a new item in your container. Azure Cosmos DB has assigned additional fields to the item such as `id` and `_etag`.
 
