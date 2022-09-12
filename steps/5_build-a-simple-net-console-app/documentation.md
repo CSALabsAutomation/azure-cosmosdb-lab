@@ -11,13 +11,13 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
 3. In the `Lab05` folder, right-click the folder and select the **Open with Code** menu option.
 
-   ![Open with Visual Studio Code](../media/03-open_with_code.jpg)
+   ![Open with Visual Studio Code](./assets/03-open_with_code.jpg)
 
    > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
 
 4. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
 
-   ![Open in Terminal](../media/open_in_terminal.jpg)
+   ![Open in Terminal](./assets/open_in_terminal.jpg)
 
 5. In the terminal pane, enter and execute the following command:
 
@@ -41,7 +41,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
 8. Select the `Program.cs` link in the **Explorer** pane to open the file in the editor.
 
-   ![Visual Studio Code editor is displayed with the program.cs file highlighted](../media/03-program_editor.jpg "Open the program.cs file")
+   ![Visual Studio Code editor is displayed with the program.cs file highlighted](./assets/03-program_editor.jpg "Open the program.cs file")
 
 9. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](00-account_setup.md) to get these values if you do not already have them:
 
