@@ -1,0 +1,6 @@
+title: Troubleshooted Azure Cosmos DB Performance
+internal_name: Troubleshooted Azure Cosmos DB Performance
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10
