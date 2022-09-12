@@ -1,1 +1,1 @@
-Check if the User Successfully Authorised Azure Cosmos DB Stored Procedures for Multi-Document Transactions
+Check if the User Successfully Authored Azure Cosmos DB Stored Procedures for Multi-Document Transactions
