@@ -1,1 +1,1 @@
- Load Data Into Cosmos DB with dmtool
+ Load Data Into Cosmos DB with Dm tool
