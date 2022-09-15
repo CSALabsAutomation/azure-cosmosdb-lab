@@ -57,90 +57,23 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
    
     ![click here](./assets/03-dm-extract.jpg "extract")
 
-1. If you see a Data Factory resource, you can skip to step 4, otherwise select **Add** to add a new resource
+1. If you see a dtui application , double click on it .
+ 
+    ![click](./assets/03-dm-dtui-app.png "Review if you have installed already")
+   
+1. Navigate to Source Information and then import JSON format by adding files from path C:\Labs\setup\ .
 
-    ![A data factory resource is highlighted](./assets/03-adf-isntance.png "Review if you have data factory already")
+    ![click ](./assets/03-dm-source.jpg "Select source ")
+    ![click ](./assets/03-dm-addJson "Select json format")
+    ![click ](./assets/03-dm-nutritionjson "Select json file and click on Next  ")
+   
+1. After adding source information , it leads to Target information .
 
-    ![Select Add in the nav bar](./assets/03-add_adf.jpg "Add a new resource")
-
-   - Search for **Data Factory** and select it. 
-   - Create a new **Data Factory**. You should name this data factory **importnutritiondata** with a unique number appended and select the relevant Azure subscription. You should ensure your existing **cosmoslabs** resource group is selected as well as a Version **V2**. 
-   - Select **East US** as the region. Do not select **Enable GIT** (this may be checked by default). 
-   - Select **Create**.
-
-        ![The new data factory dialog is displayed](./assets/03-adf_selections.jpg "Add a new Data Factory resource")
-
-1. After creation, open your newly created Data Factory. Select **Author & Monitor** and you will launch ADF.
-
-    ![The overview blade is displayed for ADF](./assets/03-adf_author&monitor.jpg "Select Author and Monitor link")
-
-1. Select **Copy Data**.
-
-   - We will be using ADF for a one-time copy of data from a source JSON file on Azure Blob Storage to a database in Cosmos DB’s SQL API. ADF can also be used for more frequent data transfers from Cosmos DB to other data stores.
-
-    ![The main workspace page is displayed for ADF](./assets/03-adf_copydata.jpg "Select the Copy Data activity")
-
-1. Edit basic properties for this data copy. You should name the task **ImportNutrition** and select to **Run once now**, then select **Next**
-
-   ![The copy data activity properties dialog is displayed](./assets/03-adf_properties.jpg "Enter a task name and the schedule")
-
-1. **Create a new connection** and select **Azure Blob Storage**. We will import data from a json file on Azure Blob Storage. In addition to Blob Storage, you can use ADF to migrate from a wide variety of sources. We will not cover migration from these sources in this tutorial.
-
-    ![Create new connection link is highlighted](./assets/03-adf_blob.jpg "Create a new connection")
-
-    ![Azure Blog Storage is highlighted](./assets/03-adf_blob2.jpg "Select the Azure Blob Storage connection type")
-
-1. Name the source **NutritionJson** and select **SAS URI** as the Authentication method. Please use the following SAS URI for read-only access to this Blob Storage container:
-
-     `https://cosmoslabsstorageaccount.blob.core.windows.net/nutrition-data?si=container-list-read-policy&spr=https&sv=2021-06-08&sr=c&sig=jGrmrokYikbgbuW9we2am%2BwAq%2BC%2BxfZcPYswOeSQpAU%3D`
-
-    ![The New linked service dialog is displayed](./assets/03-adf_connecttoblob.jpg "Enter the SAS url in the dialog")
-
-1. Select **Create**
-1. Select **Next**
-1. In the **File or Folder** textbox, enter the folder name as ``nutirion-data`` and then click on **Browse** to select the **nutrition-data** folder. Finally select **NutritionData.json** file.
-
-    ![The nutritiiondata folder is displayed](./assets/03-adf_choosestudents.jpg "Select the NutritionData.json file")
-
-1. Un-check **Copy file recursively** or **Binary Copy** if they are checked. Also ensure that other fields are empty. Click **Next**
-
-    ![The input file or folder dialog is displayed](./assets/03-adf_source_next.jpg "Ensure all other fields are empty, select next")
-
-1. Select the file format as **JSON format**. Then select **Next**.
-
-    !["The file format settings dialog is displayed"](./assets/03-adf_source_dataset_format.jpg "Ensure JSON format is selected, then select Next")
-
-1. You have now successfully connected the Blob Storage container with the nutrition.json file as the source.
-
-1. For the **Destination data store** add the Cosmos DB target data store by selecting **Create new connection** and selecting **Azure Cosmos DB (SQL API)**.
-
-    !["The New Linked Service dialog is displayed"](./assets/03-adf_selecttarget.jpg "Select the Azure Cosmos DB service type")
-
-1. Name the linked service **targetcosmosdb** and select your Azure subscription and Cosmos DB account. You should also select the Cosmos DB **ImportDatabase** that you created earlier.
-
-    !["The linked service configuration dialog is displayed"](./assets/03-adf_selecttargetdb.jpg "Select the ImportDatabase database")
-
-1. Select your newly created **targetcosmosdb** connection as the Destination data store.
-
-    !["The destination data source dialog is displayed"](./assets/03-adf_destconnectionnext.jpg "Select your recently created data source")
-
-1. Select your **FoodCollection** container from the drop-down menu. You will map your Blob storage file to the correct Cosmos DB container. Select **Next** to continue.
-
-    !["The table mapping dialog is displayed"](./assets/03-adf_correcttable.jpg "Select the FoodCollection container")
-
-1. There is no need to change any `Settings`. Select **next**.
-
-    !["The settings dialog is displayed"](./assets/03-adf_settings.jpg "Review the dialog, select next")
-
-1. Select **Next** to begin deployment After deployment is complete, select **Monitor**.
-
-    !["The pipeline runs are displayed"](./assets/03-adf_progress.jpg "Notice the pipeline is In progress")
-
-1. After a few minutes, refresh the page and the status for the ImportNutrition pipeline should be listed as **Succeeded**.
-
-    !["The pipeline runs are displayed"](./assets/03-adf_progress_complete.jpg "The pipeline has succeeded")
-
-1. Once the import process has completed, close the ADF. You will now proceed to validate your imported data.
+   
+1. Copy the connection String from your Cosmos DB  and append it with Database name as shown 
+    ![click ](./assets/03-dm-connectionString "ADD connection string and collection ")
+    ![click ](./assets/03-dm-target "Select connection string and collection ")
+   
 
 ## Validate Imported Data
 
