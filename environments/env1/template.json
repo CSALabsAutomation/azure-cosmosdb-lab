@@ -25,7 +25,7 @@
     },
     "adminUsername": {
       "type": "string",
-      "defaultValue": "cosmosLabAdmin",
+      "defaultValue": "cosmosLabUser",
       "metadata": {
         "description": "Username for the Virtual Machine."
       }
@@ -124,9 +124,7 @@
   "variables": {
     "cosmosDBAccountName": "[take(concat('cosmosdb', uniqueString(resourceGroup().id)), 15)]",
     "vmName": "[take(concat('DevVm', uniqueString(resourceGroup().id)), 15)]",
-    "osDiskVhdUri": "https://csalabsshrdstrg1.blob.core.windows.net/cloudacademy/azure-cosmosdb/devvmosdisk.vhd",
-    "osDiskName": "[take(concat('DevVmOsDisk', uniqueString(resourceGroup().id)), 15)]",
-    "dataDiskName": "[take(concat('DevVmDataDisk', uniqueString(resourceGroup().id)), 15)]",
+    "osDiskVhdUri": "https://csalabsshrdstrg1.blob.core.windows.net/cloudacademy/azure-cosmosdb/devvmosdiskv1_1.vhd",
     "imageName": "[take(concat('DevVmDataImage', uniqueString(resourceGroup().id)), 15)]",
     "storageAccountName": "[format('bootdiags{0}', uniqueString(resourceGroup().id))]",
     "publicIpName": "DevVmPublicIp",
@@ -255,20 +253,7 @@
         "[resourceId('Microsoft.Network/publicIPAddresses', parameters('publicIpName'))]",
         "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]"
       ]
-    },
-    {
-      "type": "Microsoft.Compute/disks",
-      "apiVersion": "2018-09-30",
-      "name": "[variables('osDiskName')]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "creationData": {
-          "createOption": "Import",
-          "sourceUri": "[variables('osDiskVhdUri')]"
-        },
-        "osType": "[parameters('osType')]"
-      }
-    },
+    },    
     {
       "type": "Microsoft.Compute/images",
       "apiVersion": "2020-06-01",
