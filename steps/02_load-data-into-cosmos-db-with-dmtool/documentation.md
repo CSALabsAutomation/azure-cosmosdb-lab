@@ -51,7 +51,7 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 
 1. Click on the link https://github.com/Azure/azure-documentdb-datamigrationtool/releases/tag/1.8.3 and download it.
 
-    !(./assets/03-dm-link.jpg "Download the link")
+    ![click here](./assets/03-dm-link.jpg "Download the link")
 
 1. In the **Resource groups** blade, locate and select the **cosmoslabs** resource group.
 
