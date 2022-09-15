@@ -61,7 +61,7 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
  
     ![click](./assets/03-dm-dtui-app.jpg "Review if you have installed already")
    
-1. Navigate to Source Information 
+1. Navigate to Source Information as shown below
 
     ![click ](./assets/03-dm-source.jpg "Select source ")
     
