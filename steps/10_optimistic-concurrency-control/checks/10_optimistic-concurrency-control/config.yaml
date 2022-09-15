@@ -1,0 +1,6 @@
+title: Optimistic Concurrency Control
+internal_name: Optimistic Concurrency Control
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10

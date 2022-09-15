@@ -1,0 +1,6 @@
+title: Authored Azure Cosmos DB Stored Procedures with Continuation Tokens
+internal_name: Authored Azure Cosmos DB Stored Procedures with Continuation Tokens
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10

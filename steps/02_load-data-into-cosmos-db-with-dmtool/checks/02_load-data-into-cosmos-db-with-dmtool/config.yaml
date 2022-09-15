@@ -1,0 +1,6 @@
+title: Loaded data into Cosmos DB with DM tool
+internal_name: Loaded data into Cosmos DM tool
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10

@@ -1,0 +1,6 @@
+title: Load data into Cosmos DB with DmTool
+internal_name: Load data into Cosmos DB with DmTool
+vendor: azure
+runtime: python3.8
+memory: 128
+timeout: 10
