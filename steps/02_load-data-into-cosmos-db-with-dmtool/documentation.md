@@ -78,6 +78,13 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
     
 1. Append the Connection String with Database name and make collection as FoodCollection 
     ![click ](./assets/03-dm-target.jpg "Select connection string and collection ")
+ 
+1. Click on Next and skip the Advanced settings.You will see Summary popup .
+    ![click ](./assets/03-dm_confirmImport.jpg "Confirm import settings ")
+ 
+1. Click on Import and data gets copied from Source to Destination.
+    ![click ](./assets/03-dm_Import.jpg "Confirm import settings ")
+
    
 
 ## Validate Imported Data
