@@ -1,8 +1,7 @@
-# Load Data Into Cosmos DB with ADF
+# Load Data Into Cosmos DB with Dm Tool
 
 In this lab, you will populate an Azure Cosmos DB container from an existing set of data using tools built in to Azure. After importing, you will use the Azure portal to view your imported data.
 
-> If you have not already completed setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.  This will create an Azure Cosmos DB database and container that you will use throughout the lab. You will also use an **Azure Data Factory (ADF)** resource to import existing data into your container.
 
 ## Create Azure Cosmos DB Database and Container
 
@@ -46,15 +45,13 @@ You will now create a database and container within your Azure Cosmos DB account
 
 ## Import Lab Data Into Container
 
-You will use **Azure Data Factory (ADF)** to import the JSON array stored in the **nutrition.json** file from Azure Blob Storage.
+You will use **Data Migration Tool(DM tool)** to import the JSON array stored in the **nutrition.json** file from C:\Labs\setup\ 
 
-You do not need to do Steps 1-4 in this section and can proceed to Step 4 by opening your Data Factory (named importNutritionData with a random number suffix)if you are completing the lab through Microsoft Hands-on Labs or ran the setup script, you can use the pre-created Data Factory within your resource group.
+.
 
-1. On the left side of the portal, select the **Resource groups** link.
+1. Click on the link https://github.com/Azure/azure-documentdb-datamigrationtool/releases/tag/1.8.3 and download it.
 
-    > To learn more about copying data to Cosmos DB with ADF, please read [ADF's documentation](https://docs.microsoft.com/azure/data-factory/connector-azure-cosmos-db).
-
-    ![Resource groups link is highlighted](./assets/03-resource_groups.jpg "Select Resource Groups")
+    (./assets/03-dm-link.jpg "Download the link")
 
 1. In the **Resource groups** blade, locate and select the **cosmoslabs** resource group.
 
