@@ -59,19 +59,24 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 
 1. If you see a dtui application , double click on it .
  
-    ![click](./assets/03-dm-dtui-app.png "Review if you have installed already")
+    ![click](./assets/03-dm-dtui-app.jpg "Review if you have installed already")
    
-1. Navigate to Source Information and then import JSON format by adding files from path C:\Labs\setup\ .
+1. Navigate to Source Information 
 
     ![click ](./assets/03-dm-source.jpg "Select source ")
+    
+1. Select Import from as JSON files and click on Add files.
     ![click ](./assets/03-dm-addJson "Select json format")
+    
+1. Select Nutrition.json file from path C:\Labs\setup\ 
     ![click ](./assets/03-dm-nutritionjson "Select json file and click on Next  ")
    
 1. After adding source information , it leads to Target information .
 
-   
-1. Copy the connection String from your Cosmos DB  and append it with Database name as shown 
+1. Copy the connection String from your Cosmos DB   
     ![click ](./assets/03-dm-connectionString "ADD connection string and collection ")
+    
+  Append the Connection String with Database name and make collection as FoodCollection 
     ![click ](./assets/03-dm-target "Select connection string and collection ")
    
 
