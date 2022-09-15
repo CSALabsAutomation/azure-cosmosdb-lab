@@ -74,9 +74,9 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 1. After adding source information , it leads to Target information .
 
 1. Copy the connection String from your Cosmos DB   
-    ![click ](./assets/03-dm-connectionString.jpg "ADD connection string and collection ")
+     ![click ](./assets/03-dm-connectionString.jpg "ADD connection string and collection ")
     
-  Append the Connection String with Database name and make collection as FoodCollection 
+1. Append the Connection String with Database name and make collection as FoodCollection 
     ![click ](./assets/03-dm-target.jpg "Select connection string and collection ")
    
 
