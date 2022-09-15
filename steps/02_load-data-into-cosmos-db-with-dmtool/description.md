@@ -1,1 +1,1 @@
- Load Data Into Cosmos DB with ADF
+ Load Data Into Cosmos DB with dmtool
