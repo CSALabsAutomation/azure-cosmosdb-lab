@@ -53,7 +53,9 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 
     ![click here](./assets/03-dm-link.jpg "Download the link")
 
-1. In the **Resource groups** blade, locate and select the **cosmoslabs** resource group.
+1. In the downloads , locate and select the downloaded zip file . Extract files to C:\Labs\Tools\ before running.
+   
+    ![click here](./assets/03-dm-extract.jpg "extract")
 
 1. If you see a Data Factory resource, you can skip to step 4, otherwise select **Add** to add a new resource
 
