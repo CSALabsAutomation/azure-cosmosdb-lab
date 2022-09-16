@@ -50,13 +50,14 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 
 1. Use dtui application from `C:\Labs\Tools\` location, double click on dtui application.
  
-    ![click](./assets/03-dm_dtui_app.jpg "Review if you have installed already")
+    ![click](./assets/03-dm_dtui_app.JPG "Review if you have installed already")
    
 1. Navigate to Source Information as shown below.
 
     ![click ](./assets/03-dm_source.jpg "Select source ")
     
 1. Select Import from as JSON files and click on Add files.
+
     ![click ](./assets/03-dm_addJson.jpg "Select json format")
     
 1. Select Nutrition.json file from path `C:\Labs\setup\` and it leads to Target information.
