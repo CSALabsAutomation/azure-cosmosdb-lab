@@ -106,9 +106,9 @@ You will validate that the data was successfully imported into your container us
 
     ![The Data Explorer link was selected and is blade is displayed](./assets/03-data_explorer_pane.jpg "Select Data Explorer")
 
-1. In the **Data Explorer** section, expand the **ImportDatabase** database node and then expand the **FoodCollection** container node.
+1. In the **Data Explorer** section, expand the **NutritionDatabase** database node and then expand the **FoodCollection** container node.
 
-    ![The Container node is displayed](./assets/03-collection_node.jpg "Expand the ImportDatabase node")
+    ![The Container node is displayed](./assets/03-collection_node.jpg "Expand the NutritionDatabase node")
 
 1. Within the **FoodCollection** node, select the **Scale and Settings** link to view the throughput for the container. Reduce the throughput to **400 RU/s**.
 
