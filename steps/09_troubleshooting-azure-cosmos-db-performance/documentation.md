@@ -13,6 +13,32 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     > Alternatively, you can run a terminal in your current directory and execute the ``code .`` command.
 
 1. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
+2. 
+3. In the open terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet new console
+    ```
+
+    > This command will create a new .NET Core project. The project will be a **console** project and the project will be created in the current directly since you used the `--output .` option.
+
+1. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+    ```
+
+    > This command will add the [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) NuGet package as a project dependency. The lab instructions have been tested using the `3.12.0` version of this NuGet package.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet add package Bogus --version 30.0.2
+    ```
+
+    > This command will add the [Bogus](./assets/https://www.nuget.org/packages/Bogus/) NuGet package as a project dependency. This library will allow us to quickly generate test data using a fluent syntax and minimal code. We will use this library to generate test documents to upload to our Azure Cosmos DB instance. The lab instructions have been tested using the `30.0.2` version of this NuGet package.
 
 1. In the terminal pane, enter and execute the following command:
 
@@ -29,6 +55,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     ```
 
     > This command will build the project.
+
 
 1. In the **Explorer** pane, select the **DataTypes.cs**
 1. Review the file, notice it contains the data classes you will be working with in the following steps.
