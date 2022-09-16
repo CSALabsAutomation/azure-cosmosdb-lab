@@ -9,11 +9,8 @@ You will start by using the .NET SDK to create containers to use in this and fol
 
 ### Create a .NET Core Project
 
-1. On your local machine, locate the **CosmosLabs** folder in your **Documents** folder
-1. Open the **Lab01** folder that will be used to contain the content of your .NET Core project.
-   
-   - If you are completing this lab through Microsoft Hands-on Labs, the CosmosLabs folder will be located at the path: **C:\labs\CosmosLabs**
-
+1. Create **Lab01** folder that will be used to contain the content of your .NET Core project.
+    
 1. In the **Lab01** folder, right-click the folder and select the **Open with Code** menu option.
 
     ![Open with Code is highlighted](./assets/02-open_with_code.jpg "Open the directory with Visual Studio Code")
