@@ -51,31 +51,31 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 
 1. Click on the link https://github.com/Azure/azure-documentdb-datamigrationtool/releases/tag/1.8.3 and download .zip file.
 
-    ![click here](./assets/03-dm-link.jpg "Download the link")
+    ![click here](./assets/03-dm_link.jpg "Download the link")
 
 1. In the downloads , locate and select the downloaded zip file . Extract files to C:\Labs\Tools\ before running.
    
-    ![click here](./assets/03-dm-extract.jpg "extract")
+    ![click here](./assets/03-dm_extract.jpg "extract")
 
 1. If you see a dtui application , double click on it .
  
-    ![click](./assets/03-dm-dtui-app.jpg "Review if you have installed already")
+    ![click](./assets/03-dm_dtui_app.jpg "Review if you have installed already")
    
 1. Navigate to Source Information as shown below
 
-    ![click ](./assets/03-dm-source.jpg "Select source ")
+    ![click ](./assets/03-dm_source.jpg "Select source ")
     
 1. Select Import from as JSON files and click on Add files
-    ![click ](./assets/03-dm-addJson.jpg "Select json format")
+    ![click ](./assets/03-dm_addJson.jpg "Select json format")
     
 1. Select Nutrition.json file from path C:\Labs\setup\ and it leads to Target information
-    ![click ](./assets/03-dm-nutritionjson.jpg "Select json file and click on Next  ")
+    ![click ](./assets/03-dm_nutritionjson.jpg "Select json file and click on Next  ")
    
 1. Copy the connection String from your Cosmos DB   
-    ![click ](./assets/03-dm-connectionString.JPG "ADD connection string and collection ")
+    ![click ](./assets/03-dm_connectionString.JPG "ADD connection string and collection ")
     
 1. Append the Connection String with Database name and make collection as FoodCollection 
-    ![click ](./assets/03-dm-target.jpg "Select connection string and collection ")
+    ![click ](./assets/03-dm_target.jpg "Select connection string and collection ")
  
 1. Click on Next and skip the Advanced settings.You will see Summary popup .
     ![click ](./assets/03-dm_confirmImport.jpg "Confirm import settings ")
