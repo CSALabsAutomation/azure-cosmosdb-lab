@@ -104,11 +104,11 @@ You will validate that the data was successfully imported into your container us
 
 1. In the **Azure Cosmos DB** blade, locate and select the **Data Explorer** link on the left side of the blade.
 
-    ![The Data Explorer link was selected and is blade is displayed](./assets/03-data_explorer_pane.JPG "Select Data Explorer")
+    ![The Data Explorer link was selected and is blade is displayed](./assets/03-data_explorer_pane.jpg "Select Data Explorer")
 
 1. In the **Data Explorer** section, expand the **NutritionDatabase** database node and then expand the **FoodCollection** container node.
 
-    ![The Container node is displayed](./assets/03-collection_node.JPG "Expand the NutritionDatabase node")
+    ![The Container node is displayed](./assets/03-collection_node.jpg "Expand the NutritionDatabase node")
 
 1. Within the **FoodCollection** node, select the **Scale and Settings** link to view the throughput for the container. Reduce the throughput to **400 RU/s**.
 
@@ -116,9 +116,9 @@ You will validate that the data was successfully imported into your container us
 
 1. Within the **FoodCollection** node, select the **Items** link to view a subset of the various documents in the container. Select a few of the documents and observe the properties and structure of the documents.
 
-    ![Items is highlighted](./assets/03-documents.JPG "Select Items")
+    ![Items is highlighted](./assets/03-documents.jpg "Select Items")
 
-    ![An Example document is displayed](./assets/03-example_document.JPG "Select a document")
+    ![An Example document is displayed](./assets/03-example_document.jpg "Select a document")
 
 > If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
 > 
