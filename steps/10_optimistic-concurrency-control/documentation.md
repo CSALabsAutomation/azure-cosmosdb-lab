@@ -8,7 +8,7 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
 ### Create a .NET Core Project
 
-1. On your local machine, locate the CosmosLabs folder in your Documents folder and open the `Lab10` folder that will be used to contain the content of your .NET Core project. If you are completing this lab through Microsoft Hands-on Labs, the CosmosLabs folder will be located at the path: **C:\labs\CosmosLabs**
+1. Create **Lab10** folder that will be used to contain the content of your .NET Core project.
 
 1. In the `Lab10` folder, right-click the folder and select the **Open with Code** menu option.
 
@@ -16,23 +16,48 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
 1. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
 
-   ![The Open in Terminal link is highlighted](./assets/open_in_terminal.jpg "Open Visual Studio code to the Lab10 folder")
+1. In the open terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet new console
+    ```
+
+    > This command will create a new .NET Core project. The project will be a **console** project. 
+
+1. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
 
 1. In the terminal pane, enter and execute the following command:
 
-   ```sh
-   dotnet restore
-   ```
+    ```sh
+    dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+    ```
 
-   > This command will restore all packages specified as dependencies in the project.
+    > This command will add the [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) NuGet package as a project dependency. The lab instructions have been tested using the `3.12.0` version of this NuGet package.
 
 1. In the terminal pane, enter and execute the following command:
 
-   ```sh
-   dotnet build
-   ```
+    ```sh
+    dotnet add package Bogus --version 30.0.2
+    ```
 
-   > This command will build the project.
+    > This command will add the [Bogus](./assets/https://www.nuget.org/packages/Bogus/) NuGet package as a project dependency. This library will allow us to quickly generate test data using a fluent syntax and minimal code. We will use this library to generate test documents to upload to our Azure Cosmos DB instance. The lab instructions have been tested using the `30.0.2` version of this NuGet package.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet restore
+    ```
+
+    > This command will restore all packages specified as dependencies in the project.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet build
+    ```
+
+    > This command will build the project.
+
 
 1. In the **Explorer** pane verify that you have a **DataTypes.cs** file in your project folder. This file contains the data classes you will be working with in the following steps.
 
