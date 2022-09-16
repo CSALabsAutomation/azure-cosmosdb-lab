@@ -54,15 +54,15 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
    
 1. Navigate to Source Information as shown below.
 
-    ![click ](./assets/03-dm_source.jpg "Select source ")
+    ![click ](./assets/03-dm_source.JPG "Select source ")
     
 1. Select Import from as JSON files and click on Add files.
 
-    ![click ](./assets/03-dm_addJson.jpg "Select json format")
+    ![click ](./assets/03-dm_addJson.JPG "Select json format")
     
 1. Select Nutrition.json file from path `C:\Labs\setup\` and it leads to Target information.
 
-    ![click ](./assets/03-dm_nutritionjson.jpg "Select json file and click on Next ")
+    ![click ](./assets/03-dm_nutritionjson.JPG "Select json file and click on Next ")
    
 1. Copy the connection String from your Cosmos DB.
  
@@ -70,15 +70,15 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
     
 1. Append the Connection String with Database name and make collection as FoodCollection.
 
-    ![click ](./assets/03-dm_target.jpg "Select connection string and collection")
+    ![click ](./assets/03-dm_target.JPG "Select connection string and collection")
  
 1. Click on Next and skip the Advanced settings.You will see Summary popup.
 
-    ![click ](./assets/03-dm_confirmImport.jpg "Confirm import settings ")
+    ![click ](./assets/03-dm_confirmImport.JPG "Confirm import settings ")
  
 1. Click on Import and data gets copied from Source to Destination.
 
-    ![click ](./assets/03-dm_import.jpg "Confirm import settings ")
+    ![click ](./assets/03-dm_import.JPG "Confirm import settings ")
 
    
 
