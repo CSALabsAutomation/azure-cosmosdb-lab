@@ -126,6 +126,8 @@ You will now implement stored procedures that may execute longer than the bounde
 
 ### Create a .NET Core Project
 
+1. Create **Lab07** folder that will be used to contain the content of your .NET Core project.
+
 1. In the **Lab07** folder, right-click the folder and select the **Open with Code** menu option.
 
    > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
