@@ -45,27 +45,27 @@ You will now create a database and container within your Azure Cosmos DB account
 
 ## Import Lab Data Into Container
 
-You will use **Data Migration Tool(DM tool)** to import the JSON array stored in the **nutrition.json** file from `C:\Labs\setup\`
+You will use **Data Migration Tool(DM tool)** to import the JSON array stored in the **nutrition.json** file from `C:\Labs\setup\`.
 
 
-1. Use dtui application from `C:\Labs\Tools\` location, double click on dtui application .
+1. Use dtui application from `C:\Labs\Tools\` location, double click on dtui application.
  
     ![click](./assets/03-dm_dtui_app.jpg "Review if you have installed already")
    
-1. Navigate to Source Information as shown below
+1. Navigate to Source Information as shown below.
 
     ![click ](./assets/03-dm_source.jpg "Select source ")
     
-1. Select Import from as JSON files and click on Add files
+1. Select Import from as JSON files and click on Add files.
     ![click ](./assets/03-dm_addJson.jpg "Select json format")
     
-1. Select Nutrition.json file from path `C:\Labs\setup\` and it leads to Target information
+1. Select Nutrition.json file from path `C:\Labs\setup\` and it leads to Target information.
     ![click ](./assets/03-dm_nutritionjson.jpg "Select json file and click on Next  ")
    
-1. Copy the connection String from your Cosmos DB   
+1. Copy the connection String from your Cosmos DB.   
     ![click ](./assets/03-dm_connectionString.JPG "ADD connection string and collection ")
     
-1. Append the Connection String with Database name and make collection as FoodCollection 
+1. Append the Connection String with Database name and make collection as FoodCollection. 
     ![click ](./assets/03-dm_target.jpg "Select connection string and collection ")
  
 1. Click on Next and skip the Advanced settings.You will see Summary popup .
