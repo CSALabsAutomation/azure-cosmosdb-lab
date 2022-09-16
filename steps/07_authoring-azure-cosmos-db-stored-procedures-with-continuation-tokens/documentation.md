@@ -130,8 +130,6 @@ You will now implement stored procedures that may execute longer than the bounde
 
 ### Create a .NET Core Project
 
-1. On your local machine, locate the CosmosLabs folder in your Documents folder and open the `Lab07` folder that will be used to contain the content of your .NET Core project. If you are completing this lab through Microsoft Hands-on Labs, the CosmosLabs folder will be located at the path: **C:\labs\CosmosLabs**
-
 1. In the **Lab07** folder, right-click the folder and select the **Open with Code** menu option.
 
    > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
