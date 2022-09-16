@@ -47,17 +47,8 @@ You will now create a database and container within your Azure Cosmos DB account
 
 You will use **Data Migration Tool(DM tool)** to import the JSON array stored in the **nutrition.json** file from C:\Labs\setup\ 
 
-.
 
-1. Click on the link https://github.com/Azure/azure-documentdb-datamigrationtool/releases/tag/1.8.3 and download .zip file.
-
-    ![click here](./assets/03-dm_link.jpg "Download the link")
-
-1. In the downloads , locate and select the downloaded zip file . Extract files to C:\Labs\Tools\ before running.
-   
-    ![click here](./assets/03-dm_extract.jpg "extract")
-
-1. If you see a dtui application , double click on it .
+1. Use dtui application from this C:\Labs\Tools\ , double click on duti app.
  
     ![click](./assets/03-dm_dtui_app.jpg "Review if you have installed already")
    
