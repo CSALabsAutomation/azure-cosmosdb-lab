@@ -45,7 +45,7 @@ You will now create a database and container within your Azure Cosmos DB account
 
 ## Import Lab Data Into Container
 
-You will use **Data Migration Tool(DM tool)** to import the JSON array stored in the **nutrition.json** file from C:\Labs\setup\ 
+You will use **Data Migration Tool(DM tool)** to import the JSON array stored in the **nutrition.json** file from `C:\Labs\setup\`
 
 .
 
@@ -53,7 +53,7 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 
     ![click here](./assets/03-dm_link.jpg "Download the link")
 
-1. In the downloads , locate and select the downloaded zip file . Extract files to C:\Labs\Tools\ before running.
+1. In the downloads , locate and select the downloaded zip file . Extract files to `C:\Labs\Tools\` before running.
    
     ![click here](./assets/03-dm_extract.jpg "extract")
 
@@ -68,7 +68,7 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 1. Select Import from as JSON files and click on Add files
     ![click ](./assets/03-dm_addJson.jpg "Select json format")
     
-1. Select Nutrition.json file from path C:\Labs\setup\ and it leads to Target information
+1. Select Nutrition.json file from path `C:\Labs\setup\` and it leads to Target information
     ![click ](./assets/03-dm_nutritionjson.jpg "Select json file and click on Next  ")
    
 1. Copy the connection String from your Cosmos DB   
