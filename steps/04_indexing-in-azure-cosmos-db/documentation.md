@@ -425,7 +425,7 @@ First, you will create a new Cosmos container named volcanoes inside a new datab
 1. Navigate to the **VolcanoesContainer** in the Azure Portal
 2. Select the **Items** section
 3. Select **Upload Item**
-4. In the popup, navigate to the [VolcanoData.json](C:/Labs/setup/VolcanoData.json) file. This file was copied in the pre-lab steps, if you do not have it run the account setup steps.
+4. In the popup, navigate to the [VolcanoData.json](C:\Labs\setup\VolcanoData.json) file. This file was copied in the pre-lab steps, if you do not have it run the account setup steps.
 5. Select **Upload**
 
 ### Create geo-spatial indexes in the **Volcanoes** container
