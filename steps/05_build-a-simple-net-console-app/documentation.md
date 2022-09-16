@@ -2,24 +2,21 @@
 
 After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB container in Lab 3, you are now going to use the .NET SDK to issue similar queries.
 
-> If this is your first lab and you have not already completed the setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
-
 ## Create a .NET Core Project
 
-1. On your local machine, locate the CosmosLabs folder in your `Documents` folder
-2. Open the `Lab05` folder that will be used to contain the content of your .NET Core project. If you are completing this lab through Microsoft Hands-on Labs, the CosmosLabs folder will be located at the path: **C:\labs\CosmosLabs**
+1. Create `Lab05` folder that will be used to contain the content of your .NET Core project.
 
-3. In the `Lab05` folder, right-click the folder and select the **Open with Code** menu option.
+2. In the `Lab05` folder, right-click the folder and select the **Open with Code** menu option.
 
    ![Open with Visual Studio Code](./assets/03-open_with_code.jpg)
 
    > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
 
-4. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
+3. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
 
    ![Open in Terminal](./assets/open_in_terminal.jpg)
 
-5. In the terminal pane, enter and execute the following command:
+4. In the terminal pane, enter and execute the following command:
 
    ```sh
    dotnet restore
@@ -27,7 +24,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
    > This command will restore all packages specified as dependencies in the project.
 
-6. In the terminal pane, enter and execute the following command:
+5. In the terminal pane, enter and execute the following command:
 
    ```sh
    dotnet build
@@ -35,15 +32,15 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
    > This command will build the project.
 
-7. In the **Explorer** pane verify that you have a `DataTypes.cs` file in your project folder.
+6. In the **Explorer** pane verify that you have a `DataTypes.cs` file in your project folder.
 
    > This file contains the data classes you will be working with in the following steps.
 
-8. Select the `Program.cs` link in the **Explorer** pane to open the file in the editor.
+7. Select the `Program.cs` link in the **Explorer** pane to open the file in the editor.
 
    ![Visual Studio Code editor is displayed with the program.cs file highlighted](./assets/03-program_editor.jpg "Open the program.cs file")
 
-9. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](00-account_setup.md) to get these values if you do not already have them:
+8. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](00-account_setup.md) to get these values if you do not already have them:
 
     - For example, if your **uri** is `https://cosmosacct.documents.azure.com:443/`, your new variable assignment will look like this:
 
