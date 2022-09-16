@@ -290,7 +290,7 @@ To create a container, you must specify a name and a partition key path. A parti
 
 ### Populate Container with Data
 
-1. In the Visual Studio Code window, look in the **Explorer** pane and verify that you have a **DataTypes.cs** file in your project folder. This file contains the data classes you will be working with in the following steps. If it is not in your project folder, you can copy it from this path in the cloned repo here `\labs\dotnet\setup\templates\Lab01\DataTypes.cs`
+1. In the Visual Studio Code window, look in the **Explorer** pane and verify that you have a **DataTypes.cs** file in your project folder. This file contains the data classes you will be working with in the following steps. If it is not in your project folder, you can copy it from this path in the cloned repo here `C:\Labs\setup\templates\Lab01\DataTypes.cs`
 
 1. Switch to the **Program.cs** file in Visual Studio code
 
