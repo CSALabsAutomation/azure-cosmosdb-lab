@@ -16,7 +16,25 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
    ![Open in Terminal](./assets/open_in_terminal.jpg)
 
-4. In the terminal pane, enter and execute the following command:
+4. In the open terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet new console --output .
+    ```
+
+    > This command will create a new .NET Core project. The project will be a **console** project and the project will be created in the current directly since you used the `--output .` option.
+
+5. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+    ```
+
+    > This command will add the [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) NuGet package as a project dependency. The lab instructions have been tested using the `3.12.0` version of this NuGet package.
+
+6. In the terminal pane, enter and execute the following command:
 
    ```sh
    dotnet restore
@@ -24,7 +42,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
    > This command will restore all packages specified as dependencies in the project.
 
-5. In the terminal pane, enter and execute the following command:
+7. In the terminal pane, enter and execute the following command:
 
    ```sh
    dotnet build
@@ -32,15 +50,15 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
    > This command will build the project.
 
-6. In the **Explorer** pane verify that you have a `DataTypes.cs` file in your project folder.
+8. In the **Explorer** pane verify that you have a `DataTypes.cs` file in your project folder.
 
    > This file contains the data classes you will be working with in the following steps.
 
-7. Select the `Program.cs` link in the **Explorer** pane to open the file in the editor.
+9. Select the `Program.cs` link in the **Explorer** pane to open the file in the editor.
 
    ![Visual Studio Code editor is displayed with the program.cs file highlighted](./assets/03-program_editor.jpg "Open the program.cs file")
 
-8. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](00-account_setup.md) to get these values if you do not already have them:
+10. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](00-account_setup.md) to get these values if you do not already have them:
 
     - For example, if your **uri** is `https://cosmosacct.documents.azure.com:443/`, your new variable assignment will look like this:
 
