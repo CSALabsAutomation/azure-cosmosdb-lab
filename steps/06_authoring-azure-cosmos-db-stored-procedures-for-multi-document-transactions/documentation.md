@@ -4,7 +4,7 @@ In this lab, you will author and execute multiple stored procedures within your 
 
 > If this is your first lab and you have not already completed the setup for the lab content see the instructions of previous labs before starting this lab.
 
-## Author Simple Stored Procedures
+## Author Simple Stored Procedures 
 
 You will get started in this lab by authoring simple stored procedures that implement common server-side tasks such as adding one or more items as part of a database transaction.
 
@@ -410,4 +410,4 @@ We are going to change the stored procedure to put in a different foodGroup name
 
 1. Close the **Query** tab.
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+> If this is your final lab , follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
