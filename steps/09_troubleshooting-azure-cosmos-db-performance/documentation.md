@@ -20,7 +20,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     dotnet new console
     ```
 
-    > This command will create a new .NET Core project. The project will be a **console** project and the project will be created in the current directly since you used the `--output .` option.
+    > This command will create a new .NET Core project. The project will be a **console** project. 
 
 1. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
 
