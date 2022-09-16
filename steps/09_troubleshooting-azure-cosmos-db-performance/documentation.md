@@ -13,8 +13,8 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     > Alternatively, you can run a terminal in your current directory and execute the ``code .`` command.
 
 1. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
-2. 
-3. In the open terminal pane, enter and execute the following command:
+
+1. In the open terminal pane, enter and execute the following command:
 
     ```sh
     dotnet new console
