@@ -2,7 +2,7 @@
 
 In this lab, you will author and execute multiple stored procedures within your Azure Cosmos DB instance. You will explore features unique to JavaScript stored procedures such as throwing errors for transaction rollback, logging using the JavaScript console and implementing a continuation model within a bounded execution environment.
 
-> If this is your first lab and you have not already completed the setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
+> If this is your first lab and you have not already completed the setup for the lab content see the instructions of previous labs before starting this lab.
 
 ## Author Stored Procedures using the Continuation Model
 
@@ -140,21 +140,47 @@ You will now implement stored procedures that may execute longer than the bounde
 
    ![Open in Terminal](./assets/open_in_terminal.jpg)
 
+1. In the open terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet new console
+    ```
+
+    > This command will create a new .NET Core project. The project will be a **console** project and the project will be created in the current directly since you used the `--output .` option.
+
+1. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
+
 1. In the terminal pane, enter and execute the following command:
 
-   ```sh
-   dotnet restore
-   ```
+    ```sh
+    dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+    ```
 
-   > This command will restore all packages specified as dependencies in the project.
+    > This command will add the [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) NuGet package as a project dependency. The lab instructions have been tested using the `3.12.0` version of this NuGet package.
 
 1. In the terminal pane, enter and execute the following command:
 
-   ```sh
-   dotnet build
-   ```
+    ```sh
+    dotnet add package Bogus --version 30.0.2
+    ```
 
-   > This command will build the project.
+    > This command will add the [Bogus](./assets/https://www.nuget.org/packages/Bogus/) NuGet package as a project dependency. This library will allow us to quickly generate test data using a fluent syntax and minimal code. We will use this library to generate test documents to upload to our Azure Cosmos DB instance. The lab instructions have been tested using the `30.0.2` version of this NuGet package.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet restore
+    ```
+
+    > This command will restore all packages specified as dependencies in the project.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet build
+    ```
+
+    > This command will build the project.
 
 1. In the **Explorer** pane verify that you have a `DataTypes.cs` file in your project folder.
 
