@@ -57,8 +57,6 @@ You will now implement stored procedures that may execute longer than the bounde
 
    > This stored procedure uploads an array of documents in one batch. If the entire batch is not completed, the stored procedure will set the response body to the number of documents that were imported. Your client-side code is expected to call this stored procedure multiple times until all documents are imported.
 
-   If you are having trouble copying the stored procedure above, the full source code for this stored procedure is located here: [bulk_upload.js](../solutions/05-authoring_stored_procedures/bulk_upload.js)
-
 1. Select the **Save** button at the top of the tab.
 
 1. Select the **New Stored Procedure** button at the top of the **Data Explorer** section.
@@ -123,8 +121,6 @@ You will now implement stored procedures that may execute longer than the bounde
    ```
 
    > This stored procedure iterates through all documents that match a specific query and deletes the documents. If the stored procedure is unable to delete all documents, it will return a continuation token. Your client-side code is expected to repeatedly call the stored procedure passing in a continuation token until the stored procedure does not return a continuation token.
-
-   If you are having trouble copying the stored procedure above, the full source code for this stored procedure is located here: [bulk_delete.js](../solutions/05-authoring_stored_procedures/bulk_delete.js)
 
 1. Select the **Save** button at the top of the tab.
 
