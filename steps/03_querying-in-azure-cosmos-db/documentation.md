@@ -11,7 +11,7 @@ Azure Cosmos DB supports strict JSON items only. The type system and expressions
 
 ## Running your first query
 
-In this lab section, you will query your **FoodCollection**. You must complete [Lab 02 - Load data with Azure Data Factory](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/02_load-data-into-cosmos-db-with-dmtool/documentation.md) before starting this lab.
+In this lab section, you will query your **FoodCollection**. You must complete [Lab 02 - Load Data Into Cosmos DB with Dm Tool](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/02_load-data-into-cosmos-db-with-dmtool/documentation.md) before starting this lab.
 
 You will begin by running basic queries with `SELECT`, `WHERE`, and `FROM` clauses.
 
