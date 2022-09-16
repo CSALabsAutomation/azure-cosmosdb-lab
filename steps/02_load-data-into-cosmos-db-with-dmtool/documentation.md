@@ -27,7 +27,7 @@ You will now create a database and container within your Azure Cosmos DB account
 
 1. In the **Add Container** popup, perform the following actions:
 
-    1. In the **Database id** field, select the **Create new** option and enter the value **ImportDatabase**.
+    1. In the **Database id** field, select the **Create new** option and enter the value **NutritionDatabase**.
 
     2. Do not check the **Provision database throughput** option.
 
