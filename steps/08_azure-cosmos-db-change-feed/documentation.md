@@ -80,6 +80,18 @@ In order to simulate data flowing into our store, in the form of actions on an e
 The key functionality of the console application is to add documents to our Cosmos DB to simulate activity on our e-commerce website. Here, you'll create a data definition for these documents and define a function to add them
 
 1. Within the `program.cs` file in the **DataGenerator** folder, locate the `AddItem()` method. The purpose of this method is to add an instance of **CartAction** to our CosmosDB Container.
+   ```sh
+   private static async Task AddItem(CartAction item)
+        {
+            using (var client = new CosmosClient(_endpointUrl, _primaryKey))
+            {
+                var db = client.GetDatabase(_databaseId);
+                var container = db.GetContainer(_containerId);
+
+                await container.CreateItemAsync(item, new PartitionKey(item.Item));
+            }
+        }
+    ```
 
    > If you'd like to review how to add documents to a CosmosDB container, [refer to Lab 01 ](01-creating_partitioned_collection.md).
 
