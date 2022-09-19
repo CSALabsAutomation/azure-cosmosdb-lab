@@ -66,11 +66,29 @@ You're ready to run the console app, and in this step you'll take a look at your
 
 5. Switch to the Azure Portal and your Cosmos DB Account.
 
-6. From within the **Azure Cosmos DB** blade, select the **Data Explorer** tab on the left.
+6. In the Add Container popup, perform the following actions:
+
+ 1.In the Database id field, select the Create new option and enter the value StoreDatabase.
+
+ 1.Do not check the Provision database throughput option.
+
+ 1.Provisioning throughput for a database allows you to share the throughput among all the containers that belong to that database. Within an Azure Cosmos DB database, you can have a set of containers which shares the throughput as well as containers, which have dedicated throughput.
+
+ 1.In the Container Id field, enter the value CartContainer.
+
+ 1.In the Partition key field, enter the value /Item.
+
+ 1.In the Throughput field, enter the value 11000. Note: we will reduce this to 400 RU/s after the data has been imported
+
+ 1.Select the OK button.
+
+ 1.Wait for the creation of the new database and container to finish before moving on with this lab.
+
+7. From within the **Azure Cosmos DB** blade, select the **Data Explorer** tab on the left.
 
    ![The Cosmos DB resource with the Data Explorer highlighted](./assets/08-cosmos-overview-final.jpg "Open the Data Explorer")
 
-7. Expand the **StoreDatabase** then the **CartContainer** and select **Items**. You should see something like the following screenshot.
+8. Expand the **StoreDatabase** then the **CartContainer** and select **Items**. You should see something like the following screenshot.
 
    > Note your data will be slightly different since it is random, the important thing is that there is data here at all
 
