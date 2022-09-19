@@ -210,7 +210,7 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 
 1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
 
-1. In the **Data Explorer** section, expand the **FinancialDatabase** database node and then select the **PeopleCollection** node.
+1. In the **Data Explorer** section, expand the **FinancialDatabase** database node and then select the **PeopleCollection** node, Partition key field, enter the value **/id**.
 
 1. Select the **New SQL Query** button at the top of the **Data Explorer** section.
 
