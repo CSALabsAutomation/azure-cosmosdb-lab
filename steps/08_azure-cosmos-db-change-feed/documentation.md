@@ -150,6 +150,12 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
 3. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account.
 
+5. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
+     
+     In the Partition key field, enter the value **/BuyerState**.
+     Select the OK button.
+     Wait for the creation of the new database and container to finish before moving on with this lab.
+
 4. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
 
    ```csharp
