@@ -23,7 +23,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
       
       dotnet add package Bogus --version 30.0.2
       ```
-1. In the explorer pane on the left, locate the Shared folder and expand it.
+1. In the explorer pane on the left, locate the **Shared** folder and expand it.
 
 1. In the open terminal pane, enter and execute the following command:
     ```sh
