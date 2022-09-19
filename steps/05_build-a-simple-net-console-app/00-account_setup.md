@@ -11,7 +11,7 @@ The .NET SDK requires credentials to connect to your Azure Cosmos DB account. Yo
 
 1. On the left side of the portal, select the **Resource groups** link.
 
-   ![Resource groups is highlighted](../assets/02-resource_groups.jpg "Select resource groups")
+   ![Resource groups is highlighted](./assets/02-resource_groups.jpg "Select resource groups")
 
 1. In the **Resource groups** blade, locate and select the **cosmoslabs** _Resource Group_.
 
