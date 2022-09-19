@@ -206,4 +206,3 @@ ReadItemAsync allows a single item to be retrieved from Cosmos DB by its ID. In 
         [14644] Beverages, , PEPSICO QUAKER, Gatorade G2, low calorie   Quaker Oats Company - The Gatorade Company,  a unit of Pepsi Co.
     ```
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
