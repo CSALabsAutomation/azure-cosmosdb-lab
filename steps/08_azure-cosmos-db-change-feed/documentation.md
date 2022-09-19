@@ -150,13 +150,15 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
 3. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account.
 
-5. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
+4. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
      
-     In the Partition key field, enter the value **/BuyerState**.
-     Select the OK button.
-     Wait for the creation of the new database and container to finish before moving on with this lab.
+     1.In the Partition key field, enter the value **/BuyerState**
+     
+     1.Select the OK button.
+     
+     1.Wait for the creation of the new database and container to finish before moving on with this lab.
 
-4. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
+5. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
 
    ```csharp
    private static readonly string _destinationContainerId = "CartContainerByState";
@@ -164,7 +166,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
    > In this case we are going to migrate our data to another container within the same database. The same ideas apply even if we wanted to migrate our data to another database entirely.
 
-5. In order to consume the change feed we make use of a **Lease Container**. Add the following lines of code in place of `//todo: Add lab code here` to create the lease container:
+6. In order to consume the change feed we make use of a **Lease Container**. Add the following lines of code in place of `//todo: Add lab code here` to create the lease container:
 
    ```csharp
    ContainerProperties leaseContainerProperties = new ContainerProperties("consoleLeases", "/id");
@@ -173,7 +175,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
    > The **Lease Container** stores information to allow for parallel processing of the change feed, and acts as a book mark for where we last processed changes from the feed.
 
-6. Now, add the following lines of code directly after the **leaseContainer** definition in order to get an instance of the change processor:
+7. Now, add the following lines of code directly after the **leaseContainer** definition in order to get an instance of the change processor:
 
    ```csharp
    var builder = container.GetChangeFeedProcessorBuilder("migrationProcessor", (IReadOnlyCollection<object> input, CancellationToken cancellationToken) => {
@@ -189,19 +191,19 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
    > Each time a set of changes is received, the `Func<T>` defined in `CreateChangeFeedProcessorBuilder` will be called. We're skipping the handling of those changes for the moment.
 
-7. In order for our processor to run, we have to start it. Following the definition of **processor** add the following line of code:
+8. In order for our processor to run, we have to start it. Following the definition of **processor** add the following line of code:
 
    ```csharp
    await processor.StartAsync();
    ```
 
-8. Finally, when a key is pressed to terminate the processor we need to end it. Locate the `//todo: Add stop code here` line and replace it with this code:
+9. Finally, when a key is pressed to terminate the processor we need to end it. Locate the `//todo: Add stop code here` line and replace it with this code:
 
    ```csharp
    await processor.StopAsync();
    ```
 
-9. At this point, your `Program.cs` file should look like this:
+10. At this point, your `Program.cs` file should look like this:
 
    ```csharp
    using System;
