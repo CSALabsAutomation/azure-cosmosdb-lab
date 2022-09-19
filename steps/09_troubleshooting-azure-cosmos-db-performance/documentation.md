@@ -1387,4 +1387,4 @@ Many applications have workloads that vary over time in a predictable way. For e
 
 > Note that you may need to refresh the Data Explorer to see the new value.
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+
