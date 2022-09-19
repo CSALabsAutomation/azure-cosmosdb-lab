@@ -67,7 +67,7 @@ You're ready to run the console app, and in this step you'll take a look at your
 5. Switch to the Azure Portal and your Cosmos DB Account.
 
 6. In the Add Container popup, perform the following actions:
-    ```sh
+    
    In the Database id field, select the Create new option and enter the value StoreDatabase.
 
    Do not check the Provision database throughput option.
@@ -83,7 +83,7 @@ You're ready to run the console app, and in this step you'll take a look at your
  Select the OK button.
 
  Wait for the creation of the new database and container to finish before moving on with this lab.
- ```
+ 
 7. From within the **Azure Cosmos DB** blade, select the **Data Explorer** tab on the left.
 
    ![The Cosmos DB resource with the Data Explorer highlighted](./assets/08-cosmos-overview-final.jpg "Open the Data Explorer")
