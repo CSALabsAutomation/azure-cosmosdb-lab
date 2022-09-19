@@ -124,7 +124,7 @@
   "variables": {
     "cosmosDBAccountName": "[take(concat('cosmosdb', uniqueString(resourceGroup().id)), 15)]",
     "vmName": "[take(concat('DevVm', uniqueString(resourceGroup().id)), 15)]",
-    "osDiskVhdUri": "https://csalabsshrdstrg1.blob.core.windows.net/cloudacademy/azure-cosmosdb/devvmosdiskv1_1.vhd",
+    "osDiskVhdUri": "https://csalabsshrdstrg1.blob.core.windows.net/cloudacademy/azure-cosmosdb/devvmosdiskv1_2.vhd",
     "imageName": "[take(concat('DevVmDataImage', uniqueString(resourceGroup().id)), 15)]",
     "storageAccountName": "[format('bootdiags{0}', uniqueString(resourceGroup().id))]",
     "publicIpName": "DevVmPublicIp",
