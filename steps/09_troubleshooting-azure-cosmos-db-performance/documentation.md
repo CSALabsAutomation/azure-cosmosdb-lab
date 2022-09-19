@@ -206,7 +206,7 @@ Azure Cosmos DB returns various response headers that can give you more metadata
  
 1. In the Container Id field, enter the value **PeopleCollection**.
 
-1. In the Partition key field, enter the value **/accountHolder**.
+1. In the Partition key field, enter the value **/accountHolder/LastName**.
 
 1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
 
