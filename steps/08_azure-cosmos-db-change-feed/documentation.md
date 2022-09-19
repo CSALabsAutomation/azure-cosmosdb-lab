@@ -145,9 +145,13 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 1. Switch back to Visual Studio Code
 
 2. Select the `Program.cs` link under the **ChangeFeedConsole** folder in the **Explorer** pane to open the file in the editor.
-3. Open terminal pane, enter and execute the following commands:
+
+4. Open terminal pane, enter and execute the following commands:
+
        1.dotnet new console
+       
        2.dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+       
        3.dotnet build
 
 4. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account.
