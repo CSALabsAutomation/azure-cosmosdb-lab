@@ -202,11 +202,11 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 
 1. In the **Azure Cosmos DB** blade, locate and select the **Data Explorer** link on the left side of the blade.
 
-1. In the Database id field, select the Create new option and enter the value FinancialDatabase.
+1. In the Database id field, select the Create new option and enter the value **FinancialDatabase**.
  
-1. In the Container Id field, enter the value PeopleCollection.
+1. In the Container Id field, enter the value **PeopleCollection**.
 
-1. In the Partition key field, enter the value /accountHolder.
+1. In the Partition key field, enter the value **/accountHolder**.
 
 1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
 
