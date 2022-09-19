@@ -15,7 +15,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
 
 1. In the explorer pane on the left, locate the **DataGenerator** folder and expand it.
 
-1. In the open terminal pane, enter and execute the following command:
+1. In the open terminal pane, enter and execute the following commands:
      ```sh
       dotnet new console
       
@@ -23,8 +23,13 @@ In order to simulate data flowing into our store, in the form of actions on an e
       
       dotnet add package Bogus --version 30.0.2
       ```
+1. In the explorer pane on the left, locate the Shared folder and expand it.
 
-1. Select the `program.cs` link in the **Explorer** pane to open the file in the editor.
+1. In the open terminal pane, enter and execute the following command:
+    ```sh
+      dotnet add ChangeFeedFunctions.csproj reference ..\\Shared\\Shared.csproj
+      ```
+3. Select the `program.cs` link in the **Explorer** pane to open the file in the editor.
 
    ![The program.cs is displayed](./assets/08-console-main-default.jpg "Open the program.cs file")
 
