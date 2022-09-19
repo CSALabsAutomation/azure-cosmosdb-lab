@@ -2,7 +2,6 @@
 
 In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optimize the performance and cost of your application.
 
-> If this is your first lab and you have not already completed the setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
 
 ## Create a .NET Core Project
 
@@ -202,6 +201,14 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 1. In the **cosmoslab** blade, select the **Azure Cosmos DB** account you recently created.
 
 1. In the **Azure Cosmos DB** blade, locate and select the **Data Explorer** link on the left side of the blade.
+
+1. In the Database id field, select the Create new option and enter the value FinancialDatabase.
+ 
+1. In the Container Id field, enter the value PeopleCollection.
+
+1. In the Partition key field, enter the value /accountHolder.
+
+1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
 
 1. In the **Data Explorer** section, expand the **FinancialDatabase** database node and then select the **PeopleCollection** node.
 
