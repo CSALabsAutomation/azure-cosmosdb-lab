@@ -118,9 +118,7 @@ You're ready to run the console app, and in this step you'll take a look at your
 
    In the Container Id field, enter the value **CartContainer**.
 
-   In the Partition key field, enter the value **/Item**.
-
-   In the Throughput field, enter the value 11000. Note: we will reduce this to 400 RU/s after the data has been imported
+   In the Partition key field, enter the value **/Item**.   
 
    Select the OK button.
 
@@ -152,11 +150,11 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
 4. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
      
-     1.In the Partition key field, enter the value **/BuyerState**
+      In the Partition key field, enter the value **/BuyerState**
      
-     1.Select the OK button.
+      Select the OK button.
      
-     1.Wait for the creation of the new database and container to finish before moving on with this lab.
+      Wait for the creation of the new database and container to finish before moving on with this lab.
 
 5. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
 
