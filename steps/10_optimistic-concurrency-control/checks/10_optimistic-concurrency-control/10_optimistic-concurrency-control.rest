@@ -1,0 +1,24 @@
+###Step 1: 10_optimistic-concurrency-control
+@query1="SELECT VALUE COUNT(1) FROM c"
+POST {{funcUrl}}/api/fn-run-cosmosdb-check?code={{funcKey}} HTTP/1.1
+Content-Type: application/json
+
+{
+  "event": {
+    "environment_params": {
+      "url" : "https://cosmosdb3rdcnrk.documents.azure.com:443/",
+      "tenant" : "72f988bf-86f1-41af-91ab-2d7cd011db47",
+      "subscription_id": "cbb956ec-6c04-42ae-8428-91d91154f780",
+      "resource_group_name" : "az-cosmosdb-lab-01",
+      "account_name" : "cosmosdb3rdcnrk",
+      "database_name": "NutritionDatabase",
+      "container_name": "FoodCollection",
+      "query" : {{query1}},
+      "item_count": 1
+    },
+    "credentials" : {
+      "credential_id" : "5e723d06-a0ff-4985-b523-afd3abe461ed",
+      "credential_key":  {{credential_key}}      
+    }
+  }
+}
