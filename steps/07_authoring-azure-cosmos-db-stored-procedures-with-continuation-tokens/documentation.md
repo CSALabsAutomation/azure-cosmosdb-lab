@@ -459,4 +459,4 @@ You will now implement stored procedures that may execute longer than the bounde
 
 1. Close your browser application.
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+
