@@ -9,6 +9,23 @@ In order to simulate data flowing into our store, in the form of actions on an e
 
 1. Create `Lab08` folder that will be used to contain the content of your .NET Core project.
 
+2. Switch to the Azure Portal and your Cosmos DB Account.
+
+3. In the Add Container popup, perform the following actions:
+    
+   In the Database id field, select the Create new option and enter the value **StoreDatabase**.
+
+   Do not check the Provision database throughput option.
+
+   Provisioning throughput for a database allows you to share the throughput among all the containers that belong to that database. Within an Azure Cosmos DB     database,   you can have a set of containers which shares the throughput as well as containers, which have dedicated throughput.
+
+   In the Container Id field, enter the value **CartContainer**.
+
+   In the Partition key field, enter the value **/Item**.   
+
+   Select the OK button.
+
+   Wait for the creation of the new database and container to finish before moving on with this lab.
 1. In the `Lab08` folder, right-click the folder and select the **Open with Code** menu option.
 
    > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
@@ -25,9 +42,9 @@ In order to simulate data flowing into our store, in the form of actions on an e
       ```
 1. In the explorer pane on the left, locate the **Shared** folder and expand it.
 
-1. In the open terminal pane, enter and execute the following command:
+1. In the open DataGenerator terminal pane, enter and execute the following command:
     ```sh
-      dotnet add ChangeFeedFunctions.csproj reference ..\\Shared\\Shared.csproj
+      dotnet add reference ..\\Shared\\Shared.csproj
       ```
 3. Select the `program.cs` link in the **Explorer** pane to open the file in the editor.
 
@@ -305,23 +322,7 @@ You're ready to run the console app, and in this step you'll take a look at your
 
 4. Let the console app run for a minute or two and then stop it by pressing any key in the console.
 
-5. Switch to the Azure Portal and your Cosmos DB Account.
 
-6. In the Add Container popup, perform the following actions:
-    
-   In the Database id field, select the Create new option and enter the value **StoreDatabase**.
-
-   Do not check the Provision database throughput option.
-
-   Provisioning throughput for a database allows you to share the throughput among all the containers that belong to that database. Within an Azure Cosmos DB     database,   you can have a set of containers which shares the throughput as well as containers, which have dedicated throughput.
-
-   In the Container Id field, enter the value **CartContainer**.
-
-   In the Partition key field, enter the value **/Item**.   
-
-   Select the OK button.
-
-   Wait for the creation of the new database and container to finish before moving on with this lab.
  
 7. From within the **Azure Cosmos DB** blade, select the **Data Explorer** tab on the left.
 
