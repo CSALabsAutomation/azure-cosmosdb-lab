@@ -2,17 +2,42 @@
 
 In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optimize the performance and cost of your application.
 
-> If this is your first lab and you have not already completed the setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
 
 ## Create a .NET Core Project
 
-1. On your local machine, locate the CosmosLabs folder in your Documents folder and open the `Lab09` folder that will be used to contain the content of your .NET Core project.
+1. Create **Lab09** folder that will be used to contain the content of your .NET Core project.
 
 1. In the `Lab09` folder, right-click the folder and select the **Open with Code** menu option.
 
     > Alternatively, you can run a terminal in your current directory and execute the ``code .`` command.
 
 1. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
+
+1. In the open terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet new console
+    ```
+
+    > This command will create a new .NET Core project. The project will be a **console** project. 
+
+1. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+    ```
+
+    > This command will add the [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) NuGet package as a project dependency. The lab instructions have been tested using the `3.12.0` version of this NuGet package.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet add package Bogus --version 30.0.2
+    ```
+
+    > This command will add the [Bogus](./assets/https://www.nuget.org/packages/Bogus/) NuGet package as a project dependency. This library will allow us to quickly generate test data using a fluent syntax and minimal code. We will use this library to generate test documents to upload to our Azure Cosmos DB instance. The lab instructions have been tested using the `30.0.2` version of this NuGet package.
 
 1. In the terminal pane, enter and execute the following command:
 
@@ -29,6 +54,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     ```
 
     > This command will build the project.
+
 
 1. In the **Explorer** pane, select the **DataTypes.cs**
 1. Review the file, notice it contains the data classes you will be working with in the following steps.
@@ -176,7 +202,15 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 
 1. In the **Azure Cosmos DB** blade, locate and select the **Data Explorer** link on the left side of the blade.
 
-1. In the **Data Explorer** section, expand the **FinancialDatabase** database node and then select the **PeopleCollection** node.
+1. In the Database id field, select the Create new option and enter the value **FinancialDatabase**.
+ 
+1. In the Container Id field, enter the value **PeopleCollection**.
+
+1. In the Partition key field, enter the value **/accountHolder/LastName**.
+
+1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
+
+1. In the **Data Explorer** section, expand the **FinancialDatabase** database node and then select the **PeopleCollection** node, Partition key field, enter the value **/id**.
 
 1. Select the **New SQL Query** button at the top of the **Data Explorer** section.
 
@@ -1360,4 +1394,4 @@ Many applications have workloads that vary over time in a predictable way. For e
 
 > Note that you may need to refresh the Data Explorer to see the new value.
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+

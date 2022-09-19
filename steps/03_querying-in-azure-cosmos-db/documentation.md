@@ -2,7 +2,6 @@
 
 Azure Cosmos DB SQL API accounts provide support for querying items using the Structured Query Language (SQL), one of the most familiar and popular query languages, as a JSON query language. In this lab, you will explore how to use these rich query capabilities directly through the Azure Portal. No separate tools or client side code are required.
 
-If this is your first lab and you have not already completed the setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
 
 ## Query Overview
 
@@ -12,7 +11,7 @@ Azure Cosmos DB supports strict JSON items only. The type system and expressions
 
 ## Running your first query
 
-In this lab section, you will query your **FoodCollection**. You must complete [Lab 02 - Load data with Azure Data Factory](https://azurecosmosdb.github.io/labs/dotnet/labs/02-load_data_with_adf.html) before starting this lab.
+In this lab section, you will query your **FoodCollection**. You must complete [Lab 02 - Load Data Into Cosmos DB with Dm Tool](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/02_load-data-into-cosmos-db-with-dmtool/documentation.md) before starting this lab.
 
 You will begin by running basic queries with `SELECT`, `WHERE`, and `FROM` clauses.
 
@@ -321,4 +320,4 @@ JOIN n IN c.nutrients
 WHERE n.units= "mg" AND n.nutritionValue > 0
 ```
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+

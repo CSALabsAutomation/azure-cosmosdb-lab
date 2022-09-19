@@ -2,19 +2,60 @@
 
 In this lab you will use the Change Feed Processor Library and Azure Functions to implement three use cases for the Azure Cosmos DB Change Feed
 
-> If this is your first lab and you have not already completed the setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
 
 ## Build A .NET Console App to Generate Data
 
 In order to simulate data flowing into our store, in the form of actions on an e-commerce website, we'll build a simple .NET Console App to generate and add documents to our Cosmos DB CartContainer
 
-1. On your local machine, locate the CosmosLabs folder in your Documents folder and open the `Lab08` folder that will be used to contain the content of your .NET Core project. If you are completing this lab through Microsoft Hands-on Labs, the CosmosLabs folder will be located at the path: **C:\labs\CosmosLabs**
+1. Create `Lab08` folder that will be used to contain the content of your .NET Core project.
 
 1. In the `Lab08` folder, right-click the folder and select the **Open with Code** menu option.
 
    > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
 
 1. In the explorer pane on the left, locate the **DataGenerator** folder and expand it.
+
+1. In the open terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet new console
+    ```
+
+    > This command will create a new .NET Core project. The project will be a **console** project and the project.
+
+1. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+    ```
+
+    > This command will add the [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) NuGet package as a project dependency. The lab instructions have been tested using the `3.12.0` version of this NuGet package.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet add package Bogus --version 30.0.2
+    ```
+
+    > This command will add the [Bogus](./assets/https://www.nuget.org/packages/Bogus/) NuGet package as a project dependency. This library will allow us to quickly generate test data using a fluent syntax and minimal code. We will use this library to generate test documents to upload to our Azure Cosmos DB instance. The lab instructions have been tested using the `30.0.2` version of this NuGet package.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet restore
+    ```
+
+    > This command will restore all packages specified as dependencies in the project.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet build
+    ```
+
+    > This command will build the project.
 
 1. Select the `program.cs` link in the **Explorer** pane to open the file in the editor.
 
@@ -67,11 +108,27 @@ You're ready to run the console app, and in this step you'll take a look at your
 
 5. Switch to the Azure Portal and your Cosmos DB Account.
 
-6. From within the **Azure Cosmos DB** blade, select the **Data Explorer** tab on the left.
+6. In the Add Container popup, perform the following actions:
+    
+   In the Database id field, select the Create new option and enter the value **StoreDatabase**.
+
+   Do not check the Provision database throughput option.
+
+   Provisioning throughput for a database allows you to share the throughput among all the containers that belong to that database. Within an Azure Cosmos DB     database,   you can have a set of containers which shares the throughput as well as containers, which have dedicated throughput.
+
+   In the Container Id field, enter the value **CartContainer**.
+
+   In the Partition key field, enter the value **/Item**.   
+
+   Select the OK button.
+
+   Wait for the creation of the new database and container to finish before moving on with this lab.
+ 
+7. From within the **Azure Cosmos DB** blade, select the **Data Explorer** tab on the left.
 
    ![The Cosmos DB resource with the Data Explorer highlighted](./assets/08-cosmos-overview-final.jpg "Open the Data Explorer")
 
-7. Expand the **StoreDatabase** then the **CartContainer** and select **Items**. You should see something like the following screenshot.
+8. Expand the **StoreDatabase** then the **CartContainer** and select **Items**. You should see something like the following screenshot.
 
    > Note your data will be slightly different since it is random, the important thing is that there is data here at all
 
@@ -89,9 +146,25 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
 2. Select the `Program.cs` link under the **ChangeFeedConsole** folder in the **Explorer** pane to open the file in the editor.
 
-3. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account.
+4. Open terminal pane, enter and execute the following commands:
 
-4. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
+       1.dotnet new console
+       
+       2.dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+       
+       3.dotnet build
+
+4. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account.
+
+5. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
+     
+      In the Partition key field, enter the value **/BuyerState**
+     
+      Select the OK button.
+     
+      Wait for the creation of the new database and container to finish before moving on with this lab.
+
+6. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
 
    ```csharp
    private static readonly string _destinationContainerId = "CartContainerByState";
@@ -99,7 +172,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
    > In this case we are going to migrate our data to another container within the same database. The same ideas apply even if we wanted to migrate our data to another database entirely.
 
-5. In order to consume the change feed we make use of a **Lease Container**. Add the following lines of code in place of `//todo: Add lab code here` to create the lease container:
+7. In order to consume the change feed we make use of a **Lease Container**. Add the following lines of code in place of `//todo: Add lab code here` to create the lease container:
 
    ```csharp
    ContainerProperties leaseContainerProperties = new ContainerProperties("consoleLeases", "/id");
@@ -108,7 +181,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
    > The **Lease Container** stores information to allow for parallel processing of the change feed, and acts as a book mark for where we last processed changes from the feed.
 
-6. Now, add the following lines of code directly after the **leaseContainer** definition in order to get an instance of the change processor:
+8. Now, add the following lines of code directly after the **leaseContainer** definition in order to get an instance of the change processor:
 
    ```csharp
    var builder = container.GetChangeFeedProcessorBuilder("migrationProcessor", (IReadOnlyCollection<object> input, CancellationToken cancellationToken) => {
@@ -124,19 +197,19 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
    > Each time a set of changes is received, the `Func<T>` defined in `CreateChangeFeedProcessorBuilder` will be called. We're skipping the handling of those changes for the moment.
 
-7. In order for our processor to run, we have to start it. Following the definition of **processor** add the following line of code:
+9. In order for our processor to run, we have to start it. Following the definition of **processor** add the following line of code:
 
    ```csharp
    await processor.StartAsync();
    ```
 
-8. Finally, when a key is pressed to terminate the processor we need to end it. Locate the `//todo: Add stop code here` line and replace it with this code:
+10. Finally, when a key is pressed to terminate the processor we need to end it. Locate the `//todo: Add stop code here` line and replace it with this code:
 
    ```csharp
    await processor.StopAsync();
    ```
 
-9. At this point, your `Program.cs` file should look like this:
+11. At this point, your `Program.cs` file should look like this:
 
    ```csharp
    using System;
@@ -1109,4 +1182,3 @@ With all of the configuration out of the way, you'll see how simple it is to wri
 
    ![The Final Power BI Dashboard is displayed with real-time data flowing](./assets/08-power-bi-dashboard.jpg "Review the new dashboard")
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.

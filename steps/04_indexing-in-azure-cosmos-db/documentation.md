@@ -2,8 +2,6 @@
 
 In this lab, you will modify the indexing policy of an Azure Cosmos DB container. You will explore how you can optimize indexing policy for write or read heavy workloads as well as understand the indexing requirements for different SQL API query features.
 
-> If this is your first lab and you have not already completed the setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
-
 ## Indexing Overview
 
 Azure Cosmos DB is a schema-agnostic database that allows you to iterate on your application without having to deal with schema or index management. By default, Azure Cosmos DB automatically indexes every property for all items in your container without the need to define any schema or configure secondary indexes. If you chose to leave indexing policy at the default settings, you can run most queries with optimal performance and never have to explicitly consider indexing. However, if you want control over adding or removing properties from the index, modification is possible through the Azure Portal, ARM template, PowerShell, Azure CLI or any Cosmos DB SDK.
@@ -427,7 +425,7 @@ First, you will create a new Cosmos container named volcanoes inside a new datab
 1. Navigate to the **VolcanoesContainer** in the Azure Portal
 2. Select the **Items** section
 3. Select **Upload Item**
-4. In the popup, navigate to the [VolcanoData.json](../setup/VolcanoData.json) file. This file was copied in the pre-lab steps, if you do not have it run the account setup steps.
+4. In the popup, Browse the VolcanoData.json file into 'C:\Labs\setup' path.
 5. Select **Upload**
 
 ### Create geo-spatial indexes in the **Volcanoes** container
@@ -577,4 +575,4 @@ You will not need the **VolcanoContainer** during additional lab sections. You c
 3. Confirm the container's name and delete the container.
 4. Close your browser window. You have now completed the indexing lab section.
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+

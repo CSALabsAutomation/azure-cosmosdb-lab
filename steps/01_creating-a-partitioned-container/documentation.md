@@ -2,7 +2,35 @@
 
 In this lab, you will create multiple Azure Cosmos DB containers using different partition keys and settings. In later labs, you will then use the SQL API and .NET SDK to query specific containers using a single partition key or across multiple partition keys.
 
-> If you have not already completed setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
+## Log-in to the Azure Portal
+
+1. In a new window, sign in to the **Azure Portal** (<https://portal.azure.com>).
+
+1. Once you have logged in, you may be prompted to start a tour of the Azure portal. You can safely skip this step.
+
+### Retrieve Account Credentials
+
+The .NET SDK requires credentials to connect to your Azure Cosmos DB account. You will collect and store these credentials for use throughout the lab.
+
+1. On the left side of the portal, select the **Resource groups** link.
+
+   ![Resource groups is highlighted](./assets/02-resource_groups.jpg "Select resource groups")
+
+1. In the **Resource groups** blade, locate and select the **cosmoslabs** _Resource Group_.
+
+   ![The recently cosmosdb resource group is highlighted](./assets/02-lab_resource_group.jpg "Select the CosmosDB resource group")
+
+1. In the **cosmoslabs** blade, select the **Azure Cosmos DB** account you recently created.
+
+   ![The Cosmos DB resource is highlighted](./assets/02-cosmos_resource.jpg "Select the Cosmos DB resource")
+
+1. In the **Azure Cosmos DB** blade, locate the **Settings** section and select the **Keys** link.
+
+   ![The Keys pane is highlighted](./assets/02-keys_pane.jpg "Select the Keys Pane")
+
+1. In the **Keys** pane, record the values in the **CONNECTION STRING**, **URI** and **PRIMARY KEY** fields. You will use these values later in this lab.
+
+   ![The URI, Primary Key and Connection string credentials are highlighted](./assets/02-keys.jpg "Copy the URI, primary key and the connection string")
 
 ## Create Containers using the .NET SDK
 
@@ -10,13 +38,8 @@ You will start by using the .NET SDK to create containers to use in this and fol
 
 ### Create a .NET Core Project
 
-1. On your local machine, locate the **CosmosLabs** folder in your **Documents** folder
-1. Open the **Lab01** folder that will be used to contain the content of your .NET Core project.
-
-   - If you do not have this folder, you did not run the `labCodeSetup.ps1` script in the [Account Setup](00-account_setup.md) steps.
-
-   - If you are completing this lab through Microsoft Hands-on Labs, the CosmosLabs folder will be located at the path: **C:\labs\CosmosLabs**
-
+1. Create **Lab01** folder that will be used to contain the content of your .NET Core project.
+    
 1. In the **Lab01** folder, right-click the folder and select the **Open with Code** menu option.
 
     ![Open with Code is highlighted](./assets/02-open_with_code.jpg "Open the directory with Visual Studio Code")
@@ -30,10 +53,10 @@ You will start by using the .NET SDK to create containers to use in this and fol
 1. In the open terminal pane, enter and execute the following command:
 
     ```sh
-    dotnet new console --output .
+    dotnet new console
     ```
 
-    > This command will create a new .NET Core project. The project will be a **console** project and the project will be created in the current directly since you used the `--output .` option.
+    > This command will create a new .NET Core project. The project will be a **console** project and the project.
 
 1. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
 
@@ -291,7 +314,7 @@ To create a container, you must specify a name and a partition key path. A parti
 
 ### Populate Container with Data
 
-1. In the Visual Studio Code window, look in the **Explorer** pane and verify that you have a **DataTypes.cs** file in your project folder. This file contains the data classes you will be working with in the following steps. If it is not in your project folder, you can copy it from this path in the cloned repo here `\labs\dotnet\setup\templates\Lab01\DataTypes.cs`
+1. In the Visual Studio Code window, look in the **Explorer** pane and verify that you have a **DataTypes.cs** file in your project folder. This file contains the data classes you will be working with in the following steps. If it is not in your project folder, you can copy it from this path in the cloned repo here `C:\Labs\setup\templates\Lab01\DataTypes.cs`
 
 1. Switch to the **Program.cs** file in Visual Studio code
 
@@ -492,4 +515,4 @@ To create a container, you must specify a name and a partition key path. A parti
 
 1. Close the folder in Visual Studio Code
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+

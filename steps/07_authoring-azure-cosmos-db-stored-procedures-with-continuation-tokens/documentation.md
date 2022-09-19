@@ -2,7 +2,7 @@
 
 In this lab, you will author and execute multiple stored procedures within your Azure Cosmos DB instance. You will explore features unique to JavaScript stored procedures such as throwing errors for transaction rollback, logging using the JavaScript console and implementing a continuation model within a bounded execution environment.
 
-> If this is your first lab and you have not already completed the setup for the lab content see the instructions for [Account Setup](00-account_setup.md) before starting this lab.
+> If this is your first lab and you have not already completed the setup for the lab content see the instructions of previous labs before starting this lab.
 
 ## Author Stored Procedures using the Continuation Model
 
@@ -56,8 +56,6 @@ You will now implement stored procedures that may execute longer than the bounde
    ```
 
    > This stored procedure uploads an array of documents in one batch. If the entire batch is not completed, the stored procedure will set the response body to the number of documents that were imported. Your client-side code is expected to call this stored procedure multiple times until all documents are imported.
-
-   If you are having trouble copying the stored procedure above, the full source code for this stored procedure is located here: [bulk_upload.js](../solutions/05-authoring_stored_procedures/bulk_upload.js)
 
 1. Select the **Save** button at the top of the tab.
 
@@ -124,13 +122,11 @@ You will now implement stored procedures that may execute longer than the bounde
 
    > This stored procedure iterates through all documents that match a specific query and deletes the documents. If the stored procedure is unable to delete all documents, it will return a continuation token. Your client-side code is expected to repeatedly call the stored procedure passing in a continuation token until the stored procedure does not return a continuation token.
 
-   If you are having trouble copying the stored procedure above, the full source code for this stored procedure is located here: [bulk_delete.js](../solutions/05-authoring_stored_procedures/bulk_delete.js)
-
 1. Select the **Save** button at the top of the tab.
 
 ### Create a .NET Core Project
 
-1. On your local machine, locate the CosmosLabs folder in your Documents folder and open the `Lab07` folder that will be used to contain the content of your .NET Core project. If you are completing this lab through Microsoft Hands-on Labs, the CosmosLabs folder will be located at the path: **C:\labs\CosmosLabs**
+1. Create **Lab07** folder that will be used to contain the content of your .NET Core project.
 
 1. In the **Lab07** folder, right-click the folder and select the **Open with Code** menu option.
 
@@ -138,23 +134,47 @@ You will now implement stored procedures that may execute longer than the bounde
 
 1. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
 
-   ![Open in Terminal](./assets/open_in_terminal.jpg)
+1. In the open terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet new console
+    ```
+
+    > This command will create a new .NET Core project. The project will be a **console** project.
+
+1. Visual Studio Code will most likely prompt you to install various extensions related to **.NET Core** or **Azure Cosmos DB** development. None of these extensions are required to complete the labs.
 
 1. In the terminal pane, enter and execute the following command:
 
-   ```sh
-   dotnet restore
-   ```
+    ```sh
+    dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+    ```
 
-   > This command will restore all packages specified as dependencies in the project.
+    > This command will add the [Microsoft.Azure.Cosmos](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/) NuGet package as a project dependency. The lab instructions have been tested using the `3.12.0` version of this NuGet package.
 
 1. In the terminal pane, enter and execute the following command:
 
-   ```sh
-   dotnet build
-   ```
+    ```sh
+    dotnet add package Bogus --version 30.0.2
+    ```
 
-   > This command will build the project.
+    > This command will add the [Bogus](./assets/https://www.nuget.org/packages/Bogus/) NuGet package as a project dependency. This library will allow us to quickly generate test data using a fluent syntax and minimal code. We will use this library to generate test documents to upload to our Azure Cosmos DB instance. The lab instructions have been tested using the `30.0.2` version of this NuGet package.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet restore
+    ```
+
+    > This command will restore all packages specified as dependencies in the project.
+
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet build
+    ```
+
+    > This command will build the project.
 
 1. In the **Explorer** pane verify that you have a `DataTypes.cs` file in your project folder.
 
@@ -439,4 +459,4 @@ You will now implement stored procedures that may execute longer than the bounde
 
 1. Close your browser application.
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
+

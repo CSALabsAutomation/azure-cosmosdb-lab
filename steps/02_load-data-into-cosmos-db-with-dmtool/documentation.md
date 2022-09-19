@@ -27,7 +27,7 @@ You will now create a database and container within your Azure Cosmos DB account
 
 1. In the **Add Container** popup, perform the following actions:
 
-    1. In the **Database id** field, select the **Create new** option and enter the value **ImportDatabase**.
+    1. In the **Database id** field, select the **Create new** option and enter the value **NutritionDatabase**.
 
     2. Do not check the **Provision database throughput** option.
 
@@ -45,34 +45,41 @@ You will now create a database and container within your Azure Cosmos DB account
 
 ## Import Lab Data Into Container
 
-You will use **Data Migration Tool(DM tool)** to import the JSON array stored in the **nutrition.json** file from C:\Labs\setup\ 
+You will use **Data Migration Tool(DM tool)** to import the JSON array stored in the **nutrition.json** file from `C:\Labs\setup\`.
 
-.
 
-1. Click on the link https://github.com/Azure/azure-documentdb-datamigrationtool/releases/tag/1.8.3 and download it.
-
-    ![click here](./assets/03-dm-link.jpg "Download the link")
-
-1. In the downloads , locate and select the downloaded zip file . Extract files to C:\Labs\Tools\ before running.
-   
-    ![click here](./assets/03-dm-extract.jpg "extract")
-
-1. If you see a dtui application , double click on it .
+1. Use dtui application from `C:\Labs\Tools\` location, double click on dtui application.
  
-    ![click](./assets/03-dm-dtui-app.png "Review if you have installed already")
+    ![click](./assets/03-dm_dtui_app.JPG "Review if you have installed already")
    
-1. Navigate to Source Information and then import JSON format by adding files from path C:\Labs\setup\ .
+1. Navigate to Source Information as shown below.
 
-    ![click ](./assets/03-dm-source.jpg "Select source ")
-    ![click ](./assets/03-dm-addJson "Select json format")
-    ![click ](./assets/03-dm-nutritionjson "Select json file and click on Next  ")
-   
-1. After adding source information , it leads to Target information .
+    ![click ](./assets/03-dm_source.JPG "Select source ")
+    
+1. Select Import from as JSON files and click on Add files.
 
+    ![click ](./assets/03-dm_addJson.JPG "Select json format")
+    
+1. Select Nutrition.json file from path `C:\Labs\setup\` and it leads to Target information.
+
+    ![click ](./assets/03-dm_nutritionjson.JPG "Select json file and click on Next ")
    
-1. Copy the connection String from your Cosmos DB  and append it with Database name as shown 
-    ![click ](./assets/03-dm-connectionString "ADD connection string and collection ")
-    ![click ](./assets/03-dm-target "Select connection string and collection ")
+1. Copy the connection String from your Cosmos DB.
+ 
+    ![click ](./assets/03-dm_connectionString.JPG "ADD connection string and collection")
+    
+1. Append the Connection String with Database name and make collection as FoodCollection.
+
+    ![click ](./assets/03-dm_target.JPG "Select connection string and collection")
+ 
+1. Click on Next and skip the Advanced settings.You will see Summary popup.
+
+    ![click ](./assets/03-dm_confirmImport.JPG "Confirm import settings ")
+ 
+1. Click on Import and data gets copied from Source to Destination.
+
+    ![click ](./assets/03-dm_import.JPG "Confirm import settings ")
+
    
 
 ## Validate Imported Data
@@ -97,11 +104,11 @@ You will validate that the data was successfully imported into your container us
 
 1. In the **Azure Cosmos DB** blade, locate and select the **Data Explorer** link on the left side of the blade.
 
-    ![The Data Explorer link was selected and is blade is displayed](./assets/03-data_explorer_pane.jpg "Select Data Explorer")
+    ![The Data Explorer link was selected and is blade is displayed](./assets/03-data_explorer_pane.JPG "Select Data Explorer")
 
-1. In the **Data Explorer** section, expand the **ImportDatabase** database node and then expand the **FoodCollection** container node.
+1. In the **Data Explorer** section, expand the **NutritionDatabase** database node and then expand the **FoodCollection** container node.
 
-    ![The Container node is displayed](./assets/03-collection_node.jpg "Expand the ImportDatabase node")
+    ![The Container node is displayed](./assets/03-collection_node.JPG "Expand the NutritionDatabase node")
 
 1. Within the **FoodCollection** node, select the **Scale and Settings** link to view the throughput for the container. Reduce the throughput to **400 RU/s**.
 
@@ -109,9 +116,7 @@ You will validate that the data was successfully imported into your container us
 
 1. Within the **FoodCollection** node, select the **Items** link to view a subset of the various documents in the container. Select a few of the documents and observe the properties and structure of the documents.
 
-    ![Items is highlighted](./assets/03-documents.jpg "Select Items")
+    ![Items is highlighted](./assets/03-documents.JPG "Select Items")
 
-    ![An Example document is displayed](./assets/03-example_document.jpg "Select a document")
+    ![An Example document is displayed](./assets/03-example_document.JPG "Select a document")
 
-> If this is your final lab, follow the steps in [Removing Lab Assets](11-cleaning_up.md) to remove all lab resources.
-> 
