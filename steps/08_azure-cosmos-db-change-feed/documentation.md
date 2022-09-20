@@ -94,7 +94,8 @@ The key functionality of the console application is to add documents to our Cosm
 
 1. Within the `Program.cs` file in the **DataGenerator** folder, locate the `GenerateActions()` method. The purpose of this method is to create randomized **CartAction** objects that you'll consume using the CosmosDB change feed.
 
- ```csharp
+<span style="color:green;font-weight:700;font-size:20px">
+ ```csharp 
    private static List<CartAction> GenerateActions()
         {
             Randomizer random = new();
@@ -179,6 +180,7 @@ The key functionality of the console application is to add documents to our Cosm
         }
 
    ```
+    </span>
 At this point, your Program.cs file should look like this:
 
  ```csharp
