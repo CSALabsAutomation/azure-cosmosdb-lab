@@ -70,8 +70,8 @@ The key functionality of the console application is to add documents to our Cosm
 
 1.In the Visual Studio Code window, look in the Explorer pane and verify that you have a DataModel.cs file in your Shared  project folder. This file contains the CartAction class, ActionType enum you will be working with in the following steps. If it is not in your Shared project folder, you can copy it from this path in the cloned repo here 'C:\Labs\setup\templates\Lab08\DataModel.cs'
  ```sh
-  dotnet new console
- dotnet add package Newtonsoft.Json
+     dotnet new console
+     dotnet add package Newtonsoft.Json
  ```
 2. Within the `program.cs` file in the **DataGenerator** folder, locate the `AddItem()` method. The purpose of this method is to add an instance of **CartAction** to our CosmosDB Container.
    ```csharp
@@ -181,10 +181,19 @@ The key functionality of the console application is to add documents to our Cosm
 At this point, your Program.cs file should look like this:
 
  ```csharp
-   class Program
+using System;
+using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos;
+using Bogus;
+using System.Collections.Generic;
+using Shared;
+
+namespace DataGenerator
+{
+    class Program
     {
-        private static readonly string _endpointUrl = "<your-endpoint-url>";
-        private static readonly string _primaryKey = "<your-primary-key>";
+        private static readonly string _endpointUrl = "https://gklab8.documents.azure.com:443/";
+        private static readonly string _primaryKey = "Qjpjn7NH5nrnegPcpwkyHORkMWBibbsLiMCP8B7Mho6SFXkdzCUPOSF7Qym4lmrHxbghljHXGVrnNhP0YrCc8A==";
         private static readonly string _databaseId = "StoreDatabase";
         private static readonly string _containerId = "CartContainer";
 
@@ -303,6 +312,8 @@ At this point, your Program.cs file should look like this:
             }
         }
     }
+}
+
 
    ```
 
