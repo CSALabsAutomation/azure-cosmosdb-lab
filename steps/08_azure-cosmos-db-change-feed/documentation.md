@@ -40,7 +40,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
       
       dotnet add package Bogus --version 30.0.2
       ```
-1. Create **Shared** folder open with terminal.
+1. Create **Shared** folder and open with terminal.
      ```sh
        dotnet new console
        dotnet add package Newtonsoft.Json
