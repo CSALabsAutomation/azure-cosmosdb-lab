@@ -192,8 +192,8 @@ namespace DataGenerator
 {
     class Program
     {
-        private static readonly string _endpointUrl = "https://gklab8.documents.azure.com:443/";
-        private static readonly string _primaryKey = "Qjpjn7NH5nrnegPcpwkyHORkMWBibbsLiMCP8B7Mho6SFXkdzCUPOSF7Qym4lmrHxbghljHXGVrnNhP0YrCc8A==";
+        private static readonly string _endpointUrl = "<your-endpoint-url>";
+        private static readonly string _primaryKey = "<your-primary-key>";
         private static readonly string _databaseId = "StoreDatabase";
         private static readonly string _containerId = "CartContainer";
 
