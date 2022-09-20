@@ -581,28 +581,6 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 
 1. Open a terminal window and navigate to the Lab08 folder you've been using for this lab.
 
-1. To install command line support for Azure Functions, you'll need `node.js`.
-
-1. In your terminal pane, check your node version by running the following
-
-   ```sh
-   node --version
-   ```
-
-   > If you do not have node.js installed [download it here](https://docs.npmjs.com/getting-started/installing-node#osx-or-windows). If you are using a version older than `8.5` run the following:
-
-   ```sh
-   npm i -g node@latest
-   ```
-
-1. Enter and execute the following command to download the Azure Function tooling:
-
-   ```sh
-   npm install -g azure-functions-core-tools
-   ```
-
-   > If this command fails, refer to the previous step to setup node.js. You may need to restart your terminal window for these changes to take effect.
-
 1. In your terminal pane, enter and execute the following command. This command creates a new Azure Functions project:
 
    ```sh
