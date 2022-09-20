@@ -365,13 +365,13 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
 4. Open terminal pane, enter and execute the following commands:
 
-       1.dotnet new console
+     ``sh
+       dotnet new console
        
-       2.dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
+       dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
        
-       3.dotnet build
-
-4. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account.
+       dotnet add reference ..\\Shared\\Shared.csproj
+      ``
 
 5. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
      
@@ -426,36 +426,9 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
    await processor.StopAsync();
    ```
 
-### Complete the Live Data Migration
-
-1. Within the `program.cs` file in the **ChangeFeedConsole** folder, locate the todo we left ourselves `//todo: Add processor code here`
-
-1. Modify the signature of the `Func<T>` in the `GetChangeFeedProcessorBuilder` replacing `object` with `CartAction` as follows:
+11. At this point, your `Program.cs` file should look like this:
 
    ```csharp
-   var builder = container.GetChangeFeedProcessorBuilder("migrationProcessor", 
-      (IReadOnlyCollection<CartAction> input, CancellationToken cancellationToken) =>
-      {
-         Console.WriteLine(input.Count + " Changes Received");
-         //todo: Add processor code here
-      });
-   ```
-
-1. The **input** is a collection of **CartAction** documents that have changed. To migrate them, we'll simply loop through them and write them out to our destination container. Replace the `//todo: Add processor code here` with the following code:
-
-   ```csharp
-   var tasks = new List<Task>();
-
-   foreach (var doc in input)
-   {
-      tasks.Add(destinationContainer.CreateItemAsync(doc, new PartitionKey(doc.BuyerState)));
-   }
-
-   return Task.WhenAll(tasks);
-   ```
-At this point, your `Program.cs` file should look like this:
-
-```csharp
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -512,7 +485,36 @@ namespace ChangeFeedConsole
         }
     }
 }
-```
+   ```
+
+### Complete the Live Data Migration
+
+1. Within the `program.cs` file in the **ChangeFeedConsole** folder, locate the todo we left ourselves `//todo: Add processor code here`
+
+1. Modify the signature of the `Func<T>` in the `GetChangeFeedProcessorBuilder` replacing `object` with `CartAction` as follows:
+
+   ```csharp
+   var builder = container.GetChangeFeedProcessorBuilder("migrationProcessor", 
+      (IReadOnlyCollection<CartAction> input, CancellationToken cancellationToken) =>
+      {
+         Console.WriteLine(input.Count + " Changes Received");
+         //todo: Add processor code here
+      });
+   ```
+
+1. The **input** is a collection of **CartAction** documents that have changed. To migrate them, we'll simply loop through them and write them out to our destination container. Replace the `//todo: Add processor code here` with the following code:
+
+   ```csharp
+   var tasks = new List<Task>();
+
+   foreach (var doc in input)
+   {
+      tasks.Add(destinationContainer.CreateItemAsync(doc, new PartitionKey(doc.BuyerState)));
+   }
+
+   return Task.WhenAll(tasks);
+   ```
+
 ### Test to Confirm the Change Feed Function Works
 
 Now that we have our first Change Feed consumer, we're ready to run a test and confirm that it works
