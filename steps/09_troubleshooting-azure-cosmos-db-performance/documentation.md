@@ -289,7 +289,7 @@ Azure Cosmos DB returns various response headers that can give you more metadata
     ```csharp
      using System;
      using System.Collections.Generic;
--    using System.Diagnostics;
+     using System.Diagnostics;
      using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.Azure.Cosmos;
@@ -301,6 +301,7 @@ Azure Cosmos DB returns various response headers that can give you more metadata
     private static readonly string _peopleContainerId = "PeopleCollection";
     private static readonly string _transactionContainerId = "TransactionCollection";
     private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+    
      public static async Task Main(string[] args)
     {
         Database database = _client.GetDatabase(_databaseId);
