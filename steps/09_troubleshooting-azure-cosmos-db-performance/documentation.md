@@ -287,10 +287,10 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 
 1. At this point, your Program.cs file should look like this:
     ```csharp
-     using System;
-     using System.Collections.Generic;
-     using System.Diagnostics;
-     using System.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.Azure.Cosmos;
     public class Program
