@@ -1325,7 +1325,10 @@ Many applications have workloads that vary over time in a predictable way. For e
         await UpdateThroughput(peopleContainer);
     }
     ```
-1. Before run this UpdateThroughput method You should change Autoscale to Manual Scale settings in the respective Container.
+1. Before run this **UpdateThroughput** method You should change Autoscale to Manual Scale settings in the respective Container.
+
+    ![Scalesettings](./assets/09-Scalesettings.JPG "Select Scale and Settings")
+    
 1. At the bottom of the class create a new method `UpdateThroughput`:
 
     ```csharp
