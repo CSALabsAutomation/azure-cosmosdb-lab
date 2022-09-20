@@ -365,7 +365,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
 4. Open terminal pane, enter and execute the following commands:
 
-     ``sh
+     ```sh
      
        dotnet new console
        
@@ -373,7 +373,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
        
        dotnet add reference ..\\Shared\\Shared.csproj
        
-      ``
+      ```
 
 5. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
      
