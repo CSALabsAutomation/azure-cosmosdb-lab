@@ -40,7 +40,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
       
       dotnet add package Bogus --version 30.0.2
       ```
-1. In the explorer pane on the left, locate the **Shared** folder and expand it.
+1. Create **Shared** folder and expand it.
 
 1. In the open DataGenerator terminal pane, enter and execute the following command:
     ```sh
@@ -50,7 +50,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
 
    ![The program.cs is displayed](./assets/08-console-main-default.jpg "Open the program.cs file")
 
-1. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](00-account_setup.md) to get these values if you do not already have them:
+1. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
 
    - For example, if your **url** is `https://cosmosacct.documents.azure.com:443/`, your new variable assignment will look like this:
 
