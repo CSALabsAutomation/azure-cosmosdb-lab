@@ -1445,10 +1445,8 @@ Many applications have workloads that vary over time in a predictable way. For e
 
 1. In the **Azure Cosmos DB** blade, locate and select the **Data Explorer** link on the left side of the blade.
 
-1. In the **Data Explorer** section, expand the **FinancialDatabase** database node, expand the **PeopleCollection** node, and then select the **Scale & Settings** option.
+1. In the **Data Explorer** section, expand the **FinancialDatabase** database node, expand the **PeopleCollection** container, and then select the **Scale & Settings** option.
 
 1. In the **Settings** section, locate the **Throughput** field and note that is is now set to **1000**.
 
 > Note that you may need to refresh the Data Explorer to see the new value.
-
-
