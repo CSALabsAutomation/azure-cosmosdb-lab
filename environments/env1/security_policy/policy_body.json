@@ -8,7 +8,6 @@
         "Microsoft.Authorization/elevateAccess/Action",
         "Microsoft.MarketplaceOrdering/*",
         "Microsoft.Compute/virtualMachines/Write",
-        "Microsoft.Sql/servers/Write",
         "Microsoft.Compute/disks/Write"
       ]
     }
@@ -30,8 +29,8 @@
       }
     }
   },
-  "displayName": "Azure SQL Migration Policy",
-  "description": "This policy restricts what is allowed in the Azure SQL Migration Lab.",
+  "displayName": "Azure CosmosDB Lab Policy",
+  "description": "This policy restricts what is allowed in the Azure CosmosDB Lab Policy",
   "policyRule": {
     "if": {
       "anyOf": [
@@ -59,19 +58,16 @@
     },
     "allowedServices": {
       "value": [
-        "Microsoft.Compute/virtualMachines",
-        "Microsoft.DataMigration/services",
+        "Microsoft.DocumentDB/databaseAccounts",
+        "Microsoft.Storage/storageAccounts",                
+        "Microsoft.Compute/images",
+        "Microsoft.Compute/disks",
         "Microsoft.Network/networkInterfaces",
         "Microsoft.Network/networkSecurityGroups",
         "Microsoft.Network/publicIPAddresses",
         "Microsoft.Network/virtualNetworks",
-        "Microsoft.Storage/storageAccounts",
-        "Microsoft.Sql/servers",
-        "Microsoft.Compute/virtualMachines/extensions",
         "Microsoft.Network/virtualNetworks/subnets",
-        "Microsoft.Compute/disks",
-        "Microsoft.DataMigration/services/projects",
-        "Microsoft.Sql/servers/databases"
+        "Microsoft.Compute/virtualMachines"
       ]
     }
   }
