@@ -74,7 +74,7 @@ The key functionality of the console application is to add documents to our Cosm
  dotnet add package Newtonsoft.Json
  ```
 2. Within the `program.cs` file in the **DataGenerator** folder, locate the `AddItem()` method. The purpose of this method is to add an instance of **CartAction** to our CosmosDB Container.
-   ```sh
+   ```csharp
    private static async Task AddItem(CartAction item)
         {
             using (var client = new CosmosClient(_endpointUrl, _primaryKey))
@@ -93,7 +93,7 @@ The key functionality of the console application is to add documents to our Cosm
 
 1. Within the `Program.cs` file in the **DataGenerator** folder, locate the `GenerateActions()` method. The purpose of this method is to create randomized **CartAction** objects that you'll consume using the CosmosDB change feed.
 
- ```sh
+ ```csharp
    private static List<CartAction> GenerateActions()
         {
             Randomizer random = new();
@@ -180,7 +180,7 @@ The key functionality of the console application is to add documents to our Cosm
    ```
 At this point, your Program.cs file should look like this:
 
- ```sh
+ ```csharp
    class Program
     {
         private static readonly string _endpointUrl = "<your-endpoint-url>";
