@@ -429,56 +429,62 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 11. At this point, your `Program.cs` file should look like this:
 
    ```csharp
-   using System;
-   using System.Collections.Generic;
-   using System.Threading;
-   using System.Threading.Tasks;
-   using Microsoft.Azure.Cosmos;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos;
+using Shared;
 
-   namespace ChangeFeedConsole
-   {
-       class Program
-       {
-           private static readonly string _endpointUrl = "<your-endpoint-url>";
-           private static readonly string _primaryKey = "<your-primary-key>";
-           private static readonly string _databaseId = "StoreDatabase";
-           private static readonly string _containerId = "CartContainer";
-           private static readonly string _destinationContainerId = "CartContainerByState";
-           private static CosmosClient _client = new CosmosClient(_endpointUrl, _primaryKey);
+namespace ChangeFeedConsole
+{
+    class Program
+    {
+        private static readonly string _endpointUrl = "<your-endpoint-url>";
+        private static readonly string _primaryKey = "<your-primary-key>";
+        private static readonly string _databaseId = "StoreDatabase";
+        private static readonly string _containerId = "CartContainer";
 
-           static async Task Main(string[] args)
-           {
+        private static readonly string _destinationContainerId = "CartContainerByState";
 
-               Database database = _client.GetDatabase(_databaseId);
-               Container container = db.GetContainer(_containerId);
-               Container destinationContainer = db.GetContainer(_destinationContainerId);
+        static async Task Main(string[] args)
+        {
+            using (var client = new CosmosClient(_endpointUrl, _primaryKey))
+            {
+                var db = client.GetDatabase(_databaseId);
+                var container = db.GetContainer(_containerId);
+                var destinationContainer = db.GetContainer(_destinationContainerId);
 
-               ContainerProperties leaseContainerProperties = new ContainerProperties("consoleLeases", "/id");
-               Container leaseContainer = await  db.CreateContainerIfNotExistsAsync(leaseContainerProperties, throughput: 400);
+                Container leaseContainer = await db.CreateContainerIfNotExistsAsync(id: "consoleLeases", partitionKeyPath: "/id", throughput: 400);
 
-               var builder = container.GetChangeFeedProcessorBuilder("migrationProcessor",
-                  (IReadOnlyCollection<object> input, CancellationToken cancellationToken) =>
-                  {
-                     Console.WriteLine(input.Count + " Changes Received");
-                     //todo: Add processor code here
-                  });
+                var builder = container.GetChangeFeedProcessorBuilder("migrationProcessor", (IReadOnlyCollection<CartAction> input, CancellationToken                                   cancellationToken) =>
+                {
+                    Console.WriteLine(input.Count + " Changes Received");
 
-               var processor = builder
-                               .WithInstanceName("changeFeedConsole")
-                               .WithLeaseContainer(leaseContainer)
-                               .Build();
+                    var tasks = new List<Task>();
 
-               await processor.StartAsync();
-               Console.WriteLine("Started Change Feed Processor");
-               Console.WriteLine("Press any key to stop the processor...");
+                    foreach (var doc in input)
+                    {
+                        tasks.Add(destinationContainer.CreateItemAsync(doc, new PartitionKey(doc.BuyerState)));
+                    }
 
-               Console.ReadKey();
+                    return Task.WhenAll(tasks);
+                });
 
-               Console.WriteLine("Stopping Change Feed Processor");
-               await processor.StopAsync();
-           }
-       }
-   }
+                var processor = builder.WithInstanceName("changeFeedConsole").WithLeaseContainer(leaseContainer).Build();
+
+                await processor.StartAsync();
+                Console.WriteLine("Started Change Feed Processor");
+                Console.WriteLine("Press any key to stop the processor...");
+
+                Console.ReadKey();
+
+                Console.WriteLine("Stopping Change Feed Processor");
+                await processor.StopAsync();
+            }
+        }
+    }
+}
    ```
 
 ### Complete the Live Data Migration
