@@ -74,7 +74,13 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     ```csharp
     private static readonly string _primaryKey = "elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==";
     ```
-
+1. Add the below code also.
+   ```csharp
+    private static readonly string _databaseId = "FinancialDatabase";
+    private static readonly string _peopleContainerId = "PeopleCollection";
+    private static readonly string _transactionContainerId = "TransactionCollection";
+    private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+     ```
 1. Save all of your open editor tabs.
 
 1. In the terminal pane, enter and execute the following command:
