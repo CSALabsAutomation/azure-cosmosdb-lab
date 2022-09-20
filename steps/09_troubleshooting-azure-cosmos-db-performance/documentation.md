@@ -285,6 +285,47 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 
 1. Save all of your open editor tabs.
 
+1. At this point, your Program.cs file should look like this:
+    ```csharp
+     using System;
+     using System.Collections.Generic;
+-    using System.Diagnostics;
+     using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.Cosmos;
+    public class Program
+   {
+    private static readonly string _endpointUri = "https://cosmosdbkjmbe2d.documents.azure.com:443/";
+    private static readonly string _primaryKey = "h5EXFyhyGi3fmlnSX5xcyggtT6tHRQvqJS6gjfsEaexYyOQkrvIxIxxjyQ9r2etcP3vA84xYtlNs7m8WGBFGmQ==";
+    private static readonly string _databaseId = "FinancialDatabase";
+    private static readonly string _peopleContainerId = "PeopleCollection";
+    private static readonly string _transactionContainerId = "TransactionCollection";
+    private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+     public static async Task Main(string[] args)
+    {
+        Database database = _client.GetDatabase(_databaseId);
+        Container peopleContainer = database.GetContainer(_peopleContainerId);
+        Container transactionContainer = database.GetContainer(_transactionContainerId);
+        await CreateMember(peopleContainer);
+    }
+    private static async Task<double> CreateMember(Container peopleContainer)
+    {
+    object member = new Member
+    {
+    accountHolder = new Bogus.Person(),
+    relatives = new Family
+    {
+        spouse = new Bogus.Person(),
+        children = Enumerable.Range(0, 4).Select(r => new Bogus.Person())
+    }
+    
+   };
+    ItemResponse<object> response = await peopleContainer.CreateItemAsync(member);
+    await Console.Out.WriteLineAsync($"{response.RequestCharge} RU/s");
+    return response.RequestCharge;
+   }
+   }
+     ```
 1. In the terminal pane, enter and execute the following command:
 
     ```sh
