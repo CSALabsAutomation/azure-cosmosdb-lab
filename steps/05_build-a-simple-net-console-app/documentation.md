@@ -58,7 +58,15 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
    ![Visual Studio Code editor is displayed with the program.cs file highlighted](./assets/03-program_editor.jpg "Open the program.cs file")   
 
-   
+ 1. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:
+
+    ```sh
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.Cosmos;
+   ```
 10. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
 
     - For example, if your **uri** is `https://cosmosacct.documents.azure.com:443/`, your new variable assignment will look like this:
