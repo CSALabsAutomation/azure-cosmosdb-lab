@@ -299,10 +299,10 @@ You will now implement stored procedures that may execute longer than the bounde
       Database database = _client.GetDatabase(_databaseId);
       Container container = database.GetContainer(_containerId);
 
-      await BulkUpload();
+      await BulkUpload(container);
    }
 
-   Private static Task BulkUpload()
+   Private static async Task BulkUpload(Container container)
    {
       List<Food> foods = new Bogus.Faker<Food>()
       .RuleFor(p => p.Id, f => (-1 - f.IndexGlobal).ToString())
