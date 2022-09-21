@@ -616,10 +616,22 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 1. In your terminal pane, enter and execute the following commands:
 
    ```sh
-   dotnet add package Microsoft.Azure.Cosmos
+   dotnet add package Microsoft.Azure.Cosmos --version 3.0.9
    dotnet add package Microsoft.NET.Sdk.Functions --version 3.0.9
-   dotnet add package Microsoft.Azure.WebJobs.Extensions.CosmosDB --version 3.0.7
+   dotnet add package Microsoft.Azure.WebJobs.Extensions.CosmosDB --version 3.0.9
+   dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 5.0.1
    dotnet add ChangeFeedFunctions.csproj reference ..\\Shared\\Shared.csproj
+   ```
+   Modefied local.settings.json
+   ```sd
+   <None Update="host.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+   
    ```
 
 1. In your terminal pane, build the project:
@@ -960,7 +972,6 @@ The Azure Function receives a list of Documents that have changed. We want to or
       }
    }
    ```
-
 ### Test to Confirm the Materialized View Functions Works
 
 1. Open three terminal windows.
