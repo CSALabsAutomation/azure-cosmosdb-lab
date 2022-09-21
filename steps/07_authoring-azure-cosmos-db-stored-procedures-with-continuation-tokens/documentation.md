@@ -181,14 +181,15 @@ You will now implement stored procedures that may execute longer than the bounde
    > This file contains the data classes you will be working with in the following steps.
    
  1. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:  
-     ```csharp
+ 
+   ```csharp
    using System;
    using System.Threading.Tasks;
    using Microsoft.Azure.Cosmos;
    using Microsoft.Azure.Cosmos.Scripts;
    using System.Collections.Generic;
    using System.Linq;
-   ```
+  ```
 1. Double-click the `Program.cs` link in the **Explorer** pane to open the file in the editor. The top of the class should look like this:
 
    ```csharp
