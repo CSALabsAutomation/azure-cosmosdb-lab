@@ -210,7 +210,8 @@ ReadItemAsync allows a single item to be retrieved from Cosmos DB by its ID. In 
 5. Save all of your open tabs in Visual Studio Code
 
 6. At this point, your Program.cs file should look like this:
-   ```csharp
+
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -260,7 +261,7 @@ public class Program
        }
      }
 }
-    ```
+ ```
 7. In the open terminal pane, enter and execute the following command:
 
     ```sh
