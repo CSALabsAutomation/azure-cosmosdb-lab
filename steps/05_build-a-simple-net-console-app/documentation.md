@@ -60,7 +60,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
    
 10. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:
 
-    ```csharp
+    ```sh
     using System;
     using System.Collections.Generic;
     using System.Linq;
