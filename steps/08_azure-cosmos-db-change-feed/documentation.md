@@ -657,7 +657,7 @@ The Materialized View pattern is used to generate pre-populated views of data in
 
 1. Change the **databaseName** value to `StoreDatabase`
 
-1. Change the **collectionName** value to `StateSales`
+1. Change the **collectionName** value to `CartContainerByState`
 
    > Cosmos DB Change Feeds are guaranteed to be in order within a partition, so in this case we want to use the Container where the partition is already set to the State, `CartContainerByState`, as our source
 
