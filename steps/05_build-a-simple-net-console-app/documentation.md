@@ -209,7 +209,7 @@ ReadItemAsync allows a single item to be retrieved from Cosmos DB by its ID. In 
 
 5. Save all of your open tabs in Visual Studio Code
 
-6. At this point, your Program.cs file should look like this:
+6. At end of this point, your Program.cs file should look like this:
 
 ```csharp
 using System;
@@ -220,8 +220,8 @@ using Microsoft.Azure.Cosmos;
 
 public class Program
 {
-    private static readonly string _endpointUri = "https://cosmosdbkjmbe2d.documents.azure.com:443/";
-    private static readonly string _primaryKey = "x7xYEZdwddYPzUVNsvAHh1uYCbB1Fl1vU0kzs0i5QQEb790VMyuZFit9iF0Gln4yCRM9i9afBHG0kZU0EdEniA==";
+    private static readonly string _endpointUri = "";
+    private static readonly string _primaryKey = "";
 
     private static readonly string _databaseId = "NutritionDatabase";
     private static readonly string _containerId = "FoodCollection";
