@@ -39,6 +39,8 @@ In order to simulate data flowing into our store, in the form of actions on an e
       dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
       
       dotnet add package Bogus --version 30.0.2
+      
+      dotnet build
       ```
 1. Create **Shared** folder and open with terminal, execute the following command:
      ```sh
