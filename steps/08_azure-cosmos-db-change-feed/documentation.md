@@ -51,7 +51,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
 
 1. In the open DataGenerator terminal pane, enter and execute the following command:
     ```sh
-      dotnet add reference ..\Shared\Shared.csproj
+      dotnet add reference ..\\Shared\\Shared.csproj
       ```
 3. Select the `program.cs` link in the **Explorer** pane to open the file in the editor.
 
