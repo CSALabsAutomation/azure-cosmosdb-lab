@@ -361,8 +361,6 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
 1. Switch back to Visual Studio Code
 
-2. Select the `Program.cs` link under the **ChangeFeedConsole** folder in the **Explorer** pane to open the file in the editor.
-
 4. Open terminal pane, enter and execute the following commands:
 
      ```sh
@@ -375,7 +373,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
        
       ```
 
-5. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
+5. Create Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
      
       In the Partition key field, enter the value **/BuyerState**
      
@@ -610,7 +608,7 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 1. Open the **ChangeFeedFunctions.csproj** file and update the target framework to .NET Core 3.1
 
     ```xml
-   <TargetFramework>netcoreapp3.1</TargetFramework>
+   <TargetFramework>net6.0</TargetFramework>
     ```
 
 1. In your terminal pane, enter and execute the following commands:
