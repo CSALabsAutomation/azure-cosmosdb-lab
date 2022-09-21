@@ -363,6 +363,7 @@ The two main options for consuming the Cosmos DB change feed are Azure Functions
 The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A common concern when designing a Cosmos DB container is proper selection of a partition key. You'll recall that we created our `CartContainer` with a partition key of `/Item`. What if we find out later this key is wrong? Or what if writes work better with `/Item` while reads work better with `/BuyerState` as the partition key? We can avoid analysis paralysis by using Cosmos DB Change Feed to migrate our data in real time to a second container with a different partition key!
 
 1. Switch back to Visual Studio Code
+1. In the explorer pane on the left, locate the ChangeFeedConsole folder and expand it.
 
 4. Open terminal pane, enter and execute the following commands:
 
