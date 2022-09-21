@@ -209,13 +209,65 @@ ReadItemAsync allows a single item to be retrieved from Cosmos DB by its ID. In 
 
 5. Save all of your open tabs in Visual Studio Code
 
-6. In the open terminal pane, enter and execute the following command:
+6. At this point, your Program.cs file should look like this:
+   ```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos;
+
+public class Program
+{
+    private static readonly string _endpointUri = "https://cosmosdbkjmbe2d.documents.azure.com:443/";
+    private static readonly string _primaryKey = "x7xYEZdwddYPzUVNsvAHh1uYCbB1Fl1vU0kzs0i5QQEb790VMyuZFit9iF0Gln4yCRM9i9afBHG0kZU0EdEniA==";
+
+    private static readonly string _databaseId = "NutritionDatabase";
+    private static readonly string _containerId = "FoodCollection";
+    private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+
+    public static async Task Main(string[] args)
+    {
+        Database database = _client.GetDatabase(_databaseId);
+        Container container = database.GetContainer(_containerId);
+
+        ItemResponse<Food> candyResponse = await container.ReadItemAsync<Food>("19130", new PartitionKey("Sweets"));
+        Food candy = candyResponse.Resource;
+         Console.Out.WriteLine($"Read {candy.Description}");
+
+         string sqlA = "SELECT f.description, f.manufacturerName, f.servings FROM foods f WHERE f.foodGroup = 'Sweets' and IS_DEFINED(f.description) and IS_DEFINED(f.manufacturerName) and IS_DEFINED(f.servings)";
+        FeedIterator<Food> queryA = container.GetItemQueryIterator<Food>(new QueryDefinition(sqlA), requestOptions: new QueryRequestOptions{MaxConcurrency = 1});
+         foreach (Food food in await queryA.ReadNextAsync())
+         {
+         await Console.Out.WriteLineAsync($"{food.Description} by {food.ManufacturerName}");
+         foreach (Serving serving in food.Servings)
+         {
+        await Console.Out.WriteLineAsync($"\t{serving.Amount} {serving.Description}");
+         }
+          await Console.Out.WriteLineAsync();
+         }
+
+         string sqlB = @"SELECT f.id, f.description, f.manufacturerName, f.servings FROM foods f WHERE IS_DEFINED(f.manufacturerName)";
+         FeedIterator<Food> queryB = container.GetItemQueryIterator<Food>(sqlB, requestOptions: new QueryRequestOptions{MaxConcurrency = 5, MaxItemCount = 100});
+         int pageCount = 0;
+         while (queryB.HasMoreResults)
+         {
+           Console.Out.WriteLine($"---Page #{++pageCount:0000}---");
+           foreach (var food in await queryB.ReadNextAsync())
+           {
+        Console.Out.WriteLine($"\t[{food.Id}]\t{food.Description,-20}\t{food.ManufacturerName,-40}");
+         }
+       }
+     }
+}
+    ```
+7. In the open terminal pane, enter and execute the following command:
 
     ```sh
     dotnet run
     ```
 
-7. You should see a number of new results, each separated by the a line indicating the page.  Note that the results are coming from multiple partitions:
+8. You should see a number of new results, each separated by the a line indicating the page.  Note that the results are coming from multiple partitions:
 
     ```sql
         [19067] Candies, TWIZZLERS CHERRY BITES Hershey Food Corp.
