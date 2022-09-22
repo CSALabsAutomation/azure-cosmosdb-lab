@@ -633,16 +633,26 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
    dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 5.0.1
    dotnet add ChangeFeedFunctions.csproj reference ..\\Shared\\Shared.csproj
    ```
-   Modefied local.settings.json
+   
+   After adding packages ChangeFeedFunctions.csproj should like this:
+   
    ```sd
-   <None Update="host.json">
+<ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.0.9" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="3.0.10" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="local.settings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+         <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
-   
+  </ItemGroup>
+  
    ```
 
 1. In your terminal pane, build the project:
