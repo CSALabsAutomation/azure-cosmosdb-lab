@@ -45,6 +45,7 @@ You will start by using the .NET SDK to create containers to use in this and fol
     ![Open with Code is highlighted](./assets/02-open_with_code.jpg "Open the directory with Visual Studio Code")
 
     > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
+    > ![Open in commandline is highlighted](./assets/01-Commandline_Prompt.JPG "Open Visual Studio Code")
 
 1. In the Visual Studio Code window that appears, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
 
@@ -392,7 +393,7 @@ To create a container, you must specify a name and a partition key path. A parti
 1. Locate the `InitalizeContainer()` method within the `Main` method and add the following code to the method to call the `LoadFoodAndBeverage()` method:
 
     ```csharp
-    await LoadFoodAndBeverageAsync(container);
+    await LoadFoodAndBeverage(container);
     ```
 
 1. Your `Main()` method should now look like this :

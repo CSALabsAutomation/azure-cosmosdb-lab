@@ -39,11 +39,14 @@ In order to simulate data flowing into our store, in the form of actions on an e
       dotnet add package Microsoft.Azure.Cosmos --version 3.12.0
       
       dotnet add package Bogus --version 30.0.2
+      
+      dotnet build
       ```
-1. Create **Shared** folder and open with terminal.
+1. Create **Shared** folder and open with terminal, execute the following command:
      ```sh
        dotnet new console
        dotnet add package Newtonsoft.Json
+       dotnet build
      ```
 
 1. In the open DataGenerator terminal pane, enter and execute the following command:
@@ -360,8 +363,7 @@ The two main options for consuming the Cosmos DB change feed are Azure Functions
 The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A common concern when designing a Cosmos DB container is proper selection of a partition key. You'll recall that we created our `CartContainer` with a partition key of `/Item`. What if we find out later this key is wrong? Or what if writes work better with `/Item` while reads work better with `/BuyerState` as the partition key? We can avoid analysis paralysis by using Cosmos DB Change Feed to migrate our data in real time to a second container with a different partition key!
 
 1. Switch back to Visual Studio Code
-
-2. Select the `Program.cs` link under the **ChangeFeedConsole** folder in the **Explorer** pane to open the file in the editor.
+1. In the explorer pane on the left, locate the ChangeFeedConsole folder and expand it.
 
 4. Open terminal pane, enter and execute the following commands:
 
@@ -373,9 +375,10 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
        
        dotnet add reference ..\\Shared\\Shared.csproj
        
+       dotnet build
       ```
 
-5. Creae Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
+5. Create Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
      
       In the Partition key field, enter the value **/BuyerState**
      
@@ -579,7 +582,15 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 
 > For more information, please read the [doc](https://docs.microsoft.com/azure/cosmos-db/sql/change-feed-processor).
 
-1. Open a terminal window and navigate to the Lab08 folder you've been using for this lab.
+> Navigate to the cosmosdblab Data Explorer and expand StoreDatabase then follow below 3 steps :
+
+1. In the Container Id field under StoreDatabase, enter the value **StateSales**.
+
+1. In the Partition key field, enter the value **_/State_**.
+
+1. Select the OK button.
+
+1. Now open a terminal window and navigate to the Lab08 folder you've been using for this lab.
 
 1. In your terminal pane, enter and execute the following command. This command creates a new Azure Functions project:
 
@@ -610,16 +621,38 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 1. Open the **ChangeFeedFunctions.csproj** file and update the target framework to .NET Core 3.1
 
     ```xml
-   <TargetFramework>netcoreapp3.1</TargetFramework>
+   <TargetFramework>net6.0</TargetFramework>
     ```
 
 1. In your terminal pane, enter and execute the following commands:
 
    ```sh
-   dotnet add package Microsoft.Azure.Cosmos
+   dotnet add package Microsoft.Azure.Cosmos --version 3.0.9
    dotnet add package Microsoft.NET.Sdk.Functions --version 3.0.9
-   dotnet add package Microsoft.Azure.WebJobs.Extensions.CosmosDB --version 3.0.7
+   dotnet add package Microsoft.Azure.WebJobs.Extensions.CosmosDB --version 3.0.9
+   dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 5.0.1
    dotnet add ChangeFeedFunctions.csproj reference ..\\Shared\\Shared.csproj
+   ```
+   
+   After adding packages ChangeFeedFunctions.csproj should like this:
+   
+   ```sd
+<ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.0.9" />
+    <PackageReference Include="Microsoft.Azure.EventHubs" Version="4.3.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="3.0.10" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.9" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+         <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  
    ```
 
 1. In your terminal pane, build the project:
@@ -660,6 +693,8 @@ The Materialized View pattern is used to generate pre-populated views of data in
 1. Change the **collectionName** value to `CartContainerByState`
 
    > Cosmos DB Change Feeds are guaranteed to be in order within a partition, so in this case we want to use the Container where the partition is already set to the State, `CartContainerByState`, as our source
+
+1. 
 
 1. Replace the **ConnectionStringSetting** placeholder with the new setting you added earlier **DBConnection**
 
@@ -960,7 +995,6 @@ The Azure Function receives a list of Documents that have changed. We want to or
       }
    }
    ```
-
 ### Test to Confirm the Materialized View Functions Works
 
 1. Open three terminal windows.

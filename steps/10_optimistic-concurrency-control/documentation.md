@@ -234,6 +234,50 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
 1. Save all of your open editor tabs.
 
+1. At end of this point, your Program.cs file should look like this:
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos;
+
+public class Program
+{
+    private static readonly string _endpointUri = "";
+    private static readonly string _primaryKey = "";
+    private static readonly string _databaseId = "NutritionDatabase";
+    private static readonly string _containerId = "FoodCollection";
+    private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+    public static async Task Main(string[] args)
+    {
+       
+            var database = _client.GetDatabase(_databaseId);
+            var container = database.GetContainer(_containerId);
+
+            ItemResponse<Food> response = await container.ReadItemAsync<Food>("21083", new PartitionKey("Fast Foods"));
+            await Console.Out.WriteLineAsync($"Existing ETag:\t{response.ETag}");
+
+            ItemRequestOptions requestOptions = new ItemRequestOptions { IfMatchEtag = response.ETag };
+            response.Resource.tags.Add(new Tag { name = "Demo" });
+            response = await container.UpsertItemAsync(response.Resource, requestOptions: requestOptions);
+            await Console.Out.WriteLineAsync($"New ETag:\t{response.ETag}");
+
+            response.Resource.tags.Add(new Tag { name = "Failure" });
+            try
+            {
+                response = await container.UpsertItemAsync(response.Resource, requestOptions: requestOptions);
+            }
+            catch (Exception ex)
+            {
+                await Console.Out.WriteLineAsync($"Update error:\t{ex.Message}");
+            }
+        
+    }  
+
+    
+}
+```
 1. In the open terminal pane, enter and execute the following command:
 
    ```sh
