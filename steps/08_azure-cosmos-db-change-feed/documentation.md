@@ -375,6 +375,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
        
        dotnet add reference ..\\Shared\\Shared.csproj
        
+       dotnet build
       ```
 
 5. Create Container Id field, enter the value **CartContainerByState** under **StoreDatabase**
