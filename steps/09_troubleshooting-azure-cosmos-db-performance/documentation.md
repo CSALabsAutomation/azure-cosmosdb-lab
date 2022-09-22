@@ -295,8 +295,8 @@ Azure Cosmos DB returns various response headers that can give you more metadata
     using Microsoft.Azure.Cosmos;
     public class Program
    {
-    private static readonly string _endpointUri = "https://cosmosdbkjmbe2d.documents.azure.com:443/";
-    private static readonly string _primaryKey = "h5EXFyhyGi3fmlnSX5xcyggtT6tHRQvqJS6gjfsEaexYyOQkrvIxIxxjyQ9r2etcP3vA84xYtlNs7m8WGBFGmQ==";
+    private static readonly string _endpointUri = "<your-endpoint-url>";
+    private static readonly string _primaryKey = "<your-primary-key>";
     private static readonly string _databaseId = "FinancialDatabase";
     private static readonly string _peopleContainerId = "PeopleCollection";
     private static readonly string _transactionContainerId = "TransactionCollection";
