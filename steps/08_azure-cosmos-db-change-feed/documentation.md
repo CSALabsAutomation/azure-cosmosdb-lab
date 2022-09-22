@@ -582,7 +582,15 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 
 > For more information, please read the [doc](https://docs.microsoft.com/azure/cosmos-db/sql/change-feed-processor).
 
-1. Open a terminal window and navigate to the Lab08 folder you've been using for this lab.
+> Navigate to the cosmosdblab Data Explorer and expand StoreDatabase then follow below 3 steps :
+
+1. In the Container Id field under StoreDatabase, enter the value **StateSales**.
+
+1. In the Partition key field, enter the value **_/State_**.
+
+1. Select the OK button.
+
+1. Now open a terminal window and navigate to the Lab08 folder you've been using for this lab.
 
 1. In your terminal pane, enter and execute the following command. This command creates a new Azure Functions project:
 
@@ -675,6 +683,8 @@ The Materialized View pattern is used to generate pre-populated views of data in
 1. Change the **collectionName** value to `CartContainerByState`
 
    > Cosmos DB Change Feeds are guaranteed to be in order within a partition, so in this case we want to use the Container where the partition is already set to the State, `CartContainerByState`, as our source
+
+1. 
 
 1. Replace the **ConnectionStringSetting** placeholder with the new setting you added earlier **DBConnection**
 
