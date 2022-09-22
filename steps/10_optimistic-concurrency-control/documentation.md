@@ -244,8 +244,8 @@ using Microsoft.Azure.Cosmos;
 
 public class Program
 {
-    private static readonly string _endpointUri = "";
-    private static readonly string _primaryKey = "";
+    private static readonly string _endpointUri = "<your-endpoint-url>";
+    private static readonly string _primaryKey = "<your-primary-key>";
     private static readonly string _databaseId = "NutritionDatabase";
     private static readonly string _containerId = "FoodCollection";
     private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
