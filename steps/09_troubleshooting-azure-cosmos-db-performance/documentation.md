@@ -1421,7 +1421,7 @@ Many applications have workloads that vary over time in a predictable way. For e
         int? throughput = await peopleContainer.ReadThroughputAsync();
         await Console.Out.WriteLineAsync($"Current Throughput {throughput} RU/s");
 
-        ThroughputResponse throughputResponse = await container.ReadThroughputAsync(new RequestOptions());
+        ThroughputResponse throughputResponse = await peopleContainer.ReadThroughputAsync(new RequestOptions());
         int? minThroughput = throughputResponse.MinThroughput;
         await Console.Out.WriteLineAsync($"Minimum Throughput {minThroughput} RU/s");
 
