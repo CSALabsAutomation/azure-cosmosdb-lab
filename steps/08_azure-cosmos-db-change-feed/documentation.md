@@ -637,13 +637,12 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
    After adding packages ChangeFeedFunctions.csproj should like this:
    
    ```sh
-<ItemGroup>
+
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.0.9" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="4.3.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="3.0.10" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.9" />
-  </ItemGroup>
-  <ItemGroup>
+ 
     <None Update="host.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -651,13 +650,13 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
          <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
-  </ItemGroup>
+  
   
    ```
 
 1. In your terminal pane, build the project:
 
-   ```sh
+   ```sd
    dotnet build
    ```
 
