@@ -636,7 +636,7 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
    
    After adding packages ChangeFeedFunctions.csproj should like this:
    
-   ```sd
+   ```sh
 <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.0.9" />
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="4.3.0" />
