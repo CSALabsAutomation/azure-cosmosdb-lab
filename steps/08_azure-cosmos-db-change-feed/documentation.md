@@ -58,6 +58,35 @@ In order to simulate data flowing into our store, in the form of actions on an e
 
    ![The program.cs is displayed](./assets/08-console-main-default.jpg "Open the program.cs file")
 
+1. Within the Program.cs editor tab, Add the following code .
+
+```sh
+using System;
+using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos;
+using Bogus;
+using System.Collections.Generic;
+using Shared;
+
+namespace DataGenerator
+{
+    class Program
+    {
+        private static readonly string _endpointUrl = "<your-endpoint-url>";
+        private static readonly string _primaryKey = "<your-primary-key>";
+        private static readonly string _databaseId = "StoreDatabase";
+        private static readonly string _containerId = "CartContainer";
+
+        private readonly Randomizer _random = new();
+
+
+    static async Task Main(string[] args)
+      {
+
+      }
+    }
+```
+
 1. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
 
    - For example, if your **url** is `https://cosmosacct.documents.azure.com:443/`, your new variable assignment will look like this:
@@ -78,7 +107,8 @@ The key functionality of the console application is to add documents to our Cosm
 
 1.In the Visual Studio Code window, look in the Explorer pane and verify that you have a DataModel.cs file in your Shared  project folder. This file contains the CartAction class, ActionType enum you will be working with in the following steps. If it is not in your Shared project folder, you can copy it from this path in the cloned repo here 'C:\Labs\setup\templates\Lab08\DataModel.cs'
 
-2. Within the `program.cs` file in the **DataGenerator** folder, locate the `AddItem()` method. The purpose of this method is to add an instance of **CartAction** to our CosmosDB Container.
+2. Within the `program.cs` file in the **DataGenerator** folder, below main() method add the `AddItem()` method. The purpose of this method is to add an instance of **CartAction** to our CosmosDB Container.
+
    ```csharp
    private static async Task AddItem(CartAction item)
         {
@@ -96,7 +126,7 @@ The key functionality of the console application is to add documents to our Cosm
 
 ### Create a Function to Generate Random Shopping Data
 
-1. Within the `Program.cs` file in the **DataGenerator** folder, locate the `GenerateActions()` method. The purpose of this method is to create randomized **CartAction** objects that you'll consume using the CosmosDB change feed.
+1. Within the `Program.cs` file in the **DataGenerator** folder, below main() method add the `GenerateActions()` method . The purpose of this method is to create randomized **CartAction** objects that you'll consume using the CosmosDB change feed.
 
 
  ```csharp 
@@ -342,8 +372,6 @@ You're ready to run the console app, and in this step you'll take a look at your
    ![The terminal window is displayed showing the program running outputting asterisks](./assets/08-console-running.jpg "Run the program, let it run for a minute or two")
 
 4. Let the console app run for a minute or two and then stop it by pressing any key in the console.
-
-
  
 7. From within the **Azure Cosmos DB** blade, select the **Data Explorer** tab on the left.
 
@@ -363,8 +391,9 @@ The two main options for consuming the Cosmos DB change feed are Azure Functions
 
 The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A common concern when designing a Cosmos DB container is proper selection of a partition key. You'll recall that we created our `CartContainer` with a partition key of `/Item`. What if we find out later this key is wrong? Or what if writes work better with `/Item` while reads work better with `/BuyerState` as the partition key? We can avoid analysis paralysis by using Cosmos DB Change Feed to migrate our data in real time to a second container with a different partition key!
 
-1. Switch back to Visual Studio Code
-1. In the explorer pane on the left, locate the ChangeFeedConsole folder and expand it.
+1. Switch back to Visual Studio Code.
+
+3. In the explorer pane on the left, locate the ChangeFeedConsole folder and expand it.
 
 4. Open terminal pane, enter and execute the following commands:
 
