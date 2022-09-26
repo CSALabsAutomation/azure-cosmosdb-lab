@@ -35,13 +35,9 @@ You will now create a database and container within your Azure Cosmos DB account
 
         > Provisioning throughput for a database allows you to share the throughput among all the containers that belong to that database. Within an Azure Cosmos DB database, you can have a set of containers which shares the throughput as well as containers, which have dedicated throughput.
 
-    3. In the **Container Id** field, enter the value **FoodCollection**.
+         ![throughput](./assets/02-uncheck_throughput.jpg "throughput")
 
-    4. In the **Partition key** field, enter the value ``/foodGroup``.
-
-    5. In the **Throughput** field, enter the value ``11000``. *Note: we will reduce this to 400 RU/s after the data has been imported*
-
-    6. Select the **OK** button.
+    3. Select the **OK** button.
 
 1. Wait for the creation of the new **database** and **container** to finish before moving on with this lab.
 
