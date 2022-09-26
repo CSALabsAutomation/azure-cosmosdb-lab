@@ -67,12 +67,22 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
     using System.Threading.Tasks;
     using Microsoft.Azure.Cosmos;
     ```
-1. Within the Program class, add the following lines of code to create variables for your connection information and Cosmos client:
+1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also main() method structure has to be added as given below.
    
    ```sh
-    private static readonly string _endpointUri = "";
-    private static readonly string _primaryKey = "";
-    private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+    public class Program
+   {
+         private static readonly string _endpointUri = "<your uri>";
+         private static readonly string _primaryKey = "<your key>";
+         private static readonly string _databaseId = "<Your Database>";
+         private static readonly string _containerId = "<Your Container>";
+         private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+
+    public static async Task Main(string[] args)
+      {
+
+      }
+    }
     ```
     
 10. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
@@ -88,12 +98,13 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
     ```csharp
     private static readonly string _primaryKey = "elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==";
     ```
+    
 
 ## Read a single Document in Azure Cosmos DB Using ReadItemAsync
 
 ReadItemAsync allows a single item to be retrieved from Cosmos DB by its ID. In Azure Cosmos DB, this is the most efficient method of reading a single document.
 
-1. Locate the following code within the `Main()` method:
+1. Add the following code within the `Main()` method:
 
     ```csharp
     Database database = _client.GetDatabase(_databaseId);
