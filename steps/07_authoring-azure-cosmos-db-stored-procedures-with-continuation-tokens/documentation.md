@@ -197,12 +197,23 @@ You will now implement stored procedures that may execute longer than the bounde
    using System.Collections.Generic;
    using System.Linq;
   ```
-1. Double-click the `Program.cs` link in the **Explorer** pane to open the file in the editor. The top of the class should look like this:
+1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also main() method structure has to be added as given below.
+   
+   ```sh
+    public class Program
+   {
+         private static readonly string _endpointUri = "<your uri>";
+         private static readonly string _primaryKey = "<your key>";
+         private static readonly string _databaseId = "<Your Database>";
+         private static readonly string _containerId = "<Your Container>";
+         private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
 
-   ```csharp
-   private static readonly string _endpointUri = "";
-   private static readonly string _primaryKey = "";
-   private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+    public static async Task Main(string[] args)
+      {
+
+      }
+    }
+    ```
    ```
 
 1. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
