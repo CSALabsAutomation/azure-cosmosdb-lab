@@ -213,7 +213,6 @@ You will now implement stored procedures that may execute longer than the bounde
 
       }
     }
-    ```
    ```
 
 1. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
@@ -230,13 +229,6 @@ You will now implement stored procedures that may execute longer than the bounde
    private static readonly string _primaryKey = "elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==";
    ```
 
-1. Add the following code within the `Main()` method:
-
-    ```csharp
-    Database database = _client.GetDatabase(_databaseId);
-    Container container = database.GetContainer(_containerId);
-    ```
-
 1. Save all of your open editor tabs.
 
 1. In the Visual Studio Code window, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
@@ -251,7 +243,15 @@ You will now implement stored procedures that may execute longer than the bounde
 
 ### Execute Bulk Upload Stored Procedure from .NET Core SDK
 
-1. In the Visual Studio Code window, double select to open the `Program.cs` file
+1. In the Visual Studio Code window, double select to open the `Program.cs` file.
+
+1. Add the following code within the `Main()` method:
+
+    ```csharp
+    Database database = _client.GetDatabase(_databaseId);
+    Container container = database.GetContainer(_containerId);
+    ```
+
 
 1. Locate the `BulkUpload()` method within the `Program` class:
 
