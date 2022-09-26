@@ -70,9 +70,13 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
  
     ![click ](./assets/03-dm_connectionString.JPG "ADD connection string and collection")
     
-1. Append the Connection String with Database name and make collection as FoodCollection.
+1. Append the Connection String with Database name and make collection as **_``FoodCollection``_**.
+   
+   > In the **Partition key** field, enter the value **_``/foodGroup``_**.
 
-    ![click ](./assets/03-dm_target.JPG "Select connection string and collection")
+   > In the **Collection Throughput** field, enter the value **``11000``**. *Note: we will reduce this to 400 RU/s after the data has been imported*
+
+    ![click ](./assets/02-target_info.jpg "Select connection string and collection")
  
 1. Click on Next and skip the Advanced settings.You will see Summary popup.
 
