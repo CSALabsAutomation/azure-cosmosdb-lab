@@ -67,7 +67,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
     using System.Threading.Tasks;
     using Microsoft.Azure.Cosmos;
     ```
-1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also main() method structure has to be added as given below.
+1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also **main()** method structure has to be added as given below.
    
    ```sh
     public class Program
