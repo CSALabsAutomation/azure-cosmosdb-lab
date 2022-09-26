@@ -29,7 +29,7 @@ You will now create a database and container within your Azure Cosmos DB account
 
     1. In the **Database id** field, select the **Create new** option and enter the value **NutritionDatabase**.
     
-       ![database](./assets/02-create_database.jpg "create database")
+       ![database](./assets/02-create_database.JPG "create database")
        
     2. Do not check the **Provision database throughput** option.
 
@@ -41,7 +41,7 @@ You will now create a database and container within your Azure Cosmos DB account
     
     4. You will be able to see the **_NutritionDatabase_** database created .
         
-        ![db](./assets/02-database.jpg "database")
+        ![db](./assets/02-database.JPG "database")
 
 1. Wait for the creation of the new **database** and **container** to finish before moving on with this lab.
 
@@ -78,15 +78,15 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
    
    > Expand the **_Advanced options_** and replace the **number of Parallel Requests** to **``5``**
 
-    ![click ](./assets/02-target_info.jpg "Select connection string and collection")
+    ![click ](./assets/02-target_info.JPG "Select connection string and collection")
  
 1. Click on Next and skip the Advanced Configuration.You will see Summary popup.
 
-    ![click ](./assets/02-dtui_summary.jpg "Confirm import settings ")
+    ![click ](./assets/02-dtui_summary.JPG "Confirm import settings ")
  
 1. Click on Import and data gets copied from Source to Destination.
 
-    ![click ](./assets/02-imported_data.jpg "Confirm import settings ")
+    ![click ](./assets/02-imported_data.JPG "Confirm import settings ")
 
    
 
