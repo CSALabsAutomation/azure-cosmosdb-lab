@@ -230,6 +230,13 @@ You will now implement stored procedures that may execute longer than the bounde
    private static readonly string _primaryKey = "elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==";
    ```
 
+1. Add the following code within the `Main()` method:
+
+    ```csharp
+    Database database = _client.GetDatabase(_databaseId);
+    Container container = database.GetContainer(_containerId);
+    ```
+
 1. Save all of your open editor tabs.
 
 1. In the Visual Studio Code window, right-click the **Explorer** pane and select the **Open in Terminal** menu option.
