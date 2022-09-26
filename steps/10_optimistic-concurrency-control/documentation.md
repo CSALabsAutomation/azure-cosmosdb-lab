@@ -80,8 +80,8 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
    {
          private static readonly string _endpointUri = "<your uri>";
          private static readonly string _primaryKey = "<your key>";
-         private static readonly string _databaseId = "<Your Database>";
-         private static readonly string _containerId = "<Your Container>";
+         private static readonly string _databaseId = "NutritionDatabase";
+         private static readonly string _containerId = "FoodCollection";
          private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
 
     public static async Task Main(string[] args)
