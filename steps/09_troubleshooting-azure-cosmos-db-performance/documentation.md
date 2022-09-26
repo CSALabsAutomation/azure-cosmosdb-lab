@@ -61,6 +61,34 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
 
 1. Select the **Program.cs** link in the **Explorer** pane to open the file in the editor.
 
+ 1. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:
+
+    ```sh
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.Cosmos;
+    ```
+1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also **main()** method structure has to be added as given below.
+   
+   ```sh
+    public class Program
+   {
+         private static readonly string _endpointUri = "<your uri>";
+         private static readonly string _primaryKey = "<your key>";
+         private static readonly string _databaseId = "FinancialDatabase";
+         private static readonly string _peopleContainerId = "PeopleCollection";
+         private static readonly string _transactionContainerId = "TransactionCollection";
+         private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
+
+    public static async Task Main(string[] args)
+      {
+
+      }
+    }
+    ```
+
 1. For the ``_endpointUri`` variable, replace the placeholder value with the **URI** value and for the ``_primaryKey`` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
 
     - For example, if your **uri** is ``https://cosmosacct.documents.azure.com:443/``, your new variable assignment will look like this: 
@@ -74,20 +102,9 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     ```csharp
     private static readonly string _primaryKey = "elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==";
     ```
-1. Add the below code also.
-   ```csharp
-    private static readonly string _databaseId = "FinancialDatabase";
-    private static readonly string _peopleContainerId = "PeopleCollection";
-    private static readonly string _transactionContainerId = "TransactionCollection";
-    private static CosmosClient _client = new CosmosClient(_endpointUri, _primaryKey);
-     ```
+
 1. Save all of your open editor tabs.
 
-1. In the terminal pane, enter and execute the following command:
-
-    ```sh
-    dotnet build
-    ```
 
 ## Examining Response Headers
 
@@ -95,7 +112,7 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 
 ### Observe RU Charge for Large Item
 
-1. Locate the following code within the `Main` method:
+1. Add the following code within the `Main` method:
 
     ```csharp
 
@@ -103,6 +120,11 @@ Azure Cosmos DB returns various response headers that can give you more metadata
         Container peopleContainer = database.GetContainer(_peopleContainerId);
         Container transactionContainer = database.GetContainer(_transactionContainerId);
 
+    ```
+1. In the terminal pane, enter and execute the following command:
+
+    ```sh
+    dotnet build
     ```
 
 1. After the last line of code, add a new line of code to call a new function we will create in the next step:
