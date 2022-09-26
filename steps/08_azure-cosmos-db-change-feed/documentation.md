@@ -48,8 +48,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
        dotnet add package Newtonsoft.Json
        dotnet build
      ```
-
-1. In the open DataGenerator terminal pane, enter and execute the following command:
+1. Create **DataGenerator** folder and open terminal, enter and execute the following command:
     ```sh
       dotnet add reference ..\\Shared\\Shared.csproj
       ```
