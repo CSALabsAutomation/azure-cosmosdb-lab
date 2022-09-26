@@ -31,7 +31,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
    > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
 
 
-1. Create **DataGenerator** folder and open with terminal, execute the following command:
+1. Under `Lab08` , create **DataGenerator** folder and open with terminal, execute the following command:
      ```sh
       dotnet new console
       
@@ -40,12 +40,15 @@ In order to simulate data flowing into our store, in the form of actions on an e
       dotnet add package Bogus --version 30.0.2
       
       dotnet build
-      ```
-1. Create **Shared** folder and open with terminal, execute the following command:
+      
+     ```
+1. Under `Lab08` , create **Shared** folder and open with terminal, execute the following command:
+
      ```sh
        dotnet new console
        dotnet add package Newtonsoft.Json
        dotnet build
+       
      ```
 1. Create **DataGenerator** folder and open terminal, enter and execute the following command:
     ```sh
