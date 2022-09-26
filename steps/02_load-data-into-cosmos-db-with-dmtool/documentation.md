@@ -80,7 +80,7 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
 
     ![click ](./assets/02-target_info.jpg "Select connection string and collection")
  
-1. Click on Next and skip the Advanced settings.You will see Summary popup.
+1. Click on Next and skip the Advanced Configuration.You will see Summary popup.
 
     ![click ](./assets/02-dtui_summary.jpg "Confirm import settings ")
  
