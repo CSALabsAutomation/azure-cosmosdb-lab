@@ -22,8 +22,6 @@ You will get started in this lab by authoring simple stored procedures that impl
 
     ![The New Stored Procedure menu item is highlighted](./assets/06-new_storedprocedure.jpg "Create a new Stored Procedure")
 
-1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **greetCaller**.
-
 1. Replace the contents of the stored procedure editor textarea with the following JavaScript code:
 
     ```js
@@ -33,12 +31,16 @@ You will get started in this lab by authoring simple stored procedures that impl
         response.setBody("Hello " + name);
     }
     ```
+1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **greetCaller**.
+  
 
     ![A new stored procedure called greetCaller is displayed](./assets/06-new_greet_caller_sp.jpg "Create a new stored procedure")
 
     > This simple stored procedure will echo the input parameter string with the text `Hello` as a prefix.
 
 1. Select the **Save** button at the top of the tab.
+
+   _(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
 
 1. Select the **Execute** button at the top of the tab.
 
@@ -64,8 +66,6 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. Select the **New Stored Procedure** button at the top of the **Data Explorer** section.
 
-1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **createDocument**.
-
 1. Replace the contents of the stored procedure editor textarea with the following JavaScript code:
 
     ```js
@@ -83,10 +83,13 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
         if (!accepted) return;
     }
     ```
+1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **createDocument**.
 
 1. Review the stored procedures code. Notice inside the JavaScript callback, users can either handle the exception or throw an error. In case a callback is not provided and there is an error, the Azure Cosmos DB runtime throws an error. This stored procedures creates a new item and uses a nested callback function to return the item as the body of the response.
 
 1. Select the **Save** button at the top of the tab.
+ 
+ _(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
 
 1. Select the **Execute** button at the top of the tab.
 
@@ -130,8 +133,6 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. Select the **New Stored Procedure** button at the top of the **Data Explorer** section.
 
-1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **createDocumentWithLogging**.
-
 1. Replace the contents of the stored procedure editor with the following JavaScript code:
 
     ```js
@@ -157,7 +158,11 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
     > This stored procedure will use the **console.log** feature that's normally used in browser-based JavaScript to write output to the console. In the context of Azure Cosmos DB, this feature can be used to capture diagnostics logging information that can be returned after the stored procedure is executed.
 
+1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **createDocumentWithLogging**.
+
 1. Select the **Save** button at the top of the tab.
+
+ _(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
 
 1. Select the **Execute** button at the top of the tab.
 
@@ -187,8 +192,6 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. Select the **New Stored Procedure** button at the top of the **Data Explorer** section.
 
-1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **createDocumentWithFunction**.
-
 1. Replace the contents of the *stored procedure editor* with the following JavaScript code:
 
     ```js
@@ -206,8 +209,12 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
     > This is the same stored procedure as you created previously but it is using a named function instead of an implicit callback function inline.
 
+1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **createDocumentWithFunction**.
+
 1. Select the **Save** button at the top of the tab.
 
+ _(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
+ 
 1. Select the **Execute** button at the top of the tab.
 
 1. In the **Input parameters** popup that appears, perform the following actions:
@@ -268,8 +275,6 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. Select the **New Stored Procedure** button at the top of the **Data Explorer** section.
 
-1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **createTwoDocuments**.
-
 1. Replace the contents of the stored procedure editor with the following JavaScript code:
 
     ```js
@@ -307,7 +312,11 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
     > This stored procedure uses nested callbacks to create two separate items. You may have scenarios where your data is split across multiple JSON documents and you will need to add or modify multiple items in a single stored procedure.
 
+1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **createTwoDocuments**.
+
 1. Select the **Save** button at the top of the tab.
+
+_(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
 
 1. Select the **Execute** button at the top of the tab.
 
