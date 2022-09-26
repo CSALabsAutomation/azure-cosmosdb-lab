@@ -82,11 +82,11 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
  
 1. Click on Next and skip the Advanced settings.You will see Summary popup.
 
-    ![click ](./assets/03-dm_confirmImport.JPG "Confirm import settings ")
+    ![click ](./assets/02-dtui_summary.jpg "Confirm import settings ")
  
 1. Click on Import and data gets copied from Source to Destination.
 
-    ![click ](./assets/03-dm_import.JPG "Confirm import settings ")
+    ![click ](./assets/02-imported_data.jpg "Confirm import settings ")
 
    
 
