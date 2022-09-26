@@ -61,9 +61,9 @@ You will now implement stored procedures that may execute longer than the bounde
 
 > **Note** To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . 
 
-1. Select the **New Stored Procedure** button at the top of the **Data Explorer** section.
 
-1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **bulkDelete**.
+
+1. Select the **New Stored Procedure** button at the top of the **Data Explorer** section.
 
 1. Replace the contents of the stored procedure editor with the following JavaScript code:
 
@@ -124,7 +124,10 @@ You will now implement stored procedures that may execute longer than the bounde
 
    > This stored procedure iterates through all documents that match a specific query and deletes the documents. If the stored procedure is unable to delete all documents, it will return a continuation token. Your client-side code is expected to repeatedly call the stored procedure passing in a continuation token until the stored procedure does not return a continuation token.
 
-1. Select the **Save** button at the top of the tab.
+
+1. In the stored procedure tab, locate the **Stored Procedure Id** field and enter the value: **bulkDelete**.
+
+3. Select the **Save** button at the top of the tab.
 
 > **Note** To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . 
 
