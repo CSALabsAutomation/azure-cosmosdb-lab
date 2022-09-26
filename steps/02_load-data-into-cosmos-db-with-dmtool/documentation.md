@@ -38,6 +38,10 @@ You will now create a database and container within your Azure Cosmos DB account
          ![throughput](./assets/02-uncheck_throughput.jpg "throughput")
 
     3. Select the **OK** button.
+    
+    4. You will be able to see the **_NutritionDatabase_** database created .
+        
+        ![db](./assets/02-database.jpg "database")
 
 1. Wait for the creation of the new **database** and **container** to finish before moving on with this lab.
 
