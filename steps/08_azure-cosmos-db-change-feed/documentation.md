@@ -30,9 +30,8 @@ In order to simulate data flowing into our store, in the form of actions on an e
 
    > Alternatively, you can run a terminal in your current directory and execute the `code .` command.
 
-1. In the explorer pane on the left, locate the **DataGenerator** folder and expand it.
 
-1. In the open terminal pane, enter and execute the following commands:
+1. Create **DataGenerator** folder and open with terminal, execute the following command:
      ```sh
       dotnet new console
       
