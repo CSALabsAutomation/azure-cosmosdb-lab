@@ -419,7 +419,15 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 6. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
 
    ```csharp
+   private static readonly string _endpointUrl = "<your-endpoint-url>";
+   private static readonly string _primaryKey = "<your-primary-key>";
+   private static readonly string _databaseId = "StoreDatabase";
+   private static readonly string _containerId = "CartContainer";
    private static readonly string _destinationContainerId = "CartContainerByState";
+   
+   static async Task Main(string[] args)
+        {
+        }
    ```
 
    > In this case we are going to migrate our data to another container within the same database. The same ideas apply even if we wanted to migrate our data to another database entirely.
@@ -455,6 +463,33 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
    await processor.StartAsync();
    ```
 
+### Complete the Live Data Migration
+
+1. Within the `program.cs` file in the **ChangeFeedConsole** folder, locate the todo we left ourselves `//todo: Add processor code here`
+
+1. Modify the signature of the `Func<T>` in the `GetChangeFeedProcessorBuilder` replacing `object` with `CartAction` as follows:
+
+   ```csharp
+   var builder = container.GetChangeFeedProcessorBuilder("migrationProcessor", 
+      (IReadOnlyCollection<CartAction> input, CancellationToken cancellationToken) =>
+      {
+         Console.WriteLine(input.Count + " Changes Received");
+         //todo: Add processor code here
+      });
+   ```
+
+1. The **input** is a collection of **CartAction** documents that have changed. To migrate them, we'll simply loop through them and write them out to our destination container. Replace the `//todo: Add processor code here` with the following code:
+
+   ```csharp
+   var tasks = new List<Task>();
+
+   foreach (var doc in input)
+   {
+      tasks.Add(destinationContainer.CreateItemAsync(doc, new PartitionKey(doc.BuyerState)));
+   }
+
+   return Task.WhenAll(tasks);
+   ```
 10. Finally, when a key is pressed to terminate the processor we need to end it. Locate the `//todo: Add stop code here` line and replace it with this code:
 
    ```csharp
@@ -521,35 +556,6 @@ namespace ChangeFeedConsole
     }
 }
    ```
-
-### Complete the Live Data Migration
-
-1. Within the `program.cs` file in the **ChangeFeedConsole** folder, locate the todo we left ourselves `//todo: Add processor code here`
-
-1. Modify the signature of the `Func<T>` in the `GetChangeFeedProcessorBuilder` replacing `object` with `CartAction` as follows:
-
-   ```csharp
-   var builder = container.GetChangeFeedProcessorBuilder("migrationProcessor", 
-      (IReadOnlyCollection<CartAction> input, CancellationToken cancellationToken) =>
-      {
-         Console.WriteLine(input.Count + " Changes Received");
-         //todo: Add processor code here
-      });
-   ```
-
-1. The **input** is a collection of **CartAction** documents that have changed. To migrate them, we'll simply loop through them and write them out to our destination container. Replace the `//todo: Add processor code here` with the following code:
-
-   ```csharp
-   var tasks = new List<Task>();
-
-   foreach (var doc in input)
-   {
-      tasks.Add(destinationContainer.CreateItemAsync(doc, new PartitionKey(doc.BuyerState)));
-   }
-
-   return Task.WhenAll(tasks);
-   ```
-
 ### Test to Confirm the Change Feed Function Works
 
 Now that we have our first Change Feed consumer, we're ready to run a test and confirm that it works
@@ -559,8 +565,6 @@ Now that we have our first Change Feed consumer, we're ready to run a test and c
 1. Start up your console app by running the following commands in the **second** terminal window:
 
    ```sh
-   cd ChangeFeedConsole
-
    dotnet run
    ```
 
@@ -570,7 +574,6 @@ Now that we have our first Change Feed consumer, we're ready to run a test and c
    Started Change Feed Processor
    Press any key to stop the processor...
    ```
-
    > Because this is the first we've run this consumer, there will be no data to consume. We'll start the data generator in order to start receiving changes.
 
 1. In the **first** terminal window, navigate to the **DataGenerator** folder
@@ -630,11 +633,7 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 
 1. When prompted, choose the **dotnet** worker runtime. Use the arrow keys to scroll up and down.
 
-1. Change directory to the `ChangeFeedFunctions` directory created in the previous step
-
-   ```sh
-   cd ChangeFeedFunctions
-   ```
+1. Create folder with name `ChangeFeedFunctions` navigate to the folder and open the terminal
 
 1. In your terminal pane, enter and execute the following command:
 
@@ -642,7 +641,9 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
    func new
    ```
 
-1. When prompted, select **C#** from the list of languages. Use the arrow keys to scroll up and down.
+1. When prompted, select **C#** from the list of languages. Use the arrow keys to scroll up and down
+
+1.  When prompted, enter the number `13` for the CosmosDBTrigger function  click enter
 
 1. When prompted, select **CosmosDBTrigger** from the list of templates. Use the arrow keys to scroll up and down.
 
@@ -1201,8 +1202,9 @@ With all of the configuration out of the way, you'll see how simple it is to wri
    ```sh
    func new
    ```
+ 1. When prompted select **13**  click Enter
 
-   1. When prompted select **CosmosDBTrigger** as the _template_
+   1. When prompted select **CosmosDBTrigger** as the _template_ click enter
 
    1. When prompted enter `AnalyticsFunction` as the _name_
 
