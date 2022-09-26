@@ -74,7 +74,9 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
    
    > In the **Partition key** field, enter the value **_``/foodGroup``_**.
 
-   > In the **Collection Throughput** field, enter the value **``11000``**. *Note: we will reduce this to 400 RU/s after the data has been imported*
+   > In the **Collection Throughput** field, enter the value **``11000``**. *Note: we will reduce this to 400 RU/s after the data has been imported*.
+   
+   > Expand the **_Advanced options_** and replace the **number of Parallel Requests** to **``5``**
 
     ![click ](./assets/02-target_info.jpg "Select connection string and collection")
  
