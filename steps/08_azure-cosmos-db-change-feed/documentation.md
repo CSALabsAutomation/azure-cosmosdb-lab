@@ -419,6 +419,10 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 6. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
 
    ```csharp
+ namespace DataGenerator
+ {
+   class Program
+    {
    private static readonly string _endpointUrl = "<your-endpoint-url>";
    private static readonly string _primaryKey = "<your-primary-key>";
    private static readonly string _databaseId = "StoreDatabase";
@@ -428,6 +432,8 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
    static async Task Main(string[] args)
         {
         }
+    }
+ }
    ```
 
    > In this case we are going to migrate our data to another container within the same database. The same ideas apply even if we wanted to migrate our data to another database entirely.
