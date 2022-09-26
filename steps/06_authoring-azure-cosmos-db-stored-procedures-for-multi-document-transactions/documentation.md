@@ -40,7 +40,7 @@ You will get started in this lab by authoring simple stored procedures that impl
 
 1. Select the **Save** button at the top of the tab.
 
-   _(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
+  > **Note** To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** .
 
 1. Select the **Execute** button at the top of the tab.
 
@@ -89,7 +89,7 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. Select the **Save** button at the top of the tab.
  
- _(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
+ > **Note**  To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . 
 
 1. Select the **Execute** button at the top of the tab.
 
@@ -162,7 +162,7 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. Select the **Save** button at the top of the tab.
 
- _(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
+ > **Note** To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . 
 
 1. Select the **Execute** button at the top of the tab.
 
@@ -213,7 +213,7 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. Select the **Save** button at the top of the tab.
 
- _(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
+ > **Note** To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . 
  
 1. Select the **Execute** button at the top of the tab.
 
@@ -316,7 +316,7 @@ All Azure Cosmos DB operations within a stored procedure are asynchronous and de
 
 1. Select the **Save** button at the top of the tab.
 
-_(Note : To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . )_
+> **Note** To save the Stored Procedure , make sure you copy/edit the text area before locating and entering the **Stored Procedure Id** . 
 
 1. Select the **Execute** button at the top of the tab.
 
