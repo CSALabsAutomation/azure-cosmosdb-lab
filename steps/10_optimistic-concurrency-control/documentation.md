@@ -67,11 +67,10 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
  1. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:
 
     ```sh
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using Microsoft.Azure.Cosmos;
+      using System;
+      using System.Collections.Generic;
+      using System.Threading.Tasks;
+      using Microsoft.Azure.Cosmos;
     ```
 1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also **main()** method structure has to be added as given below.
    
