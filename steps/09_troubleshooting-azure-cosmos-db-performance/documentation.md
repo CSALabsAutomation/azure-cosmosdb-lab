@@ -61,7 +61,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
 
 1. Select the **Program.cs** link in the **Explorer** pane to open the file in the editor.
 
- 1. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:
+ 1. Within the Program.cs editor tab, Add the following blocks of code :
 
     ```sh
     using System;
