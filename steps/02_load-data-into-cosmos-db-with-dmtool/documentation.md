@@ -28,7 +28,9 @@ You will now create a database and container within your Azure Cosmos DB account
 1. In the **Add Container** popup, perform the following actions:
 
     1. In the **Database id** field, select the **Create new** option and enter the value **NutritionDatabase**.
-
+    
+       ![database](./assets/02-create_database.jpg "create database")
+       
     2. Do not check the **Provision database throughput** option.
 
         > Provisioning throughput for a database allows you to share the throughput among all the containers that belong to that database. Within an Azure Cosmos DB database, you can have a set of containers which shares the throughput as well as containers, which have dedicated throughput.
