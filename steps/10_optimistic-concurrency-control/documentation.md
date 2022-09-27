@@ -149,14 +149,6 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
    dotnet run
    ```
 
-1. Observe the output of the console application. You should see an ETag for the item.
-
-1. Enter and execute the following command:
-
-   ```sh
-   dotnet run
-   ```
-
 1. Observe the output of the console application.
 
    > The ETag should remain unchanged since the item has not been changed.
