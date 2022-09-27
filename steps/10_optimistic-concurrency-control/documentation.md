@@ -116,7 +116,7 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
 1. Select the **Program.cs** link in the **Explorer** pane to open the file in the editor.
 
-1. Locate the `Main` method and add these lines:
+1. Locate the `Main()` method and add these lines:
 
    ```csharp
    public static async Task Main(string[] args)
