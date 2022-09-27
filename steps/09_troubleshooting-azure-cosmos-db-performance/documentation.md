@@ -136,7 +136,7 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 1. Next create a new function that creates a new object and stores it in a variable named `member`:
 
     ```csharp
-    private static async Task CreateMember(Container peopleContainer)
+    private static async Task<double> CreateMember(Container peopleContainer)
     {
         object member = new Member { accountHolder = new Bogus.Person() };
 
