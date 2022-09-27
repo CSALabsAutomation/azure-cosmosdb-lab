@@ -7,29 +7,29 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
 
 1. Create **Lab09** folder that will be used to contain the content of your .NET Core project.
 
-1.Switch to the Azure Portal (http://portal.azure.com).
+1. Switch to the Azure Portal (http://portal.azure.com).
 
-1.On the left side of the portal, select the Resource groups link.
+1. On the left side of the portal, select the Resource groups link.
 
-1.In the Resource groups blade, locate and select the cosmoslab resource group.
+1. In the Resource groups blade, locate and select the cosmoslab resource group.
 
-1.In the cosmoslab blade, select the Azure Cosmos DB account you recently created.
+1. In the cosmoslab blade, select the Azure Cosmos DB account you recently created.
 
-1.In the Azure Cosmos DB blade, locate and select the Data Explorer link on the left side of the blade.
+1. In the Azure Cosmos DB blade, locate and select the Data Explorer link on the left side of the blade.
 
-1.In the Database id field, select the Create new option and enter the value FinancialDatabase.
+1. In the Database id field, select the Create new option and enter the value FinancialDatabase.
 
-1.In the Container Id field, enter the value PeopleCollection.
+1. In the Container Id field, enter the value PeopleCollection.
 
-1.In the Partition key field, enter the value /accountHolder/LastName.
+1. In the Partition key field, enter the value /accountHolder/LastName.
 
-1.Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
+1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
 
-1.In the Container Id field, enter the value TransactionCollection. under FinancialDatabase.
+1. In the Container Id field, enter the value TransactionCollection. under FinancialDatabase.
 
-1.In the Partition key field, enter the value /id.
+1. In the Partition key field, enter the value /id.
 
-1.Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
+1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
 
 1. In the `Lab09` folder, right-click the folder and select the **Open with Code** menu option.
 
