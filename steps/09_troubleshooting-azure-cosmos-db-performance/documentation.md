@@ -67,6 +67,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Diagnostics;
     using System.Threading.Tasks;
     using Microsoft.Azure.Cosmos;
     ```
