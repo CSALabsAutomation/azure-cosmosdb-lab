@@ -50,7 +50,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
        dotnet build
        
      ```
-1. Create **DataGenerator** folder and open terminal, enter and execute the following command:
+1. Open **DataGenerator** terminal, enter and execute the following command:
     ```sh
       dotnet add reference ..\\Shared\\Shared.csproj
       ```
@@ -362,8 +362,6 @@ You're ready to run the console app, and in this step you'll take a look at your
 2. In the terminal pane, enter and execute the following command to run your console app:
 
    ```sh
-   cd DataGenerator
-
    dotnet run
    ```
 
@@ -393,9 +391,9 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
 1. Switch back to Visual Studio Code.
 
-3. In the explorer pane on the left, locate the ChangeFeedConsole folder and expand it.
+3. Under Lab08 , create ChangeFeedConsole folder and open with terminal:
 
-4. Open terminal pane, enter and execute the following commands:
+5. Enter and execute the following commands:
 
      ```sh
      
@@ -420,7 +418,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
    
  ```csharp
- namespace DataGenerator
+ namespace ChangeFeedConsole
  {
    class Program
     {
@@ -432,6 +430,14 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
    
    static async Task Main(string[] args)
         {
+        using (var client = new CosmosClient(_endpointUrl, _primaryKey))
+            {
+                var db = client.GetDatabase(_databaseId);
+                var container = db.GetContainer(_containerId);
+                var destinationContainer = db.GetContainer(_destinationContainerId);
+                
+                //todo: Add lab code
+            }
         }
     }
  }
@@ -442,8 +448,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 7. In order to consume the change feed we make use of a **Lease Container**. Add the following lines of code in place of `//todo: Add lab code here` to create the lease container:
 
    ```csharp
-   ContainerProperties leaseContainerProperties = new ContainerProperties("consoleLeases", "/id");
-   Container leaseContainer = await database.CreateContainerIfNotExistsAsync(leaseContainerProperties, throughput: 400);
+    Container leaseContainer = await db.CreateContainerIfNotExistsAsync(id: "consoleLeases", partitionKeyPath: "/id", throughput: 400);  
    ```
 
    > The **Lease Container** stores information to allow for parallel processing of the change feed, and acts as a book mark for where we last processed changes from the feed.
@@ -455,11 +460,8 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
        Console.WriteLine(input.Count + " Changes Received");
        //todo: Add processor code here
    });
-
-   var processor = builder
-                   .WithInstanceName("changeFeedConsole")
-                   .WithLeaseContainer(leaseContainer)
-                   .Build();
+   var processor = builder.WithInstanceName("changeFeedConsole").WithLeaseContainer(leaseContainer).Build();
+   
    ```
 
    > Each time a set of changes is received, the `Func<T>` defined in `CreateChangeFeedProcessorBuilder` will be called. We're skipping the handling of those changes for the moment.
@@ -468,6 +470,10 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
 
    ```csharp
    await processor.StartAsync();
+   Console.WriteLine("Started Change Feed Processor");
+   Console.WriteLine("Press any key to stop the processor...");
+   Console.ReadKey();
+   Console.WriteLine("Stopping Change Feed Processor");
    ```
 
 ### Complete the Live Data Migration
@@ -632,14 +638,6 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 
 1. Now open a terminal window and navigate to the Lab08 folder you've been using for this lab.
 
-1. In your terminal pane, enter and execute the following command. This command creates a new Azure Functions project:
-
-   ```sh
-   func init ChangeFeedFunctions
-   ```
-
-1. When prompted, choose the **dotnet** worker runtime. Use the arrow keys to scroll up and down.
-
 1. Create folder with name `ChangeFeedFunctions` navigate to the folder and open the terminal
 
 1. In your terminal pane, enter and execute the following command:
@@ -647,8 +645,9 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
    ```sh
    func new
    ```
-
-1. When prompted, select **C#** from the list of languages. Use the arrow keys to scroll up and down
+1. When prompted, choose the **dotnet** worker runtime. Use the arrow keys to scroll up and down.
+2. 
+3. When prompted, select **C#** from the list of languages. Use the arrow keys to scroll up and down
 
 1.  When prompted, enter the number `13` for the CosmosDBTrigger function  click enter
 
@@ -656,7 +655,7 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
 
 1. When prompted, enter the name `MaterializedViewFunction` for the function
 
-1. Open the **ChangeFeedFunctions.csproj** file and update the target framework to .NET Core 3.1
+1. Open the **ChangeFeedFunctions.csproj** file check the .net version:
 
     ```xml
    <TargetFramework>net6.0</TargetFramework>
@@ -668,7 +667,6 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
    dotnet add package Microsoft.Azure.Cosmos --version 3.0.9
    dotnet add package Microsoft.NET.Sdk.Functions --version 3.0.9
    dotnet add package Microsoft.Azure.WebJobs.Extensions.CosmosDB --version 3.0.9
-   dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage --version 5.0.1
    dotnet add ChangeFeedFunctions.csproj reference ..\\Shared\\Shared.csproj
    ```
    
@@ -680,17 +678,17 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
     <PackageReference Include="Microsoft.Azure.EventHubs" Version="4.3.0" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="3.0.10" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.9" />
- 
-    <None Update="host.json">
+    ```
+   you Need to update  host.json and local.settings.json itemgroup  should like this 
+    ```sh
+       <None Update="host.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="local.settings.json">
-         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-         <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
-  
-  
-   ```
+    ```
 
 1. In your terminal pane, build the project:
 
@@ -847,7 +845,7 @@ The Azure Function receives a list of Documents that have changed. We want to or
    }
    ```
 
-1. Replace the two logging lines with the following code:
+1. Replace the two logging lines inside **_if condition_** with the following code:
 
    ```csharp
    var stateDict = new Dictionary<string, List<double>>();
@@ -874,15 +872,19 @@ The Azure Function receives a list of Documents that have changed. We want to or
 1. Following the conclusion of this _foreach_ loop, add this code to connect to our destination container:
 
    ```csharp
+    using (var client = new CosmosClient(_endpointUrl, _primaryKey))
+     {
       var database = _client.GetDatabase(_databaseId);
       var container = database.GetContainer(_containerId);
-
+      
       //todo - Next steps go here
+      }
    ```
 
 1. Because we're dealing with an aggregate collection, we'll be either creating or updating a document for each entry in our dictionary. For starters, we need to check to see if the document we care about exists. Add the following code after the `todo` line above:
 
    ```csharp
+   
    var tasks = new List<Task>();
 
    foreach (var key in stateDict.Keys)
@@ -1096,6 +1098,16 @@ This step is optional, if you do not wish to follow the lab to creating the dash
 
 1. Switch to the [Azure Portal](https://portal.azure.com)
 
+1. Search for Eventhub in search bar
+
+1. Click on **+ Create ** Option
+
+  ![Resource Groups is highlighted](./assets/08-eventhub.jpg "Browse to resource groups")
+
+1. Select your resource group and Enter the NameSpace Name and select your location 
+
+1. Click on  **review + Create**, once validation is passed Click on Create.
+
 1. On the left side of the portal, select the **Resource groups** link.
 
    ![Resource Groups is highlighted](./assets/08-select-resource-groups.jpg "Browse to resource groups")
@@ -1278,16 +1290,9 @@ With all of the configuration out of the way, you'll see how simple it is to wri
    }
    ```
 
-1. At the top of the class, add the following configuration parameters:
-
-   ```csharp
-   private static readonly string _eventHubConnection = "<event-hub-connection>";
-   private static readonly string _eventHubName = "carteventhub";
-   ```
-
 1. Replace the placeholder in **\_eventHubConnection** with the value of the Event Hubs **Connection string-primary key** you collected earlier.
 
-1. Start by creating an **EventHubClient** by replacing the two logging lines with the following code:
+1. Start by creating an **EventHubClient** by replacing the two logging lines inside the **_if Condition_**  with the following code:
 
    ```csharp
    var sbEventHubConnection = new EventHubsConnectionStringBuilder(_eventHubConnection){
@@ -1315,6 +1320,13 @@ With all of the configuration out of the way, you'll see how simple it is to wri
    }
 
    await Task.WhenAll(tasks);
+   ```
+   
+   1. At the top of the class, add the following configuration parameters:
+
+   ```csharp
+   private static readonly string _eventHubConnection = "<event-hub-connection>";
+   private static readonly string _eventHubName = "carteventhub";
    ```
 
 1. The final version of the **AnalyticsFunction** looks like this:
