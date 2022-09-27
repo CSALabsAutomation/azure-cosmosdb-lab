@@ -25,9 +25,9 @@ You will now create a database and container within your Azure Cosmos DB account
 
     ![Add container link is highlighted](./assets/03-add_dataexplore.JPG "Add a new container")
 
-1. In the **New Database** popup, perform the following actions:
+1. click on the **New container** dropdown  and select **New Database**:
 
-    1. In the Database id field, select "New Database" under "New container" and enter the value **NutritionDatabase**.
+    1. In the Database id field and enter the value **NutritionDatabase**.
     
        ![database](./assets/02-create_database.JPG "create database")
        
