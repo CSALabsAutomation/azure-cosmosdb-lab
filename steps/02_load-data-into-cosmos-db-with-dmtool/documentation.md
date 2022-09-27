@@ -21,7 +21,7 @@ You will now create a database and container within your Azure Cosmos DB account
 
     ![The Cosmos DB resource is highlighted](./assets/03-cosmos_resource.jpg "Select the cosmoslabs resource")
 
-1. In the **Azure Cosmos DB** blade, locate and select the **Overview** link on the left side of the blade. At the top select the **Add Container** button.
+1. In the Azure Cosmos DB blade, locate and select the Data Explorer link on the left side of the blade.
 
     ![Add container link is highlighted](./assets/03-add_collection.jpg "Add a new container")
 
