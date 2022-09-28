@@ -82,7 +82,20 @@ namespace DataGenerator
 
     static async Task Main(string[] args)
       {
+           Console.WriteLine("Press any key to stop the console app...");
 
+           var tasks = new List<Task>();
+
+           while (!Console.KeyAvailable)
+           {
+               foreach (var action in GenerateActions())
+               {
+                   await AddItem(action);
+                   Console.Write("*");
+               }
+           }
+
+           await Task.WhenAll(tasks);
       }
     }
 ```
@@ -412,12 +425,19 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
      
       Select the OK button.
      
-      Wait for the creation of the new database and container to finish before moving on with this lab.
+      Wait for the creation of the new container under **StoreDatabase** to finish before moving with further steps.
 
 6. Notice the container configuration value at the top of the `program.cs` file, for the name of the destination container, following `_containerId`:
 
    
  ```csharp
+ using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Azure.Cosmos;
+using Shared;
+
  namespace ChangeFeedConsole
  {
    class Program
@@ -474,6 +494,7 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
    Console.WriteLine("Press any key to stop the processor...");
    Console.ReadKey();
    Console.WriteLine("Stopping Change Feed Processor");
+   await processor.StopAsync();
    ```
 
 ### Complete the Live Data Migration
@@ -502,11 +523,6 @@ The first use case we'll explore for Cosmos DB Change Feed is Live Migration. A 
    }
 
    return Task.WhenAll(tasks);
-   ```
-10. Finally, when a key is pressed to terminate the processor we need to end it. Locate the `//todo: Add stop code here` line and replace it with this code:
-
-   ```csharp
-   await processor.StopAsync();
    ```
 
 11. At this point, your `Program.cs` file should look like this:
@@ -679,7 +695,7 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.CosmosDB" Version="3.0.10" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.9" />
     ```
-   you Need to update  host.json and local.settings.json itemgroup  should like this 
+   Under ChangeFeedFunctions.csproj file ,You need to update host.json and local.settings.json itemgroup and it should like this :
     ```sh
        <None Update="host.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -1100,7 +1116,7 @@ This step is optional, if you do not wish to follow the lab to creating the dash
 
 1. Search for Eventhub in search bar
 
-1. Click on **+ Create ** Option
+1. Click on **+ Create** Option
 
   ![Resource Groups is highlighted](./assets/08-eventhub.jpg "Browse to resource groups")
 
@@ -1291,6 +1307,11 @@ With all of the configuration out of the way, you'll see how simple it is to wri
    ```
 
 1. Replace the placeholder in **\_eventHubConnection** with the value of the Event Hubs **Connection string-primary key** you collected earlier.
+    
+   ```csharp
+   private static readonly string _eventHubConnection = "<event-hub-connection>";
+   private static readonly string _eventHubName = "carteventhub";
+   ```
 
 1. Start by creating an **EventHubClient** by replacing the two logging lines inside the **_if Condition_**  with the following code:
 
@@ -1322,12 +1343,6 @@ With all of the configuration out of the way, you'll see how simple it is to wri
    await Task.WhenAll(tasks);
    ```
    
-   1. At the top of the class, add the following configuration parameters:
-
-   ```csharp
-   private static readonly string _eventHubConnection = "<event-hub-connection>";
-   private static readonly string _eventHubName = "carteventhub";
-   ```
 
 1. The final version of the **AnalyticsFunction** looks like this:
 
