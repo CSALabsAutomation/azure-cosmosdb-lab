@@ -1306,7 +1306,7 @@ With all of the configuration out of the way, you'll see how simple it is to wri
    }
    ```
 
-1. Replace the placeholder in **\_eventHubConnection** with the value of the Event Hubs **Connection string-primary key** you collected earlier.
+1. Replace the placeholder in **\_eventHubConnection** with the value of the Event Hubs **Connection string-primary key** you collected earlier and replace the **\_eventHubName** with the event hub name you created. 
     
    ```csharp
    private static readonly string _eventHubConnection = "<event-hub-connection>";
