@@ -646,8 +646,8 @@ In this exercise, we will implement .NET SDK's change feed processor library to 
    func new
    ```
 1. When prompted, choose the **dotnet** worker runtime. Use the arrow keys to scroll up and down.
-2. 
-3. When prompted, select **C#** from the list of languages. Use the arrow keys to scroll up and down
+ 
+1. When prompted, select **C#** from the list of languages. Use the arrow keys to scroll up and down
 
 1.  When prompted, enter the number `13` for the CosmosDBTrigger function  click enter
 
