@@ -17,7 +17,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
 
 1. In the Azure Cosmos DB blade, locate and select the Data Explorer link on the left side of the blade.
 
-1. In the Database id field, select the Create new option and enter the value FinancialDatabase.
+1. In the Database id field, select the Create new option and enter the value **FinancialDatabase**.
 
 1. In the Container Id field, enter the value **PeopleCollection**.
 
