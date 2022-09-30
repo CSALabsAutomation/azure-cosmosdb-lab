@@ -4,8 +4,8 @@ In this lab, you will create multiple Azure Cosmos DB containers using different
 
 ### Recommended Prerequisites 
 
-1. [Explore Cosmos DB](https://learn.microsoft.com/en-us/training/modules/explore-azure-cosmos-db) 
-2. [Implement partitioning in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/implement-partitioning-azure-cosmos-db)
+- [Explore Cosmos DB](https://learn.microsoft.com/en-us/training/modules/explore-azure-cosmos-db) 
+- [Implement partitioning in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/implement-partitioning-azure-cosmos-db)
  
 ## Log-in to the Azure Portal
 

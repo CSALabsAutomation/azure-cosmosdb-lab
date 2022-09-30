@@ -4,11 +4,11 @@ In this lab you will use the Change Feed Processor Library and Azure Functions t
 
 ### Recommended Prerequisites 
 
-1. [Integrate Azure Cosmos DB SQL API with Azure services](https://learn.microsoft.com/en-gb/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/ ) 
-2. [Consume an Azure Cosmos DB SQL API change feed using the SDK](https://learn.microsoft.com/en-gb/training/modules/consume-azure-cosmos-db-sql-api-change-feed-use-sdk/)
-3. [Handle events with Azure Functions and Azure Cosmos DB SQL API change feed](https://learn.microsoft.com/en-gb/training/modules/handle-events-azure-functions-azure-cosmos-db-sql-api-change-feed/)
-4. [ Introduction to Event Hubs ](https://learn.microsoft.com/en-gb/training/modules/intro-to-event-hubs/1-introduction)
-5. [Get started with Azure Stream Analytics](https://learn.microsoft.com/en-gb/training/modules/examine-azure-stream-analytics-azure-functions/2-what-azure-stream-analytics)
+- [Integrate Azure Cosmos DB SQL API with Azure services](https://learn.microsoft.com/en-gb/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/ ) 
+- [Consume an Azure Cosmos DB SQL API change feed using the SDK](https://learn.microsoft.com/en-gb/training/modules/consume-azure-cosmos-db-sql-api-change-feed-use-sdk/)
+- [Handle events with Azure Functions and Azure Cosmos DB SQL API change feed](https://learn.microsoft.com/en-gb/training/modules/handle-events-azure-functions-azure-cosmos-db-sql-api-change-feed/)
+- [ Introduction to Event Hubs ](https://learn.microsoft.com/en-gb/training/modules/intro-to-event-hubs/1-introduction)
+- [Get started with Azure Stream Analytics](https://learn.microsoft.com/en-gb/training/modules/examine-azure-stream-analytics-azure-functions/2-what-azure-stream-analytics)
 
 
 ## Build A .NET Console App to Generate Data

@@ -4,8 +4,8 @@ In this lab, you will modify the indexing policy of an Azure Cosmos DB container
 
 ### Recommended Prerequisites 
 
-1. [Define indexes in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/define-indexes-azure-cosmos-db-sql-api/)
-2. [Customize an indexing policy in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/choose-indexes-azure-cosmos-db-sql-api/)
+- [Define indexes in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/define-indexes-azure-cosmos-db-sql-api/)
+- [Customize an indexing policy in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/choose-indexes-azure-cosmos-db-sql-api/)
 
 ## Indexing Overview
 

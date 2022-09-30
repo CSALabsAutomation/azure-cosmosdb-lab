@@ -6,7 +6,7 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
 ### Recommended Prerequisites 
 
-1. [Transactions and optimistic concurrency control ](https://learn.microsoft.com/en-us/azure/cosmos-db/sql/database-transactions-optimistic-concurrency) 
+- [Transactions and optimistic concurrency control ](https://learn.microsoft.com/en-us/azure/cosmos-db/sql/database-transactions-optimistic-concurrency) 
 
 ### Create a .NET Core Project
 

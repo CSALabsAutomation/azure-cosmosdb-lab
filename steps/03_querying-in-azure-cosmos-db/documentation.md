@@ -4,8 +4,8 @@ Azure Cosmos DB SQL API accounts provide support for querying items using the St
 
 ### Recommended Prerequisites 
 
-1. [Query the Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/query-azure-cosmos-db-sql-api/)
-2. [Author complex queries with the Azure Cosmos ](https://learn.microsoft.com/en-gb/training/modules/author-complex-queries-azure-cosmos-db-sql-api/)
+- [Query the Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/query-azure-cosmos-db-sql-api/)
+- [Author complex queries with the Azure Cosmos ](https://learn.microsoft.com/en-gb/training/modules/author-complex-queries-azure-cosmos-db-sql-api/)
 
 
 ## Query Overview
