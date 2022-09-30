@@ -2,6 +2,10 @@
 
 In this lab, you will populate an Azure Cosmos DB container from an existing set of data using tools built in to Azure. After importing, you will use the Azure portal to view your imported data.
 
+### Recommended Prerequisites 
+
+1. [Use Data migration tool to migrate your data to Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/import-data) 
+
 
 ## Create Azure Cosmos DB Database and Container
 

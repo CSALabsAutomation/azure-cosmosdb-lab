@@ -2,6 +2,11 @@
 
 In this lab, you will create multiple Azure Cosmos DB containers using different partition keys and settings. In later labs, you will then use the SQL API and .NET SDK to query specific containers using a single partition key or across multiple partition keys.
 
+### Recommended Prerequisites 
+
+1. [Explore Cosmos DB](https://learn.microsoft.com/en-us/training/modules/explore-azure-cosmos-db) 
+2. [Implement partitioning in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/implement-partitioning-azure-cosmos-db)
+ 
 ## Log-in to the Azure Portal
 
 1. In a new window, sign in to the **Azure Portal** (<https://portal.azure.com>).
