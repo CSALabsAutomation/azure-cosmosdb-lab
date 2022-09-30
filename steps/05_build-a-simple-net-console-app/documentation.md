@@ -4,7 +4,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
 ### Recommended Prerequisites 
 
-1. [build a net console app](https://learn.microsoft.com/en-gb/training/modules/build-dotnet-app-cosmos-db-sql-api/)
+1. [Build a net console app](https://learn.microsoft.com/en-gb/training/modules/build-dotnet-app-cosmos-db-sql-api/)
 
 ## Create a .NET Core Project
 
