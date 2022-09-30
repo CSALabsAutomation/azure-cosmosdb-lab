@@ -2,6 +2,11 @@
 
 Azure Cosmos DB SQL API accounts provide support for querying items using the Structured Query Language (SQL), one of the most familiar and popular query languages, as a JSON query language. In this lab, you will explore how to use these rich query capabilities directly through the Azure Portal. No separate tools or client side code are required.
 
+### Recommended Prerequisites 
+
+- [Query the Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/query-azure-cosmos-db-sql-api/)
+- [Author complex queries with the Azure Cosmos ](https://learn.microsoft.com/en-gb/training/modules/author-complex-queries-azure-cosmos-db-sql-api/)
+
 
 ## Query Overview
 

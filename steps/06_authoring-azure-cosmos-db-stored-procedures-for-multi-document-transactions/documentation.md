@@ -4,6 +4,11 @@ In this lab, you will author and execute multiple stored procedures within your 
 
 > If this is your first lab and you have not already completed the setup for the lab content see the instructions of previous labs before starting this lab.
 
+### Recommended Prerequisites 
+
+- [Build multi-item transactions with the Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/)
+- [Expand query and transaction functionality in Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/expand-query-transaction-functionality-azure-cosmos-db-sql-api/)
+
 ## Author Simple Stored Procedures 
 
 You will get started in this lab by authoring simple stored procedures that implement common server-side tasks such as adding one or more items as part of a database transaction.

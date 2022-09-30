@@ -2,6 +2,11 @@
 
 In this lab, you will modify the indexing policy of an Azure Cosmos DB container. You will explore how you can optimize indexing policy for write or read heavy workloads as well as understand the indexing requirements for different SQL API query features.
 
+### Recommended Prerequisites 
+
+- [Define indexes in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/define-indexes-azure-cosmos-db-sql-api/)
+- [Customize an indexing policy in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/choose-indexes-azure-cosmos-db-sql-api/)
+
 ## Indexing Overview
 
 Azure Cosmos DB is a schema-agnostic database that allows you to iterate on your application without having to deal with schema or index management. By default, Azure Cosmos DB automatically indexes every property for all items in your container without the need to define any schema or configure secondary indexes. If you chose to leave indexing policy at the default settings, you can run most queries with optimal performance and never have to explicitly consider indexing. However, if you want control over adding or removing properties from the index, modification is possible through the Azure Portal, ARM template, PowerShell, Azure CLI or any Cosmos DB SDK.

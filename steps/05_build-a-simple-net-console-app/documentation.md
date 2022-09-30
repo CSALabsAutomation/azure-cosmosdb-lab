@@ -2,6 +2,10 @@
 
 After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB container in Lab 3, you are now going to use the .NET SDK to issue similar queries.
 
+### Recommended Prerequisites 
+
+- [Use the Azure Cosmos DB SQL API SDK](https://learn.microsoft.com/en-gb/training/modules/use-azure-cosmos-db-sql-api-sdk/)
+
 ## Create a .NET Core Project
 
 1. Create `Lab05` folder that will be used to contain the content of your .NET Core project.

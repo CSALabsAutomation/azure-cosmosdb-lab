@@ -2,10 +2,39 @@
 
 In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optimize the performance and cost of your application.
 
+### Recommended Prerequisites 
+
+- [Measure performance in Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/measure-performance-azure-cosmos-db-sql-api/) 
+- [Configure Azure Cosmos DB SQL API database and containers](https://learn.microsoft.com/en-gb/training/modules/configure-azure-cosmos-db-sql-api/)
+
 
 ## Create a .NET Core Project
 
 1. Create **Lab09** folder that will be used to contain the content of your .NET Core project.
+
+1. Switch to the Azure Portal (http://portal.azure.com).
+
+1. On the left side of the portal, select the Resource groups link.
+
+1. In the Resource groups blade, locate and select the cosmoslab resource group.
+
+1. In the cosmoslab blade, select the Azure Cosmos DB account you recently created.
+
+1. In the Azure Cosmos DB blade, locate and select the Data Explorer link on the left side of the blade.
+
+1. In the Database id field, select the Create new option and enter the value **FinancialDatabase**.
+
+1. In the Container Id field, enter the value **PeopleCollection**.
+
+1. In the Partition key field, enter the value **/accountHolder/LastName**.
+
+1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
+
+1. In the Container Id field, enter the value **TransactionCollection**. under FinancialDatabase.
+
+1. In the Partition key field, enter the value **/id**.
+
+1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
 
 1. In the `Lab09` folder, right-click the folder and select the **Open with Code** menu option.
 
@@ -67,6 +96,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Diagnostics;
     using System.Threading.Tasks;
     using Microsoft.Azure.Cosmos;
     ```
@@ -136,7 +166,7 @@ Azure Cosmos DB returns various response headers that can give you more metadata
 1. Next create a new function that creates a new object and stores it in a variable named `member`:
 
     ```csharp
-    private static async Task CreateMember(Container peopleContainer)
+    private static async Task<double> CreateMember(Container peopleContainer)
     {
         object member = new Member { accountHolder = new Bogus.Person() };
 
@@ -219,30 +249,6 @@ Azure Cosmos DB returns various response headers that can give you more metadata
     ```
 
 1. Observe the results of the console project. You should see the document creation operation use approximately `15  RU/s`.
-
-1. Return to the **Azure Portal** (<http://portal.azure.com>).
-
-1. On the left side of the portal, select the **Resource groups** link.
-
-1. In the **Resource groups** blade, locate and select the **cosmoslab** resource group.
-
-1. In the **cosmoslab** blade, select the **Azure Cosmos DB** account you recently created.
-
-1. In the **Azure Cosmos DB** blade, locate and select the **Data Explorer** link on the left side of the blade.
-
-1. In the Database id field, select the Create new option and enter the value **FinancialDatabase**.
- 
-1. In the Container Id field, enter the value **PeopleCollection**.
-
-1. In the Partition key field, enter the value **/accountHolder/LastName**.
-
-1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
-
-1. In the Container Id field, enter the value **TransactionCollection**. under **FinancialDatabase**.
-
-1. In the Partition key field, enter the value **/id**.
-
-1. Select the OK button, Wait for the creation of the new database and container to finish before moving on with this lab.
 
 1. In the **Data Explorer** section, expand the **FinancialDatabase** database node and then select the **PeopleCollection** node.
 

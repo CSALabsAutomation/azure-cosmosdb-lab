@@ -2,6 +2,10 @@
 
 In this lab, you will populate an Azure Cosmos DB container from an existing set of data using tools built in to Azure. After importing, you will use the Azure portal to view your imported data.
 
+### Recommended Prerequisites 
+
+- [Use Data migration tool to migrate your data to Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/import-data) 
+
 
 ## Create Azure Cosmos DB Database and Container
 
@@ -21,13 +25,13 @@ You will now create a database and container within your Azure Cosmos DB account
 
     ![The Cosmos DB resource is highlighted](./assets/03-cosmos_resource.jpg "Select the cosmoslabs resource")
 
-1. In the **Azure Cosmos DB** blade, locate and select the **Overview** link on the left side of the blade. At the top select the **Add Container** button.
+1. In the Azure Cosmos DB blade, locate and select the Data Explorer link on the left side of the blade.
 
-    ![Add container link is highlighted](./assets/03-add_collection.jpg "Add a new container")
+    ![Add container link is highlighted](./assets/03-add_dataexplore.JPG "Add a new container")
 
-1. In the **Add Container** popup, perform the following actions:
+1. click on the **New container** dropdown  and select **New Database**:
 
-    1. In the **Database id** field, select the **Create new** option and enter the value **NutritionDatabase**.
+    1. In the Database id field and enter the value **NutritionDatabase**.
     
        ![database](./assets/02-create_database.JPG "create database")
        

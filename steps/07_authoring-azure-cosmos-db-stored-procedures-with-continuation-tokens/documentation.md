@@ -4,6 +4,10 @@ In this lab, you will author and execute multiple stored procedures within your 
 
 > If this is your first lab and you have not already completed the setup for the lab content see the instructions of previous labs before starting this lab.
 
+## Recommended Prerequisites 
+
+- [Build multi-item transactions with the Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/)
+
 ## Author Stored Procedures using the Continuation Model
 
 You will now implement stored procedures that may execute longer than the bounded execution limits on the server. You will implement the continuation model so that the stored procedures can "pick up where they left off" after they ran out of time in a previous execution.
