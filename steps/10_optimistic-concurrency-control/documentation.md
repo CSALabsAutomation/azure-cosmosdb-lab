@@ -4,6 +4,10 @@
 
 The SQL API supports optimistic concurrency control (OCC) through HTTP entity tags, or ETags. Every SQL API resource has an ETag, and the ETag is set on the server every time an item is updated. In this exercise, we will view the ETag property of a resource that is requested using the SDK.
 
+### Recommended Prerequisites 
+
+1. [Transactions and optimistic concurrency control ](https://learn.microsoft.com/en-us/azure/cosmos-db/sql/database-transactions-optimistic-concurrency) 
+
 ### Create a .NET Core Project
 
 1. Create **Lab10** folder that will be used to contain the content of your .NET Core project.
