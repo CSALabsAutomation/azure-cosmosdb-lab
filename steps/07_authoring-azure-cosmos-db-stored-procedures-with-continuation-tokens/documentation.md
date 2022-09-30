@@ -6,7 +6,7 @@ In this lab, you will author and execute multiple stored procedures within your 
 
 ## Recommended Prerequisites 
 
-1. [Execute Stored Procedures in Azure Cosmos DB](https://learn.microsoft.com/en-gb/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/)
+1. [Build multi-item transactions with the Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/build-multi-item-transactions-azure-cosmos-db-sql-api/)
 
 ## Author Stored Procedures using the Continuation Model
 
