@@ -2,6 +2,10 @@
 
 In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optimize the performance and cost of your application.
 
+### Recommended Prerequisites 
+
+1. [Measure performance in Azure Cosmos DB SQL API](https://learn.microsoft.com/en-gb/training/modules/measure-performance-azure-cosmos-db-sql-api/) 
+
 
 ## Create a .NET Core Project
 
