@@ -1,6 +1,14 @@
 # Azure Cosmos DB Change Feed
 
-In this lab you will use the Change Feed Processor Library and Azure Functions to implement three use cases for the Azure Cosmos DB Change Feed
+In this lab you will use the Change Feed Processor Library and Azure Functions to implement three use cases for the Azure Cosmos DB Change Feed.
+
+### Recommended Prerequisites 
+
+1. [Change feed Processor ](https://learn.microsoft.com/en-gb/training/paths/integrate-azure-cosmos-db-sql-api-azure-services/ ) 
+2. [Consume an Azure Cosmos DB SQL API change feed using the SDK](https://learn.microsoft.com/en-gb/training/modules/consume-azure-cosmos-db-sql-api-change-feed-use-sdk/)
+3. [Handle events with Azure Functions and Azure Cosmos DB SQL API change feed](https://learn.microsoft.com/en-gb/training/modules/handle-events-azure-functions-azure-cosmos-db-sql-api-change-feed/)
+4. [ Introduction to Event Hubs ](https://learn.microsoft.com/en-gb/training/modules/intro-to-event-hubs/1-introduction)
+5. [Azure Stream Analytics](https://learn.microsoft.com/en-gb/training/modules/examine-azure-stream-analytics-azure-functions/2-what-azure-stream-analytics)
 
 
 ## Build A .NET Console App to Generate Data
