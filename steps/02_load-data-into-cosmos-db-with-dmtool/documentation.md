@@ -81,7 +81,8 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
       ```sh
       AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>.
       ```
-       
+   > The <CosmosDB Endpoint> is the endpoint URI. You can get this value from the Azure portal. Navigate to your Azure Cosmos DB account. Open the Overview pane and        copy the URI value. 
+    
    > In the **Partition key** field, enter the value **_``/foodGroup``_**.
 
    > In the **Collection Throughput** field, enter the value **``11000``**. *Note: we will reduce this to 400 RU/s after the data has been imported*.
