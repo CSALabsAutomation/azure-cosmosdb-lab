@@ -88,9 +88,8 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
    > The <CosmosDB Database> is the CosmosDB database name. 
     
    > **Exampple**
- ```sh         AccountEndpoint=https://myCosmosDBName.documents.azure.com:443/;AccountKey=wJmFRYna6ttQ79ATmrTMKql8vPri84QBiHTt6oinFkZRvoe7Vv81x9sn6zlVlBY10bEPMgGM982wfYXpWXWB9w==;Database=myDatabaseName.
- ```      
-    
+ ```csharp       AccountEndpoint=https://myCosmosDBName.documents.azure.com:443/;AccountKey=wJmFRYna6ttQ79ATmrTMKql8vPri84QBiHTt6oinFkZRvoe7Vv81x9sn6zlVlBY10bEPMgGM982wfYXpWXWB9w==;Database=myDatabaseName.
+ ```    
    > In the **Partition key** field, enter the value **_``/foodGroup``_**.
 
    > In the **Collection Throughput** field, enter the value **``11000``**. *Note: we will reduce this to 400 RU/s after the data has been imported*.
