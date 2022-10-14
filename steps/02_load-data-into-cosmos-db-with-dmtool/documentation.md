@@ -75,6 +75,18 @@ You will use **Data Migration Tool(DM tool)** to import the JSON array stored in
     ![click ](./assets/03-dm_connectionString.JPG "ADD connection string and collection")
     
 1. Append the Connection String with Database name and make collection as **_``FoodCollection``_**.
+
+   > The connection string is in the following format: 
+      '''sh
+      AccountEndpoint=<CosmosDB Endpoint>;AccountKey=<CosmosDB Key>;Database=<CosmosDB Database>.
+      '''
+   > The <CosmosDB Endpoint> is the endpoint URI. You can get this value from the Azure portal. Navigate to your Azure Cosmos DB account. Open the Overview pane and        copy the URI value. 
+
+   > The <AccountKey> is the "Password" or PRIMARY KEY. You can get this value from the Azure portal. Navigate to your Azure Cosmos DB account. Open the Connection        Strings or Keys pane, and copy the "Password" or PRIMARY KEY value. 
+
+    > The <CosmosDB Database> is the CosmosDB database name.  
+    
+    > **Example** :      AccountEndpoint=https://myCosmosDBName.documents.azure.com:443/;AccountKey=wJmFRYna6ttQ79ATmrTMKql8vPri84QBiHTt6oinFkZRvoe7Vv81x9sn6zlVlBY10bEPMgGM982wfYXpWXWB9w==;Database=myDatabaseName
    
    > In the **Partition key** field, enter the value **_``/foodGroup``_**.
 
