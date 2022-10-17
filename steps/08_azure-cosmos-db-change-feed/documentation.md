@@ -15,7 +15,7 @@ In this lab you will use the Change Feed Processor Library and Azure Functions t
 
 In order to simulate data flowing into our store, in the form of actions on an e-commerce website, we'll build a simple .NET Console App to generate and add documents to our Cosmos DB CartContainer
 
-1. Create `Lab08` folder that will be used to contain the content of your .NET Core project.
+1. Open **File explorer** , navigate to **_C:\Users\cosmosLabUser\Desktop_** location and create **Lab08** folder that will be used to contain the content of your    .NET Core project.
 
 2. Switch to the Azure Portal and your Cosmos DB Account.
 
@@ -66,7 +66,7 @@ In order to simulate data flowing into our store, in the form of actions on an e
 
    ![The program.cs is displayed](./assets/08-console-main-default.jpg "Open the program.cs file")
 
-1. Within the Program.cs editor tab, Add the following code .
+1. Within the Program.cs editor tab, add the following lines of code as given below.
 
 ```sh
 using System;
