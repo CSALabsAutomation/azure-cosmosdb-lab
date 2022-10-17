@@ -137,7 +137,7 @@ You will now implement stored procedures that may execute longer than the bounde
 
 ### Create a .NET Core Project
 
-1. Create **Lab07** folder that will be used to contain the content of your .NET Core project.
+1. Open **File explorer** , navigate to **_C:\Users\cosmosLabUser\Desktop_** location and create **Lab07** folder that will be used to contain the content of your .NET Core project.
 
 1. In the **Lab07** folder, right-click the folder and select the **Open with Code** menu option.
 
@@ -191,7 +191,7 @@ You will now implement stored procedures that may execute longer than the bounde
 
    > This file contains the data classes you will be working with in the following steps.
    
- 1. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:  
+ 1. Within the Program.cs editor tab, add the following lines of code as given below.
  
    ```csharp
    using System;
@@ -201,7 +201,7 @@ You will now implement stored procedures that may execute longer than the bounde
    using System.Collections.Generic;
    using System.Linq;
   ```
-1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also main() method structure has to be added as given below.
+1. Within the `Program` class, add the following lines of code to create variables for Cosmos DB Connection, Cosmos Client, Database, Container and main() method as given below.
    
    ```sh
     public class Program
