@@ -62,7 +62,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
    ![Visual Studio Code editor is displayed with the program.cs file highlighted](./assets/03-program_editor.jpg "Open the program.cs file")   
 
- 1. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:
+ 1. Within the Program.cs editor tab, add the following lines of code as given below.
 
     ```sh
     using System;
