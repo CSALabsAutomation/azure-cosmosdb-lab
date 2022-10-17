@@ -10,7 +10,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
 
 ## Create a .NET Core Project
 
-1. Create **Lab09** folder that will be used to contain the content of your .NET Core project.
+1. Open **File explorer** , navigate to **_C:\Users\cosmosLabUser\Desktop_** location and create **Lab09** folder that will be used to contain the content of your    .NET Core project.
 
 1. Switch to the Azure Portal (http://portal.azure.com).
 
@@ -90,7 +90,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
 
 1. Select the **Program.cs** link in the **Explorer** pane to open the file in the editor.
 
- 1. Within the Program.cs editor tab, Add the following blocks of code :
+ 1. Within the Program.cs editor tab, add the following lines of code as given below.
 
     ```sh
     using System;
@@ -100,7 +100,7 @@ In this lab, you will use the .NET SDK to tune Azure Cosmos DB requests to optim
     using System.Threading.Tasks;
     using Microsoft.Azure.Cosmos;
     ```
-1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also **main()** method structure has to be added as given below.
+1. Within the `Program` class, add the following lines of code to create variables for Cosmos DB Connection, Cosmos Client, Database , Container and main() method as given below.
    
    ```sh
     public class Program
