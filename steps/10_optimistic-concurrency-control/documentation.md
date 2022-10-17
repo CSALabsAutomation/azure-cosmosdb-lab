@@ -10,7 +10,7 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
 ### Create a .NET Core Project
 
-1. Create **Lab10** folder that will be used to contain the content of your .NET Core project.
+1.  Open **File explorer** , navigate to **_C:\Users\cosmosLabUser\Desktop_** location and create **Lab10** folder that will be used to contain the content of your    .NET Core project.
 
 1. In the `Lab10` folder, right-click the folder and select the **Open with Code** menu option.
 
@@ -67,7 +67,7 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
    ![The program.cs file is displayed](./assets/10-program-editor.jpg "Open the program.cs file")
 
- 1. Within the Program.cs editor tab, Add the following using blocks to the top of the editor:
+1. Within the Program.cs editor tab, add the following lines of code as given below.
 
     ```sh
       using System;
@@ -75,7 +75,7 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
       using System.Threading.Tasks;
       using Microsoft.Azure.Cosmos;
     ```
-1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also **main()** method structure has to be added as given below.
+1. Within the `Program` class, add the following lines of code to create variables for Cosmos DB Connection, Cosmos Client, Database , Container and main() method as given below.
    
    ```sh
     public class Program
@@ -91,15 +91,15 @@ The SQL API supports optimistic concurrency control (OCC) through HTTP entity ta
 
       }
     }
-    ```
+   ```
 
-1. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
+   1. For the `_endpointUri` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
 
    - For example, if your **uri** is `https://cosmosacct.documents.azure.com:443/`, your new variable assignment will look like this: 
 
-    ```csharp
+   ```csharp
     private static readonly string _endpointUri = "https://cosmosacct.documents.azure.com:443/";
-    ````
+   ````
 
    - For example, if your **primary key** is `elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==`, your new variable assignment will look like this:
 
@@ -299,13 +299,13 @@ public class Program
     
 }
 ```
-1. In the open terminal pane, enter and execute the following command:
+22. In the open terminal pane, enter and execute the following command:
 
    ```sh
    dotnet run
    ```
 
-1. Observe the output of the console application.
+23. Observe the output of the console application.
 
    > You should see that the second update call fails because value of the ETag property has changed. The **ItemRequestOptions** class specifying the original ETag value as an If-Match header caused the server to decide to reject the update operation with an "HTTP 412 Precondition failure" response code.
 
