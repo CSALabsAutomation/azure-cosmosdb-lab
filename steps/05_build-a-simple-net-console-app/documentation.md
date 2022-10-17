@@ -8,7 +8,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
 
 ## Create a .NET Core Project
 
-1. Create `Lab05` folder that will be used to contain the content of your .NET Core project.
+1. Open **File explorer** , navigate to **_C:\Users\cosmosLabUser\Desktop_** location and create **Lab05** folder that will be used to contain the content of your    .NET Core project.
 
 2. In the `Lab05` folder, right-click the folder and select the **Open with Code** menu option.
 
@@ -71,7 +71,7 @@ After using the Azure Portal's **Data Explorer** to query an Azure Cosmos DB con
     using System.Threading.Tasks;
     using Microsoft.Azure.Cosmos;
     ```
-1. Within the Program class, add the following lines of code which creates variables for your connection information and Cosmos client. Database and Container info has to be added. Also **main()** method structure has to be added as given below.
+1. Within the `Program` class, add the following lines of code to create variables for Cosmos DB Connection, Cosmos Client, Database , Container and main() method as given below.
    
    ```sh
     public class Program
