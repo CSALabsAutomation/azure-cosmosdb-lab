@@ -43,7 +43,7 @@ You will start by using the .NET SDK to create containers to use in this and fol
 
 ### Create a .NET Core Project
 
-1. Open **File explorer** , Navigate to **_C:\Users\cosmosLabUser\Desktop_** location and create **Lab01** folder that will be used to contain the content of your .NET Core project.
+1. Open **File explorer** , navigate to **_C:\Users\cosmosLabUser\Desktop_** location and create **Lab01** folder that will be used to contain the content of your .NET Core project.
     
 1. In the **Lab01** folder, right-click the folder and select the **Open with Code** menu option.
 
@@ -122,7 +122,7 @@ The CosmosClient class is the main "entry point" to using the Core (SQL) API in 
     using Microsoft.Azure.Cosmos;
     ```
 
-1. Within the `Program` class, add the following lines of code to create variables for Cosmos DB Connection, Cosmos Client. Add main() method as given below.
+1. Within the `Program` class, add the following lines of code to create variables for Cosmos DB Connection, Cosmos Client and main() method as given below.
 
     ```csharp
     public class Program
