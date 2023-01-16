@@ -32,7 +32,6 @@
     },
     "adminPassword": {
       "type": "secureString",
-      "defaultValue": "de22c4!DE22C4@de22c4",
       "minLength": 12,
       "metadata": {
         "description": "Password for the Virtual Machine."
