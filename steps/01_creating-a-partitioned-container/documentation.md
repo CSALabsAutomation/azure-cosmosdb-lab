@@ -125,18 +125,18 @@ The CosmosClient class is the main "entry point" to using the Core (SQL) API in 
 
 1. For the `_endpointUri` variable, replace the placeholder value with the **URI** value from your Azure Cosmos DB account
 
-    > For example, if your **uri** is `https://cosmosacct.documents.azure.com:443/`, your new variable assignment will look like this:
+    > For example, if your **uri** is `https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/`, your new variable assignment will look like this:
 
     ```csharp
-    private static readonly string _endpointUri = "https://cosmosacct.documents.azure.com:443/";
+    private static readonly string _endpointUri = "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxx/";
     ```
 
 1. For the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account
 
-    > For example, if your **primary key** is ``elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==``, your new variable assignment will look like this:
+    > For example, if your **primary key** is ``xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx``, your new variable assignment will look like this:
 
     ```csharp
-    private static readonly string _primaryKey = "elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==";
+    private static readonly string _primaryKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     ```
 
     > Keep the **URI** and **PRIMARY KEY** values recorded, you will use them again later in this lab.
