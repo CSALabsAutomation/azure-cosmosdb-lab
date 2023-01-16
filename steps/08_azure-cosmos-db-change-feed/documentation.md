@@ -110,16 +110,16 @@ namespace DataGenerator
 
 1. For the `_endpointUrl` variable, replace the placeholder value with the **URI** value and for the `_primaryKey` variable, replace the placeholder value with the **PRIMARY KEY** value from your Azure Cosmos DB account. Use [these instructions](https://github.com/CSALabsAutomation/azure-cosmosdb-lab/blob/main/steps/01_creating-a-partitioned-container/documentation.md) to get these values if you do not already have them:
 
-   - For example, if your **url** is `https://cosmosacct.documents.azure.com:443/`, your new variable assignment will look like this:
+   - For example, if your **url** is `https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`, your new variable assignment will look like this:
 
    ```csharp
-   private static readonly string _endpointUrl = "https://cosmosacct.documents.azure.com:443/";
+   private static readonly string _endpointUrl = "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
    ```
 
-   - For example, if your **primary key** is `elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==`, your new variable assignment will look like this:
+   - For example, if your **primary key** is `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`, your new variable assignment will look like this:
 
    ```csharp
-   private static readonly string _primaryKey = "elzirrKCnXlacvh1CRAnQdYVbVLspmYHQyYrhx0PltHi8wn5lHVHFnd1Xm3ad5cn4TUcH4U0MSeHsVykkFPHpQ==";
+   private static readonly string _primaryKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
    ```
 
 ### Create Function to Add Documents to Cosmos DB
